@@ -1,0 +1,74 @@
+---
+import { getPage } from "../lib/content";
+import { t, type Lang } from "../lib/i18n";
+import { href } from "../lib/url";
+import { SITE } from "../site.config";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const access = (await getPage("access", lang)).data;
+---
+
+<footer class="footer">
+  <div class="container inner">
+    <div class="about">
+      <span class="name">{t(lang, "site.name")}</span>
+      <span>{t(lang, "site.affiliation")}</span>
+      {access.address.map((line) => (
+        <span>{line}</span>
+      ))}
+    </div>
+    <div class="links">
+      <a href={href("/access/", lang)}>{t(lang, "nav.access")}</a>
+      {SITE.contactUrl ? (
+        <a href={SITE.contactUrl}>{t(lang, "footer.contact")}</a>
+      ) : (
+        <a href={href("/access/#contact", lang)}>
+          {t(lang, "footer.contact")}
+          {t(lang, "footer.pending")}
+        </a>
+      )}
+      <a href={SITE.githubUrl}>GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-surface);
+  }
+  .inner {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px 48px;
+    font-size: 14px;
+    color: var(--color-text-sub);
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .name {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-text);
+    letter-spacing: 0.08em;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 28px;
+  }
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap-min);
+    color: var(--color-text-sub);
+  }
+</style>

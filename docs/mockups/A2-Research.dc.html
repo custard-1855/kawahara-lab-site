@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>研究</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0A5BB8}a:hover{color:#0F2547}
+</style>
+</helmet>
+<div style="font-family: 'IBM Plex Sans JP', sans-serif; color: #1B2230; background: #FFFFFF; font-size: 16px; line-height: 1.9; letter-spacing: 0.03em">
+
+<header style="border-bottom: 1px solid #E3E6EB">
+<div style="max-width: 1120px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
+<a href="A2-Top.dc.html" style="display: flex; align-items: baseline; gap: 12px; color: #1B2230; text-decoration: none">
+<span style="font-weight: 600; font-size: 18px; letter-spacing: 0.08em">川原研究室</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372; letter-spacing: 0.04em">Kawahara Lab</span>
+</a>
+<nav aria-label="メインメニュー" style="display: flex; flex-wrap: wrap; align-items: center; gap: 0 28px; font-size: 14px">
+<a href="#" aria-current="page" style="color: #1B2230; text-decoration: underline; text-decoration-color: #0F2547; text-underline-offset: 8px; text-decoration-thickness: 2px; padding: 12px 0; font-weight: 500">研究</a>
+<a href="A2-Members.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">メンバー</a>
+<a href="A2-Pubs.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">業績</a>
+<a href="A2-Articles.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">記事</a>
+<a href="A2-Join.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">配属希望の方へ</a>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372; display: flex; align-items: center; gap: 6px">
+<a href="#" aria-current="true" style="color: #1B2230; text-decoration: none; padding: 12px 2px; font-weight: 500">JA</a>/<a href="#" style="color: #5B6372; text-decoration: none; padding: 12px 2px">EN</a>
+</span>
+</nav>
+</div>
+</header>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 88px 32px 0">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">Research</span>
+<h1 style="margin: 4px 0 0; font-weight: 500; font-size: 34px; line-height: 1.5; letter-spacing: 0.06em">研究</h1>
+<p style="margin: 12px 0 0; color: #5B6372; max-width: 40em">[研究室全体の研究の方向性を2〜3文で。各テーマがどうつながっているかにも触れる。]</p>
+<nav aria-label="研究テーマ" style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{themes}}" as="t" hint-placeholder-count="4">
+<a href="#" style="display: flex; align-items: baseline; gap: 10px; font-size: 14px; color: #1B2230; text-decoration: none; background: #F4F6F9; border-radius: 999px; padding: 10px 20px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">{{t.no}}</span>{{t.name}}</a>
+</sc-for>
+</nav>
+</section>
+
+<sc-for list="{{themes}}" as="t" hint-placeholder-count="4">
+<section style="max-width: 1120px; margin: 0 auto; padding: 120px 32px 0; display: flex; flex-wrap: wrap; gap: 16px 48px">
+<div style="flex: 1 1 200px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5B6372">{{t.no}}</span>
+<h2 style="margin: 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">{{t.name}}</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">{{t.en}}</span>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<p style="margin: 0; font-size: 17px; line-height: 2; max-width: 38em">[このテーマで取り組んでいる問題と、それがなぜ大事かを3〜4文で。専門外の学部生にも伝わる言葉で書く。]</p>
+<p style="margin: 16px 0 0; font-size: 14px; color: #5B6372">キーワード:{{t.keywords}}</p>
+
+<div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px 40px">
+<div>
+<h3 style="margin: 0; font-weight: 500; font-size: 15px; letter-spacing: 0.06em">取り組んでいるメンバー</h3>
+<div style="margin-top: 8px; border-top: 1px solid #E3E6EB">
+<sc-for list="{{t.members}}" as="m" hint-placeholder-count="2">
+<a href="A2-Members.dc.html" style="display: flex; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid #E3E6EB; color: #1B2230; text-decoration: none; font-size: 15px">
+<span style="flex: 0 0 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">{{m.grade}}</span>
+<span style="flex: 0 0 auto; font-weight: 500">[氏名]</span>
+<span style="flex: 1 1 auto; min-width: 0; font-size: 14px; color: #5B6372">[研究テーマ]</span>
+</a>
+</sc-for>
+</div>
+</div>
+<div>
+<h3 style="margin: 0; font-weight: 500; font-size: 15px; letter-spacing: 0.06em">関連する記事</h3>
+<div style="margin-top: 8px; border-top: 1px solid #E3E6EB">
+<sc-for list="{{t.articles}}" as="r" hint-placeholder-count="1">
+<a href="{{r.href}}" style="display: flex; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid #E3E6EB; color: #1B2230; text-decoration: none; font-size: 15px">
+<span style="flex: 1 1 auto; min-width: 0">{{r.title}}</span>
+<span style="flex: 0 0 auto; font-size: 13px; color: #5B6372">{{r.cat}}</span>
+</a>
+</sc-for>
+</div>
+</div>
+</div>
+
+<h3 style="margin: 40px 0 0; font-weight: 500; font-size: 15px; letter-spacing: 0.06em">主な業績</h3>
+<div style="margin-top: 8px; border-top: 1px solid #E3E6EB">
+<sc-for list="{{t.pubs}}" as="p" hint-placeholder-count="2">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 20px; padding: 12px 0; border-bottom: 1px solid #E3E6EB; font-size: 14px">
+<span style="flex: 0 0 40px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">[年]</span>
+<span style="flex: 999 1 300px; min-width: 0"><b style="font-weight: 600">[研究室メンバー]</b>, [共著者], “[論文タイトル],” [会議・論文誌名].</span>
+</div>
+</sc-for>
+</div>
+<a href="A2-Pubs.dc.html" style="display: inline-block; margin-top: 8px; font-size: 14px; padding: 10px 0">このテーマの業績をすべて見る →</a>
+</div>
+</section>
+</sc-for>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 136px 32px 136px">
+<div style="background: #F4F6F9; border-radius: 16px; padding: 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+<div style="flex: 1 1 320px; min-width: 0">
+<p style="margin: 0; font-weight: 500; font-size: 17px">この研究室で研究してみたい方へ</p>
+<p style="margin: 4px 0 0; font-size: 14px; color: #5B6372">研究室生活や、配属までに準備しておくとよいことをまとめています。</p>
+</div>
+<a href="A2-Join.dc.html" style="flex: 0 0 auto; background: #0F2547; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 500; padding: 14px 28px; border-radius: 999px">配属希望の方へ</a>
+</div>
+</section>
+
+<footer style="background: #F4F6F9">
+<div style="max-width: 1120px; margin: 0 auto; padding: 56px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px 48px; font-size: 14px; color: #5B6372">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 600; font-size: 16px; color: #1B2230; letter-spacing: 0.08em">川原研究室</span>
+<span>東洋大学 情報連携学部(INIAD)</span>
+<span>[所在地・部屋番号]</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 0 28px">
+<a href="A2-Access.dc.html" style="color: #5B6372; padding: 12px 0">アクセス</a>
+<a href="#" style="color: #5B6372; padding: 12px 0">お問い合わせ(確認中)</a>
+<a href="#" style="color: #5B6372; padding: 12px 0">GitHub</a>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":3500}}'>
+class Component extends DCLogic {
+renderVals() {
+const none = [{ title: '[記事タイトル]', cat: '研究ノート', href: '#' }];
+const themes = [
+{ no: '01', name: 'ネットワーク', en: 'Networking', keywords: '[キーワード]',
+  members: [{ grade: 'M2' }, { grade: 'B4' }], articles: none },
+{ no: '02', name: '機械学習', en: 'Machine Learning', keywords: '[キーワード]',
+  members: [{ grade: 'M2' }, { grade: 'M1' }], articles: none },
+{ no: '03', name: 'IoT', en: 'Internet of Things', keywords: '[キーワード]',
+  members: [{ grade: 'M1' }, { grade: 'B4' }], articles: none }
+];
+return { themes: themes.map((t) => ({ ...t, pubs: [1, 2] })) };
+}
+}
+</script>
+</body>
+</html>

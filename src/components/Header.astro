@@ -1,0 +1,104 @@
+---
+// サイト名、ナビ、言語の切り替え。現在のページは紺の下線と aria-current
+import { t, type Lang } from "../lib/i18n";
+import { href } from "../lib/url";
+import LangSwitch from "./LangSwitch.astro";
+
+export type NavKey = "research" | "members" | "publications" | "articles" | "join";
+
+interface Props {
+  lang: Lang;
+  path: string;
+  hasAlt: boolean;
+  current?: NavKey;
+}
+const { lang, path, hasAlt, current } = Astro.props;
+const items: { key: NavKey; path: string; lang: Lang }[] = [
+  { key: "research", path: "/research/", lang },
+  { key: "members", path: "/members/", lang },
+  { key: "publications", path: "/publications/", lang },
+  // 記事は日本語のみ
+  { key: "articles", path: "/articles/", lang: "ja" },
+  { key: "join", path: "/join/", lang },
+];
+---
+
+<header class="header">
+  <div class="container inner">
+    <a class="brand" href={href("/", lang)}>
+      <span class="name">{t(lang, "site.name")}</span>
+      <span class="name-sub mono">{t(lang, "site.nameSub")}</span>
+    </a>
+    <nav class="nav" aria-label={t(lang, "nav.label")}>
+      {items.map((item) => (
+        <a
+          href={href(item.path, item.lang)}
+          aria-current={current === item.key ? "page" : undefined}
+          lang={item.lang !== lang ? item.lang : undefined}
+        >
+          {t(lang, `nav.${item.key}`)}
+        </a>
+      ))}
+      <LangSwitch lang={lang} path={path} hasAlt={hasAlt} />
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    border-bottom: 1px solid var(--color-line);
+  }
+  .inner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 32px;
+  }
+  .brand {
+    display: flex;
+    align-items: baseline;
+    padding: 6px 0; /* クリック範囲を44px以上にする */
+    gap: 12px;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .name {
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+  }
+  .name-sub {
+    font-size: 12px;
+    color: var(--color-text-sub);
+    letter-spacing: 0.04em;
+  }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 28px;
+    font-size: 14px;
+  }
+  .nav > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap-min);
+    color: var(--color-text);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+  }
+  .nav > a:hover {
+    color: var(--color-navy);
+  }
+  .nav > a[aria-current="page"] {
+    border-bottom-color: var(--color-navy);
+  }
+  @media (max-width: 640px) {
+    .nav {
+      gap: 0 20px;
+    }
+  }
+</style>

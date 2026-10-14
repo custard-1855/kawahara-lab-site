@@ -1,0 +1,57 @@
+---
+// 同じページのもう一方の言語へ。対応するページが無い(記事)ときは、その言語のトップへ
+import { t, type Lang } from "../lib/i18n";
+import { href } from "../lib/url";
+
+interface Props {
+  lang: Lang;
+  path: string;
+  hasAlt: boolean;
+}
+const { lang, path, hasAlt } = Astro.props;
+const target = (l: Lang) => (l === lang || hasAlt ? href(path, l) : href("/", l));
+---
+
+<span class="switch mono" role="group" aria-label={t(lang, "lang.switch")}>
+  <a
+    href={target("ja")}
+    hreflang="ja"
+    lang="ja"
+    aria-current={lang === "ja" ? "true" : undefined}
+    aria-label="日本語"
+  >
+    JA
+  </a>
+  /
+  <a
+    href={target("en")}
+    hreflang="en"
+    lang="en"
+    aria-current={lang === "en" ? "true" : undefined}
+    aria-label="English"
+  >
+    EN
+  </a>
+</span>
+
+<style>
+  .switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--color-text-sub);
+  }
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap-min);
+    padding: 0 2px;
+    color: var(--color-text-sub);
+    text-decoration: none;
+  }
+  a[aria-current="true"] {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+</style>

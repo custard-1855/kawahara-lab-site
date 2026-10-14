@@ -1,0 +1,22 @@
+// テストで巡るページ(base を除いたパス)
+export const PAGES = [
+  "",
+  "research/",
+  "members/",
+  "publications/",
+  "articles/",
+  "articles/category/note/",
+  "articles/category/column/",
+  "articles/tag/optimal-transport/",
+  "articles/sinkhorn-distances/",
+  "join/",
+  "message/",
+  "access/",
+  "en/",
+  "en/research/",
+  "en/members/",
+  "en/publications/",
+  "en/join/",
+  "en/message/",
+  "en/access/",
+];

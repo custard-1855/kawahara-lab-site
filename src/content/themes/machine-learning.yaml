@@ -1,0 +1,9 @@
+# 研究テーマ(仮置き)
+order: 2
+name: { ja: "機械学習", en: "Machine Learning" }
+label: Machine Learning
+summary: { ja: "[概要を1〜2行で]", en: "[Summary in one or two lines]" }
+body:
+  ja: "[このテーマで取り組んでいる問題と、それがなぜ大事かを3〜4文で。専門外の学部生にも伝わる言葉で書く。]"
+  en: "[What problems we work on in this theme and why they matter, in three or four sentences.]"
+keywords: ["[キーワード]"]

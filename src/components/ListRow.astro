@@ -1,0 +1,62 @@
+---
+// 罫線で区切る1行(日付・本文・メタ)。記事、業績、メンバー、研究テーマで共通。
+// href があればリンク、無ければ div。列の幅は lead(左)の幅で調整する
+interface Props {
+  href?: string;
+  /** 左の列の幅(px)。0 なら左の列なし */
+  lead?: number;
+  pad?: number;
+  hreflang?: string;
+}
+const { href, lead = 96, pad = 22, hreflang } = Astro.props;
+const Tag = href ? "a" : "div";
+const style = `--lead: ${lead}px; --pad: ${pad}px`;
+---
+
+<Tag class:list={["row", { link: !!href }]} href={href} hreflang={hreflang} style={style}>
+  {Astro.slots.has("lead") && (
+    <span class="lead">
+      <slot name="lead" />
+    </span>
+  )}
+  <span class="main">
+    <slot />
+  </span>
+  {Astro.slots.has("meta") && (
+    <span class="meta">
+      <slot name="meta" />
+    </span>
+  )}
+</Tag>
+
+<style>
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 24px;
+    padding: var(--pad) 0;
+    border-bottom: 1px solid var(--color-line);
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .row.link:hover .main {
+    color: var(--color-navy);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .lead {
+    flex: 0 0 var(--lead);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--color-text-sub);
+  }
+  .main {
+    flex: 999 1 300px;
+    min-width: 0;
+  }
+  .meta {
+    font-size: 13px;
+    color: var(--color-text-sub);
+  }
+</style>

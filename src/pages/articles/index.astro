@@ -1,0 +1,10 @@
+---
+import { paginate } from "../../lib/articles";
+import { getArticles } from "../../lib/content";
+import { SITE } from "../../site.config";
+import ArticlesView from "../../views/ArticlesView.astro";
+
+const [first] = paginate(await getArticles(), SITE.articlesPerPage);
+---
+
+<ArticlesView items={first.items} page={1} lastPage={first.lastPage} listPath="/articles/" />

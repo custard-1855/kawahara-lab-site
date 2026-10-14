@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>記事ページ</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=STIX+Two+Text:ital@0;1&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0A5BB8}a:hover{color:#0F2547}
+.m{font-family:'STIX Two Text',serif;font-style:italic;font-size:1.12em;letter-spacing:0}
+.eq{margin:24px 0 0;padding:20px 0;font-family:'STIX Two Text',serif;font-size:20px;line-height:1.8;letter-spacing:0;text-align:center;overflow-x:auto}
+.eq sub,.eq sup{font-size:13px}
+</style>
+</helmet>
+<div style="font-family: 'IBM Plex Sans JP', sans-serif; color: #1B2230; background: #FFFFFF; font-size: 16px; line-height: 1.9; letter-spacing: 0.03em">
+
+<header style="border-bottom: 1px solid #E3E6EB">
+<div style="max-width: 1120px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
+<a href="A2-Top.dc.html" style="display: flex; align-items: baseline; gap: 12px; color: #1B2230; text-decoration: none">
+<span style="font-weight: 600; font-size: 18px; letter-spacing: 0.08em">川原研究室</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372; letter-spacing: 0.04em">Kawahara Lab</span>
+</a>
+<nav aria-label="メインメニュー" style="display: flex; flex-wrap: wrap; align-items: center; gap: 0 28px; font-size: 14px">
+<a href="A2-Research.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">研究</a>
+<a href="A2-Members.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">メンバー</a>
+<a href="A2-Pubs.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">業績</a>
+<a href="A2-Articles.dc.html" aria-current="page" style="color: #1B2230; text-decoration: underline; text-decoration-color: #0F2547; text-underline-offset: 8px; text-decoration-thickness: 2px; padding: 12px 0; font-weight: 500">記事</a>
+<a href="A2-Join.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">配属希望の方へ</a>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372; display: flex; align-items: center; gap: 6px">
+<a href="#" aria-current="true" style="color: #1B2230; text-decoration: none; padding: 12px 2px; font-weight: 500">JA</a>/<a href="#" style="color: #5B6372; text-decoration: none; padding: 12px 2px">EN</a>
+</span>
+</nav>
+</div>
+</header>
+
+<article>
+<div style="max-width: 1120px; margin: 0 auto; padding: 72px 32px 0">
+<nav aria-label="パンくず" style="font-size: 13px; color: #5B6372"><a href="A2-Articles.dc.html" style="color: #5B6372; padding: 12px 0">記事</a> / <a href="#" style="color: #5B6372; padding: 12px 0">コラム</a></nav>
+<h1 style="margin: 16px 0 0; max-width: 24em; font-weight: 500; font-size: 34px; line-height: 1.55; letter-spacing: 0.05em">Sinkhorn Distances:双対性で最適輸送を速く解く</h1>
+<div style="margin-top: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; font-size: 14px; color: #5B6372">
+<span style="display: flex; align-items: center; gap: 10px"><span style="width: 32px; height: 32px; border-radius: 50%; background: #F4F6F9"></span><span style="color: #1B2230">竹本 志恩</span>[学年]</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px">2026-07-10</span>
+<span>コラム</span>
+<span style="display: flex; gap: 12px"><a href="#" style="color: #5B6372; padding: 8px 0">#最適輸送</a><a href="#" style="color: #5B6372; padding: 8px 0">#双対性</a><a href="#" style="color: #5B6372; padding: 8px 0">#Sinkhorn</a></span>
+</div>
+</div>
+
+<div style="max-width: 1120px; margin: 0 auto; padding: 72px 32px 0; display: flex; flex-wrap: wrap; gap: 32px 48px">
+<aside style="flex: 1 1 200px; font-size: 14px">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">Contents</p>
+<ol style="margin: 8px 0 0; padding: 0; list-style: none; border-left: 1px solid #E3E6EB">
+<li><a href="#" style="display: block; padding: 6px 0 6px 16px; color: #1B2230; text-decoration: none; border-left: 2px solid #0F2547; margin-left: -1px">はじめに</a></li>
+<li><a href="#" style="display: block; padding: 6px 0 6px 16px; color: #5B6372; text-decoration: none">小麦をパン屋に運ぶ</a></li>
+<li><a href="#" style="display: block; padding: 6px 0 6px 16px; color: #5B6372; text-decoration: none">見方を変える:双対問題</a></li>
+<li><a href="#" style="display: block; padding: 6px 0 6px 16px; color: #5B6372; text-decoration: none">エントロピーで滑らかにする</a></li>
+<li><a href="#" style="display: block; padding: 6px 0 6px 16px; color: #5B6372; text-decoration: none">解の形を求める</a></li>
+<li><a href="#" style="display: block; padding: 6px 0 6px 16px; color: #5B6372; text-decoration: none">Sinkhornアルゴリズム</a></li>
+<li><a href="#" style="display: block; padding: 6px 0 6px 16px; color: #5B6372; text-decoration: none">おわりに</a></li>
+</ol>
+</aside>
+
+<div style="flex: 999 1 560px; min-width: 0; max-width: 40em; font-size: 16.5px; line-height: 2">
+
+<h2 style="margin: 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">はじめに</h2>
+<p style="margin: 16px 0 0">機械学習では、予測した分布と正解の分布がどれだけ離れているかを測りたい場面がよくあります。最適輸送は、分布の「形」まで考慮して比べられる強力な道具ですが、そのまま解くと計算が重いのが難点でした。</p>
+<p style="margin: 16px 0 0">この記事では、Cuturi(2013)の Sinkhorn Distances を題材に、<b style="font-weight: 600">双対性</b>と<b style="font-weight: 600">エントロピー正則化</b>を使うと、最適輸送が行列とベクトルの掛け算の繰り返しだけで近似的に解けることを紹介します。</p>
+
+<h2 style="margin: 64px 0 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">小麦をパン屋に運ぶ</h2>
+<p style="margin: 16px 0 0">工場 <span class="m">i</span> には小麦が <span class="m">a<sub>i</sub></span> だけあり、パン屋 <span class="m">j</span> は小麦を <span class="m">b<sub>j</sub></span> だけ必要としています。工場 <span class="m">i</span> からパン屋 <span class="m">j</span> へ1単位運ぶコストは <span class="m">C<sub>ij</sub></span> です。小麦は途中で消えたり増えたりせず、総量は1に正規化しておきます。</p>
+<p style="margin: 16px 0 0">このとき、運ぶ量 <span class="m">P<sub>ij</sub></span> をどう決めれば総コストが最小になるか、というのが最適輸送問題です。</p>
+<div class="eq" role="math" aria-label="P について sum C_ij P_ij を最小化。制約は P_ij 0 以上、各 i で sum_j P_ij = a_i、各 j で sum_i P_ij = b_j">
+<div>min<sub><i>P</i></sub> &#160;Σ<sub><i>i</i>,<i>j</i></sub> <i>C<sub>ij</sub></i> <i>P<sub>ij</sub></i></div>
+<div style="font-size: 17px; color: #3A4252">s.t. &#160;<i>P<sub>ij</sub></i> ≥ 0, &#160;Σ<sub><i>j</i></sub> <i>P<sub>ij</sub></i> = <i>a<sub>i</sub></i>, &#160;Σ<sub><i>i</i></sub> <i>P<sub>ij</sub></i> = <i>b<sub>j</sub></i></div>
+</div>
+<p style="margin: 8px 0 0">目的関数も制約も1次式なので、これは線形計画問題です。たとえば工場が2つ、パン屋が2つで、<span class="m">a</span> = (0.5, 0.5)、<span class="m">b</span> = (0.3, 0.7)、隣どうし(工場1とパン屋1、工場2とパン屋2)のコストが0、たすき掛けのコストが1とします。最適な計画は、工場1からパン屋1へ0.3、パン屋2へ0.2、工場2からパン屋2へ0.5を運ぶもので、総コストは0.2です。</p>
+
+<h2 style="margin: 64px 0 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">見方を変える:双対問題</h2>
+<p style="margin: 16px 0 0">線形計画問題には、対になる<b style="font-weight: 600">双対問題</b>があります。ここでは、輸送を請け負う業者の立場で考えてみます。業者は工場 <span class="m">i</span> から1単位あたり <span class="m">f<sub>i</sub></span> の集荷料、パン屋 <span class="m">j</span> から <span class="m">g<sub>j</sub></span> の配送料を受け取ります。</p>
+<p style="margin: 16px 0 0">ただし料金の合計が自分で運ぶコスト <span class="m">C<sub>ij</sub></span> を超えると、工場とパン屋は業者に頼まなくなります。この条件のもとで、業者は売上を最大にしようとします。</p>
+<div class="eq" role="math" aria-label="f と g について sum a_i f_i + sum b_j g_j を最大化。制約は f_i + g_j が C_ij 以下">
+<div>max<sub><i>f</i>, <i>g</i></sub> &#160;Σ<sub><i>i</i></sub> <i>a<sub>i</sub></i> <i>f<sub>i</sub></i> + Σ<sub><i>j</i></sub> <i>b<sub>j</sub></i> <i>g<sub>j</sub></i></div>
+<div style="font-size: 17px; color: #3A4252">s.t. &#160;<i>f<sub>i</sub></i> + <i>g<sub>j</sub></i> ≤ <i>C<sub>ij</sub></i></div>
+</div>
+<p style="margin: 8px 0 0">制約を満たす <span class="m">P</span> と <span class="m">f</span>, <span class="m">g</span> なら、いつでも次の不等式が成り立ちます(弱双対定理)。</p>
+<div class="eq" role="math" aria-label="sum C_ij P_ij は sum (f_i + g_j) P_ij 以上で、それは sum a_i f_i + sum b_j g_j に等しい">Σ <i>C<sub>ij</sub></i> <i>P<sub>ij</sub></i> &#160;≥&#160; Σ (<i>f<sub>i</sub></i> + <i>g<sub>j</sub></i>) <i>P<sub>ij</sub></i> &#160;=&#160; Σ <i>a<sub>i</sub></i> <i>f<sub>i</sub></i> + Σ <i>b<sub>j</sub></i> <i>g<sub>j</sub></i></div>
+<p style="margin: 8px 0 0">主問題は上から、双対問題は下から最適値に近づき、最適解では両者が一致します(強双対定理)。双対問題の変数は <span class="m">n</span> + <span class="m">m</span> 個で、主問題の <span class="m">nm</span> 個よりずっと少ないのがポイントです。</p>
+
+<h2 style="margin: 64px 0 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">エントロピーで滑らかにする</h2>
+<p style="margin: 16px 0 0">制約を満たす <span class="m">P</span> の集合は<b style="font-weight: 600">輸送多面体</b>と呼ばれます。線形計画の最適解はその頂点に現れるため、<span class="m">a</span> や <span class="m">C</span> を少し変えただけで解が別の頂点へ飛ぶことがあり、微分を使った最適化と相性がよくありません。</p>
+<p style="margin: 16px 0 0">そこで Sinkhorn Distances では、目的関数にエントロピー <span class="m">h</span>(<span class="m">P</span>) = −Σ <span class="m">P<sub>ij</sub></span> log <span class="m">P<sub>ij</sub></span> の項を加えます。</p>
+<div class="eq" role="math" aria-label="P について sum C_ij P_ij + epsilon sum P_ij log P_ij を最小化">min<sub><i>P</i></sub> &#160;Σ <i>C<sub>ij</sub></i> <i>P<sub>ij</sub></i> + <i>ε</i> Σ <i>P<sub>ij</sub></i> log <i>P<sub>ij</sub></i></div>
+<p style="margin: 8px 0 0">エントロピーは輸送量が均等に散らばるほど大きくなるので、この項は解を多面体の内側へ引き込みます。目的関数は狭義凸で滑らかになり、解はただ一つに決まります。<span class="m">ε</span> を小さくするほど、元の問題の解に近づきます。</p>
+<figure style="margin: 28px 0 0">
+<div style="border-radius: 16px; background: #F4F6F9; padding: 28px 24px 20px">
+<svg viewBox="0 0 560 150" width="100%" role="img" aria-label="先の例の輸送多面体は線分になる。左端が P11=0、右端が P11=0.3。元の問題の最適解は右端の頂点、epsilon=0.5 の解は P11=0.288 で少し内側にある">
+<line x1="60" y1="70" x2="500" y2="70" stroke="#0F2547" stroke-width="1.5"></line>
+<circle cx="60" cy="70" r="5" fill="#0F2547"></circle>
+<circle cx="500" cy="70" r="5" fill="#0F2547"></circle>
+<circle cx="500" cy="70" r="11" fill="none" stroke="#0F2547" stroke-width="1.2"></circle>
+<circle cx="482" cy="70" r="5" fill="#0A5BB8"></circle>
+<text x="60" y="106" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B6372">P11 = 0</text>
+<text x="500" y="106" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B6372">P11 = 0.3</text>
+<text x="500" y="40" text-anchor="middle" font-family="IBM Plex Sans JP, sans-serif" font-size="13" fill="#1B2230">元の問題の解(頂点)</text>
+<text x="420" y="134" text-anchor="middle" font-family="IBM Plex Sans JP, sans-serif" font-size="13" fill="#0A5BB8">ε = 0.5 の解(P11 = 0.288)</text>
+<line x1="482" y1="78" x2="460" y2="118" stroke="#0A5BB8" stroke-width="1"></line>
+</svg>
+</div>
+<figcaption style="margin-top: 10px; font-size: 13px; color: #5B6372">図1 先の例では、輸送多面体は1本の線分になる(<span class="m">P</span><sub>11</sub> を決めると残りが決まるため)。正則化した解は頂点から少し内側に入る。</figcaption>
+</figure>
+
+<h2 style="margin: 64px 0 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">解の形を求める</h2>
+<p style="margin: 16px 0 0">供給と需要の制約に、ラグランジュ乗数として先ほどの <span class="m">f</span>, <span class="m">g</span> を割り当てます。</p>
+<div class="eq" role="math" aria-label="ラグランジュ関数 L は sum C_ij P_ij + epsilon sum P_ij log P_ij + sum f_i (a_i - sum_j P_ij) + sum g_j (b_j - sum_i P_ij)">
+<div><i>L</i> = Σ <i>C<sub>ij</sub></i> <i>P<sub>ij</sub></i> + <i>ε</i> Σ <i>P<sub>ij</sub></i> log <i>P<sub>ij</sub></i></div>
+<div>+ Σ<sub><i>i</i></sub> <i>f<sub>i</sub></i> (<i>a<sub>i</sub></i> − Σ<sub><i>j</i></sub> <i>P<sub>ij</sub></i>) + Σ<sub><i>j</i></sub> <i>g<sub>j</sub></i> (<i>b<sub>j</sub></i> − Σ<sub><i>i</i></sub> <i>P<sub>ij</sub></i>)</div>
+</div>
+<p style="margin: 8px 0 0"><span class="m">P<sub>ij</sub></span> で偏微分して0とおくと、<span class="m">C<sub>ij</sub></span> + <span class="m">ε</span>(log <span class="m">P<sub>ij</sub></span> + 1) − <span class="m">f<sub>i</sub></span> − <span class="m">g<sub>j</sub></span> = 0 より、</p>
+<div class="eq" role="math" aria-label="P_ij は exp((f_i + g_j - C_ij)/epsilon - 1) で、u_i K_ij v_j と分解できる">
+<div><i>P<sub>ij</sub></i> = exp((<i>f<sub>i</sub></i> + <i>g<sub>j</sub></i> − <i>C<sub>ij</sub></i>) / <i>ε</i> − 1) = <i>u<sub>i</sub></i> <i>K<sub>ij</sub></i> <i>v<sub>j</sub></i></div>
+<div style="font-size: 17px; color: #3A4252"><i>u<sub>i</sub></i> = e<sup><i>f<sub>i</sub></i>/<i>ε</i> − 1/2</sup>, &#160;<i>v<sub>j</sub></i> = e<sup><i>g<sub>j</sub></i>/<i>ε</i> − 1/2</sup>, &#160;<i>K<sub>ij</sub></i> = e<sup>−<i>C<sub>ij</sub></i>/<i>ε</i></sup></div>
+</div>
+<p style="margin: 8px 0 0">行列で書くと <span class="m">P</span> = diag(<span class="m">u</span>) <span class="m">K</span> diag(<span class="m">v</span>) です。<span class="m">K</span> はコストだけで決まる固定の行列なので、<span class="m">nm</span> 個の変数を持つ <span class="m">P</span> を探す問題が、2本のベクトル <span class="m">u</span>, <span class="m">v</span> を探す問題に変わりました。</p>
+
+<h2 style="margin: 64px 0 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">Sinkhornアルゴリズム</h2>
+<p style="margin: 16px 0 0"><span class="m">P</span> の行和が <span class="m">a</span>、列和が <span class="m">b</span> になるように、<span class="m">u</span> と <span class="m">v</span> を交互に更新します。片方を固定すればもう片方は割り算一発で決まるので、双対変数を交互に最適化していることになります。</p>
+<pre style="margin: 20px 0 0; padding: 20px 24px; background: #0F1A2E; color: #DCE3EE; border-radius: 12px; overflow-x: auto; font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 1.75; letter-spacing: 0"><code><span style="color: #8FA6C9">import</span> numpy <span style="color: #8FA6C9">as</span> np
+
+<span style="color: #8FA6C9">def</span> <span style="color: #9FD3C7">sinkhorn</span>(a, b, C, eps, n_iter=<span style="color: #E7C27D">1000</span>):
+    K = np.exp(-C / eps)
+    u, v = np.ones_like(a), np.ones_like(b)
+    <span style="color: #8FA6C9">for</span> _ <span style="color: #8FA6C9">in</span> range(n_iter):
+        u = a / (K @ v)      <span style="color: #7C879A"># 行和を a に合わせる</span>
+        v = b / (K.T @ u)    <span style="color: #7C879A"># 列和を b に合わせる</span>
+    <span style="color: #8FA6C9">return</span> u[:, <span style="color: #8FA6C9">None</span>] * K * v[<span style="color: #8FA6C9">None</span>, :]
+
+a = np.array([<span style="color: #E7C27D">0.5</span>, <span style="color: #E7C27D">0.5</span>])
+b = np.array([<span style="color: #E7C27D">0.3</span>, <span style="color: #E7C27D">0.7</span>])
+C = np.array([[<span style="color: #E7C27D">0.0</span>, <span style="color: #E7C27D">1.0</span>], [<span style="color: #E7C27D">1.0</span>, <span style="color: #E7C27D">0.0</span>]])
+P = sinkhorn(a, b, C, eps=<span style="color: #E7C27D">0.5</span>)
+<span style="color: #7C879A"># [[0.288 0.212]</span>
+<span style="color: #7C879A">#  [0.012 0.488]]  総コスト 0.224</span></code></pre>
+<p style="margin: 16px 0 0">1回の更新は行列とベクトルの積だけなので、GPUで並列に計算しやすいのも利点です。<span class="m">ε</span> = 0.1 まで小さくすると、解は元の問題の解(総コスト0.2)とほぼ一致します。</p>
+
+<h2 style="margin: 64px 0 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">おわりに</h2>
+<p style="margin: 16px 0 0">双対性で変数をベクトル2本に減らし、エントロピー正則化で問題を滑らかにすることで、最適輸送は単純な反復計算で解けるようになりました。一方で、正則化した値は同じ分布どうしでも0にならないなど、厳密には距離の公理を満たしません。この点を補正した Sinkhorn divergence や、Wasserstein距離との関係は次回の記事で扱う予定です。</p>
+
+<div style="margin: 48px 0 0; font-size: 14px; color: #5B6372; line-height: 1.9">
+<p style="margin: 0; font-weight: 500; color: #1B2230">参考文献</p>
+<ol style="margin: 8px 0 0; padding-left: 1.6em">
+<li>M. Cuturi, “Sinkhorn Distances: Lightspeed Computation of Optimal Transport,” NeurIPS, 2013.</li>
+<li>佐藤竜馬『最適輸送の理論とアルゴリズム』講談社, 2023.</li>
+<li>佐藤竜馬「最適輸送の解き方」Speaker Deck.</li>
+</ol>
+</div>
+
+<div style="margin-top: 72px; padding-top: 32px; border-top: 1px solid #E3E6EB; display: flex; flex-wrap: wrap; gap: 20px">
+<div style="width: 64px; height: 64px; flex: 0 0 64px; border-radius: 50%; background: #F4F6F9"></div>
+<div style="flex: 1 1 260px; min-width: 0">
+<p style="margin: 0; font-size: 12px; color: #5B6372; font-family: 'IBM Plex Mono', monospace">Author</p>
+<p style="margin: 0; font-weight: 500">竹本 志恩 <span style="font-weight: 400; font-size: 14px; color: #5B6372">[学年]</span></p>
+<p style="margin: 6px 0 0; font-size: 14px; color: #5B6372; line-height: 1.8">[研究テーマを1行で]</p>
+<a href="A2-Members.dc.html" style="display: inline-block; font-size: 14px; padding: 10px 0">メンバー紹介 →</a>
+</div>
+</div>
+</div>
+</div>
+</article>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 104px 32px 136px; display: flex; flex-wrap: wrap; gap: 16px 48px">
+<div style="flex: 1 1 200px">
+<h2 style="margin: 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">関連する記事</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">Related</span>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; border-top: 1px solid #E3E6EB">
+<sc-for list="{{related}}" as="r" hint-placeholder-count="3">
+<a href="#" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 24px; padding: 22px 0; border-bottom: 1px solid #E3E6EB; color: #1B2230; text-decoration: none">
+<span style="flex: 0 0 96px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5B6372">[日付]</span>
+<span style="flex: 999 1 300px; min-width: 0">{{r.title}}</span>
+<span style="font-size: 13px; color: #5B6372">{{r.cat}}</span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<footer style="background: #F4F6F9">
+<div style="max-width: 1120px; margin: 0 auto; padding: 56px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px 48px; font-size: 14px; color: #5B6372">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 600; font-size: 16px; color: #1B2230; letter-spacing: 0.08em">川原研究室</span>
+<span>東洋大学 情報連携学部(INIAD)</span>
+<span>[所在地・部屋番号]</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 0 28px">
+<a href="A2-Access.dc.html" style="color: #5B6372; padding: 12px 0">アクセス</a>
+<a href="#" style="color: #5B6372; padding: 12px 0">お問い合わせ(確認中)</a>
+<a href="#" style="color: #5B6372; padding: 12px 0">GitHub</a>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":3900}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+related: [
+{ title: '[記事タイトル] 例:Wasserstein距離とSinkhorn divergence', cat: '研究ノート' },
+{ title: '[記事タイトル]', cat: 'コラム' },
+{ title: '[記事タイトル]', cat: '研究ノート' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

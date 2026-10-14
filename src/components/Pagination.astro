@@ -1,0 +1,68 @@
+---
+import { pageHref } from "../lib/url";
+import { href } from "../lib/url";
+
+interface Props {
+  /** 一覧の1ページ目のパス(例: /articles/) */
+  listPath: string;
+  page: number;
+  lastPage: number;
+}
+const { listPath, page, lastPage } = Astro.props;
+const pages = Array.from({ length: lastPage }, (_, i) => i + 1);
+---
+
+{lastPage > 1 && (
+  <nav class="pager mono" aria-label="ページ送り">
+    {page > 1 && (
+      <a class="step" href={href(pageHref(listPath, page - 1))}>
+        ← 前へ
+      </a>
+    )}
+    {pages.map((p) => (
+      <a
+        class="num"
+        href={href(pageHref(listPath, p))}
+        aria-current={p === page ? "page" : undefined}
+        aria-label={`${p}ページ目`}
+      >
+        {p}
+      </a>
+    ))}
+    {page < lastPage && (
+      <a class="step" href={href(pageHref(listPath, page + 1))}>
+        次へ →
+      </a>
+    )}
+  </nav>
+)}
+
+<style>
+  .pager {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 48px;
+    font-size: 14px;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--tap-min);
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .num {
+    width: var(--tap-min);
+    border-radius: 50%;
+  }
+  .num[aria-current="page"] {
+    background: var(--color-navy);
+    color: var(--color-bg);
+  }
+  .step {
+    padding: 0 12px;
+  }
+</style>

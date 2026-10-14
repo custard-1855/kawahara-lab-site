@@ -1,0 +1,13 @@
+place: Kawahara Lab, INIAD, Toyo University
+address:
+  - 1-7-11 Akabanedai, Kita-ku, Tokyo 115-8650, Japan
+  - INIAD HUB-1, [Floor] [Room]
+campusLink: { label: Access to INIAD (Akabanedai Campus), url: "https://www.iniad.org/access/" }
+routes:
+  - { station: JR Akabane Station, detail: About 10 minutes on foot from the West Exit }
+  - {
+      station: Akabane-iwabuchi Station (Tokyo Metro Namboku Line),
+      detail: About 12 minutes on foot from Exit 2,
+    }
+inside: "[How to get to the lab inside the building]"
+contact: "[Contact information will be announced.]"

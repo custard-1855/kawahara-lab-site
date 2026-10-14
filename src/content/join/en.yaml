@@ -1,0 +1,35 @@
+lead: What a year in the lab looks like, and what to prepare before joining.
+week:
+  - { name: Seminar, when: "[Day / time]", desc: "[Format]" }
+  - { name: One-on-one meeting, when: "[Frequency]", desc: "[Meetings with the professor]" }
+  - { name: Study group, when: "[Frequency]", desc: "[If any]" }
+  - { name: Core time, when: "[Yes / No]", desc: "[Rules for lab hours]" }
+yearNote: Example for fourth-year undergraduates.
+year:
+  - { month: "[Month]", title: "[e.g.] Joining the lab", desc: "[Description]", milestone: true }
+  - { month: "[Month]", title: "[e.g.] Reading group", desc: "[Description]" }
+  - { month: "[Month]", title: "[e.g.] Interim presentation", desc: "[Description]" }
+  - { month: "[Month]", title: "[e.g.] Conference presentation", desc: "[Description]" }
+  - { month: "[Month]", title: "[e.g.] Thesis submission", desc: "[Description]" }
+  - { month: "[Month]", title: "[e.g.] Final presentation", desc: "[Description]", milestone: true }
+masterNote: "[The master's course schedule will be described separately.]"
+prepLead: "[You do not need to know everything before joining.]"
+prep:
+  - { area: Mathematics, items: ["[e.g.] Linear algebra", "[e.g.] Probability and statistics"] }
+  - { area: Programming, items: ["[e.g.] Python", "[e.g.] Git"] }
+  - { area: Networking, items: ["[e.g.] TCP/IP basics", "[Item]"] }
+books:
+  - { kind: Course, title: "[Course]", note: "[Note]" }
+  - { kind: Book, title: "[Title]", note: "[Note]" }
+  - { kind: Book, title: "[Title]", note: "[Note]" }
+careersNote: Companies our graduates have joined (company names only).
+faq:
+  - { q: How much background knowledge do I need?, a: "[Answer]" }
+  - { q: How much mathematics is involved?, a: "[Answer]" }
+  - { q: How are research topics decided?, a: "[Answer]" }
+  - { q: Will I present at conferences?, a: "[Answer]" }
+  - { q: Can I balance research with job hunting or part-time work?, a: "[Answer]" }
+  - { q: Can I join the graduate program from another university?, a: "[Answer]" }
+visit:
+  title: Visit the lab
+  body: "[How to apply will be announced.]"

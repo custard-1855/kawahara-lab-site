@@ -1,0 +1,355 @@
+---
+import Button from "../components/Button.astro";
+import ListRow from "../components/ListRow.astro";
+import PageHead from "../components/PageHead.astro";
+import PillLink from "../components/PillLink.astro";
+import Section from "../components/Section.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCareers, getPage } from "../lib/content";
+import { pick, t, type Lang } from "../lib/i18n";
+import { SITE } from "../site.config";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const ja = lang === "ja";
+const d = (await getPage("join", lang)).data;
+const careers = await getCareers();
+const sections = [
+  { id: "life", ja: "研究室生活", en: "Lab Life", label: "Lab Life" },
+  { id: "prep", ja: "前提知識", en: "Preparation", label: "Preparation" },
+  { id: "career", ja: "進路", en: "Careers", label: "Careers" },
+  { id: "faq", ja: "よくある質問", en: "FAQ", label: "FAQ" },
+  { id: "visit", ja: "見学・面談", en: "Visit", label: "Visit" },
+];
+const name = (id: string) => {
+  const s = sections.find((x) => x.id === id)!;
+  return ja ? s.ja : s.en;
+};
+const careerText =
+  careers.length === 0
+    ? ja
+      ? "[企業名]、[企業名]、[企業名]、大学院進学"
+      : "[Company], [Company], [Company], Graduate school"
+    : [...careers.map((c) => pick(c.name, lang)), ja ? "大学院進学" : "Graduate school"].join(
+        ja ? "、" : ", ",
+      );
+---
+
+<BaseLayout lang={lang} title={t(lang, "nav.join")} path="/join/" current="join">
+  <PageHead label="For Students" title={t(lang, "nav.join")} lead={d.lead}>
+    <nav class="pills" aria-label={ja ? "このページの目次" : "On this page"}>
+      {sections.map((s) => (
+        <PillLink href={`#${s.id}`}>{name(s.id)}</PillLink>
+      ))}
+    </nav>
+  </PageHead>
+
+  <Section id="life" title={name("life")} label="Lab Life" gap={120}>
+    <h3 class="first">{ja ? "1週間" : "A week"}</h3>
+    <div class="rule-list week">
+      {d.week.map((w) => (
+        <ListRow lead={0} pad={16}>
+          <span class="week-row">
+            <span class="week-name">{w.name}</span>
+            <span class="week-when mono sub">{w.when}</span>
+            <span class="week-desc sub">{w.desc}</span>
+          </span>
+        </ListRow>
+      ))}
+    </div>
+
+    <h3>{ja ? "1年の流れ" : "A year"}</h3>
+    <p class="note sub">{d.yearNote}</p>
+    <ol class="timeline">
+      {d.year.map((y) => (
+        <li>
+          <div class="month mono">{y.month}</div>
+          <div class="track" aria-hidden="true">
+            <span class:list={["dot", { milestone: y.milestone }]} />
+            <span class="line" />
+          </div>
+          <div class="event">
+            <p class="event-title">{y.title}</p>
+            <p class="event-desc sub">{y.desc}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+    <p class="note sub">{d.masterNote}</p>
+  </Section>
+
+  <Section id="prep" title={name("prep")} label="Preparation" gap={120}>
+    <p class="prep-lead">{d.prepLead}</p>
+    <div class="cards">
+      {d.prep.map((p) => (
+        <div class="card">
+          <p class="card-title">{p.area}</p>
+          <ul>
+            {p.items.map((i) => (
+              <li>{i}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <h3>{ja ? "おすすめの授業・本" : "Recommended courses and books"}</h3>
+    <div class="rule-list">
+      {d.books.map((b) => (
+        <ListRow lead={64} pad={16}>
+          <span slot="lead" class="book-kind">
+            {b.kind}
+          </span>
+          {b.title}
+          <span slot="meta">{b.note}</span>
+        </ListRow>
+      ))}
+    </div>
+  </Section>
+
+  <Section id="career" title={name("career")} label="Careers" gap={120}>
+    <p class="careers">{careerText}</p>
+    <p class="note sub">{d.careersNote}</p>
+  </Section>
+
+  <Section id="faq" title={name("faq")} label="FAQ" gap={120}>
+    <div class="faq">
+      {d.faq.map((f, i) => (
+        <details open={i === 0}>
+          <summary>
+            <span class="q mono">Q</span>
+            <span class="q-text">{f.q}</span>
+            <span class="toggle mono" aria-hidden="true" />
+          </summary>
+          <div class="answer">
+            <span class="a mono">A</span>
+            <p>{f.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </Section>
+
+  <Section id="visit" title={name("visit")} label="Visit" gap={120}>
+    <div class="visit">
+      <div class="visit-text">
+        <p class="visit-title">{d.visit.title}</p>
+        <p class="sub">{d.visit.body}</p>
+      </div>
+      {SITE.visitUrl ? (
+        <Button href={SITE.visitUrl}>{ja ? "申し込む" : "Apply"}</Button>
+      ) : (
+        <Button href="#visit" ariaDisabled>
+          {ja ? "申し込む(確認中)" : "Apply (TBD)"}
+        </Button>
+      )}
+    </div>
+  </Section>
+</BaseLayout>
+
+<style>
+  .pills {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  h3 {
+    margin: 56px 0 0;
+    font-size: 17px;
+    letter-spacing: 0.06em;
+  }
+  h3.first {
+    margin-top: 0;
+  }
+  .week {
+    margin-top: 12px;
+  }
+  .week-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 24px;
+  }
+  .week-name {
+    flex: 0 0 160px;
+    font-weight: 500;
+  }
+  .week-when {
+    flex: 0 0 140px;
+    font-size: 13px;
+  }
+  .week-desc {
+    flex: 999 1 220px;
+    min-width: 0;
+    font-size: 15px;
+  }
+  .note {
+    margin: 4px 0 0;
+    font-size: 13px;
+  }
+  .timeline {
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .timeline li {
+    display: flex;
+    gap: 24px;
+    padding-bottom: 28px;
+  }
+  .month {
+    flex: 0 0 56px;
+    font-size: 14px;
+    color: var(--color-navy);
+    font-weight: 500;
+    text-align: right;
+  }
+  .track {
+    flex: 0 0 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 9px;
+  }
+  .dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--color-bg);
+    border: 1.5px solid var(--color-navy);
+  }
+  .dot.milestone {
+    background: var(--color-navy);
+  }
+  .line {
+    flex: 1;
+    width: 1px;
+    background: var(--color-line-strong);
+    margin-top: 6px;
+    min-height: 32px;
+  }
+  .event {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .event p {
+    margin: 0;
+  }
+  .event-title {
+    font-weight: 500;
+  }
+  .event-desc {
+    margin-top: 2px !important;
+    font-size: 14px;
+  }
+  .prep-lead {
+    margin: 0;
+    max-width: var(--measure);
+  }
+  .cards {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+  }
+  .card {
+    background: var(--color-surface);
+    border-radius: var(--radius-card);
+    padding: 24px 28px;
+  }
+  .card-title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 17px;
+  }
+  .card ul {
+    margin: 10px 0 0;
+    padding-left: 1.2em;
+    font-size: 14px;
+    color: var(--color-text-body2);
+  }
+  .book-kind {
+    font-family: var(--font-sans);
+  }
+  h3 + .rule-list {
+    margin-top: 12px;
+  }
+  .careers {
+    margin: 0;
+    font-size: 15px;
+    line-height: 2.1;
+  }
+  .faq {
+    border-top: 1px solid var(--color-line);
+  }
+  details {
+    border-bottom: 1px solid var(--color-line);
+  }
+  summary {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 20px 0;
+    font-weight: 500;
+    cursor: pointer;
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  .q {
+    font-size: 13px;
+    color: var(--color-navy);
+  }
+  .q-text {
+    flex: 1 1 auto;
+  }
+  .toggle::before {
+    content: "+";
+    color: var(--color-text-sub);
+  }
+  details[open] .toggle::before {
+    content: "−";
+  }
+  .answer {
+    display: flex;
+    gap: 16px;
+    padding: 0 0 24px;
+  }
+  .a {
+    font-size: 13px;
+    color: var(--color-text-sub);
+  }
+  .answer p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--color-text-body2);
+  }
+  .visit {
+    background: var(--color-surface);
+    border-radius: var(--radius-card);
+    padding: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .visit-text {
+    flex: 1 1 320px;
+    min-width: 0;
+  }
+  .visit-text p {
+    margin: 0;
+  }
+  .visit-title {
+    font-weight: 500;
+    font-size: 17px;
+  }
+  .visit-text .sub {
+    margin-top: 6px;
+    font-size: 14px;
+  }
+</style>

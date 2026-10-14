@@ -1,0 +1,9 @@
+catchcopy: "[Catchphrase]"
+lead: "[One sentence introducing the lab]"
+researchLead: "[The overall direction of our research in two or three sentences.]"
+guides:
+  - { title: Lab Life, desc: Seminars, the yearly schedule, and conferences, anchor: life }
+  - { title: Preparation, desc: What to learn before joining, anchor: prep }
+  - { title: Members and Topics, desc: Topics of current students and alumni, anchor: members }
+  - { title: Careers, desc: Where our graduates work, anchor: career }
+visitNote: "Lab visits: [To be announced]"

@@ -1,0 +1,18 @@
+---
+import type { GetStaticPaths } from "astro";
+import { paginate } from "../../../lib/articles";
+import { getArticles } from "../../../lib/content";
+import { SITE } from "../../../site.config";
+import ArticlesView from "../../../views/ArticlesView.astro";
+
+// 2ページ目以降(1ページ目は /articles/)
+export const getStaticPaths = (async () => {
+  return paginate(await getArticles(), SITE.articlesPerPage)
+    .slice(1)
+    .map((p) => ({ params: { page: String(p.page) }, props: p }));
+}) satisfies GetStaticPaths;
+
+const { items, page, lastPage } = Astro.props;
+---
+
+<ArticlesView items={items} page={page} lastPage={lastPage} listPath="/articles/" />

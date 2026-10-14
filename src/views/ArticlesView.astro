@@ -1,0 +1,229 @@
+---
+// 記事一覧(日本語のみ)。分類とタグのページは静的に生成し、絞り込みに JavaScript を使わない
+import PageHead from "../components/PageHead.astro";
+import Pagination from "../components/Pagination.astro";
+import PillLink from "../components/PillLink.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { formatDate } from "../lib/articles";
+import { getArticles, getTagIndex, type Article } from "../lib/content";
+import { pick, t } from "../lib/i18n";
+import { articleHref, categoryHref, href, tagHref } from "../lib/url";
+
+interface Props {
+  items: Article[];
+  page: number;
+  lastPage: number;
+  /** 一覧の1ページ目のパス */
+  listPath: string;
+  category?: "note" | "column";
+  tag?: string;
+}
+const { items, page, lastPage, listPath, category, tag } = Astro.props;
+const all = await getArticles();
+const tags = await getTagIndex();
+const usedTags = tags.all().filter((x) => all.some((a) => a.tags.includes(x.id)));
+const cats = [
+  { key: undefined, label: "すべて", path: "/articles/", count: all.length },
+  ...(["note", "column"] as const).map((c) => ({
+    key: c,
+    label: t("ja", `category.${c}`),
+    path: categoryHref(c),
+    count: all.filter((a) => a.category === c).length,
+  })),
+];
+const heading = tag
+  ? `#${tags.nameOf(tag)}`
+  : category
+    ? t("ja", `category.${category}`)
+    : undefined;
+const title = heading ? `${heading}の記事` : t("ja", "nav.articles");
+---
+
+<BaseLayout
+  lang="ja"
+  title={page > 1 ? `${title}(${page}ページ目)` : title}
+  path={listPath}
+  hasAlt={false}
+  current="articles"
+>
+  <PageHead label="Articles" title={t("ja", "nav.articles")}>
+    <div class="kinds">
+      <p>
+        <b>研究ノート</b>
+        <br />
+        メンバーが、自分の研究で一番面白い・重要だと思う技術を紹介します。
+      </p>
+      <p>
+        <b>コラム</b>
+        <br />
+        研究とは別に、メンバーが個人的に興味を持っているテーマを書きます。
+      </p>
+    </div>
+    <div class="filters">
+      <nav class="cats" aria-label="分類で絞り込む">
+        {cats.map((c) => (
+          <PillLink href={href(c.path)} current={!tag && c.key === category} count={c.count}>
+            {c.label}
+          </PillLink>
+        ))}
+      </nav>
+      <nav class="tags" aria-label="タグで絞り込む">
+        <span class="sub tags-label">タグ</span>
+        {usedTags.map((x) => (
+          <a href={href(tagHref(x.id))} aria-current={x.id === tag ? "page" : undefined}>
+            #{x.name}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </PageHead>
+
+  <section class="container list">
+    {heading && <h2 class="visually-hidden">{title}</h2>}
+    {items.length === 0 && <p class="none sub">条件に合う記事はありません。</p>}
+    {items.map((a) => (
+      <a class="item" href={href(articleHref(a.id))}>
+        <div class="side">
+          <span class="mono">{formatDate(a.date)}</span>
+          <span>{t("ja", `category.${a.category}`)}</span>
+        </div>
+        <div class="main">
+          <p class="title">{a.title}</p>
+          <p class="excerpt">{a.excerpt}</p>
+          <div class="meta">
+            <span class="author">
+              <span class="avatar" aria-hidden="true" />
+              {pick(a.author.data.name, "ja")}
+            </span>
+            <span>{a.tags.map((s) => `#${tags.nameOf(s)}`).join(" ")}</span>
+          </div>
+        </div>
+      </a>
+    ))}
+    <Pagination listPath={listPath} page={page} lastPage={lastPage} />
+  </section>
+</BaseLayout>
+
+<style>
+  .kinds {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px 40px;
+    max-width: 880px;
+  }
+  .kinds p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--color-text-sub);
+  }
+  .kinds b {
+    color: var(--color-text);
+  }
+  .filters {
+    margin-top: 48px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-line);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .cats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 16px;
+    font-size: 14px;
+  }
+  .tags-label {
+    font-size: 13px;
+  }
+  .tags a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap-min);
+    color: var(--color-text-sub);
+    text-decoration: none;
+  }
+  .tags a:hover,
+  .tags a[aria-current="page"] {
+    color: var(--color-navy);
+    text-decoration: underline;
+    text-underline-offset: 6px;
+  }
+  .list {
+    padding-top: 8px;
+  }
+  .none {
+    margin: 0;
+    padding: 40px 0;
+  }
+  .item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 48px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--color-line);
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .item:hover .title {
+    color: var(--color-navy);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .side {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 13px;
+    color: var(--color-text-sub);
+  }
+  .main {
+    flex: 999 1 560px;
+    min-width: 0;
+  }
+  .title {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+  }
+  .excerpt {
+    margin: 8px 0 0;
+    font-size: 15px;
+    color: var(--color-text-sub);
+    max-width: var(--measure);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .meta {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 16px;
+    font-size: 13px;
+    color: var(--color-text-sub);
+  }
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-surface);
+  }
+</style>

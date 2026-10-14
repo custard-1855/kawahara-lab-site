@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>アクセス</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0A5BB8}a:hover{color:#0F2547}
+</style>
+</helmet>
+<div style="font-family: 'IBM Plex Sans JP', sans-serif; color: #1B2230; background: #FFFFFF; font-size: 16px; line-height: 1.9; letter-spacing: 0.03em">
+
+<header style="border-bottom: 1px solid #E3E6EB">
+<div style="max-width: 1120px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
+<a href="A2-Top.dc.html" style="display: flex; align-items: baseline; gap: 12px; color: #1B2230; text-decoration: none">
+<span style="font-weight: 600; font-size: 18px; letter-spacing: 0.08em">川原研究室</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372; letter-spacing: 0.04em">Kawahara Lab</span>
+</a>
+<nav aria-label="メインメニュー" style="display: flex; flex-wrap: wrap; align-items: center; gap: 0 28px; font-size: 14px">
+<a href="A2-Research.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">研究</a>
+<a href="A2-Members.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">メンバー</a>
+<a href="A2-Pubs.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">業績</a>
+<a href="A2-Articles.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">記事</a>
+<a href="A2-Join.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">配属希望の方へ</a>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372; display: flex; align-items: center; gap: 6px">
+<a href="#" aria-current="true" style="color: #1B2230; text-decoration: none; padding: 12px 2px; font-weight: 500">JA</a>/<a href="#" style="color: #5B6372; text-decoration: none; padding: 12px 2px">EN</a>
+</span>
+</nav>
+</div>
+</header>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 88px 32px 0">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">Access</span>
+<h1 style="margin: 4px 0 0; font-weight: 500; font-size: 34px; line-height: 1.5; letter-spacing: 0.06em">アクセス</h1>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 72px 32px 0; display: flex; flex-wrap: wrap; gap: 16px 48px">
+<div style="flex: 1 1 200px">
+<h2 style="margin: 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">所在地</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">Address</span>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<p style="margin: 0; font-weight: 500; font-size: 18px">東洋大学 情報連携学部(INIAD) 川原研究室</p>
+<p style="margin: 4px 0 0">〒[郵便番号] [住所]</p>
+<p style="margin: 0">[建物名] [階] [部屋番号]</p>
+<div style="margin-top: 28px; height: 300px; border-radius: 16px; background: #F4F6F9; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #5B6372">[地図(静的な画像、または地図サービスへのリンク)]</div>
+<a href="#" style="display: inline-block; margin-top: 8px; font-size: 14px; padding: 10px 0">地図アプリで開く →</a>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 104px 32px 0; display: flex; flex-wrap: wrap; gap: 16px 48px">
+<div style="flex: 1 1 200px">
+<h2 style="margin: 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">交通</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">Directions</span>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; border-top: 1px solid #E3E6EB">
+<sc-for list="{{routes}}" as="r" hint-placeholder-count="2">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 24px; padding: 16px 0; border-bottom: 1px solid #E3E6EB">
+<span style="flex: 0 0 200px; font-weight: 500">[駅名]</span>
+<span style="flex: 999 1 240px; min-width: 0; color: #5B6372; font-size: 15px">[路線] / [出口] から徒歩約[分]分</span>
+</div>
+</sc-for>
+<p style="margin: 16px 0 0; font-size: 14px; color: #5B6372">[建物に入ってから研究室までの案内。受付の有無、入館方法など]</p>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 104px 32px 136px; display: flex; flex-wrap: wrap; gap: 16px 48px">
+<div style="flex: 1 1 200px">
+<h2 style="margin: 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">お問い合わせ</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">Contact</span>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<p style="margin: 0">[窓口と連絡方法は先生に確認後に記載]</p>
+<p style="margin: 8px 0 0; font-size: 14px; color: #5B6372">見学・面談のご相談は <a href="A2-Join.dc.html">配属希望の方へ</a> をご覧ください。</p>
+</div>
+</section>
+
+<footer style="background: #F4F6F9">
+<div style="max-width: 1120px; margin: 0 auto; padding: 56px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px 48px; font-size: 14px; color: #5B6372">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 600; font-size: 16px; color: #1B2230; letter-spacing: 0.08em">川原研究室</span>
+<span>東洋大学 情報連携学部(INIAD)</span>
+<span>[所在地・部屋番号]</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 0 28px">
+<a href="#" aria-current="page" style="color: #1B2230; padding: 12px 0">アクセス</a>
+<a href="#" style="color: #5B6372; padding: 12px 0">お問い合わせ(確認中)</a>
+<a href="#" style="color: #5B6372; padding: 12px 0">GitHub</a>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1500}}'>
+class Component extends DCLogic {
+renderVals() { return { routes: [1, 2] }; }
+}
+</script>
+</body>
+</html>

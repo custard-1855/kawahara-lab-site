@@ -1,0 +1,16 @@
+# 学生の業績(教員の業績は researchmap から自動で取得する)。
+# 新しいものを下に足していけばよい(表示は日付の新しい順)。例:
+#
+# - type: domestic            # paper(論文誌) / intl(国際会議) / domestic(国内発表) / award(受賞)
+#   date: 2026-03-05
+#   authors:
+#     - name: 竹本 志恩
+#       member: takemoto      # 研究室のメンバーは members の id を書く(太字になる)
+#     - name: 川原 亮一
+#       member: kawahara
+#   title: 発表タイトル
+#   venue: 電子情報通信学会 ○○研究会, 東京
+#   doi: 10.xxxx/xxxx          # 任意。researchmap の業績と重複したら、こちらを優先する
+#   url: https://example.com   # 任意
+#   themes: [network]          # 任意。研究ページの「主な業績」に出す
+[]

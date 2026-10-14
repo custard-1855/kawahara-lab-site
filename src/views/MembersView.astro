@@ -1,0 +1,231 @@
+---
+import { Image } from "astro:assets";
+import ListRow from "../components/ListRow.astro";
+import PageHead from "../components/PageHead.astro";
+import Section from "../components/Section.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getArticles, getCareers, getMembers } from "../lib/content";
+import { pick, t, type Lang } from "../lib/i18n";
+import { articleHref, href } from "../lib/url";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const ja = lang === "ja";
+const members = await getMembers();
+const faculty = members.filter((m) => m.data.role === "faculty");
+const gradeOrder = ["D3", "D2", "D1", "M2", "M1", "B4"];
+const students = members
+  .filter((m) => m.data.role === "student")
+  .sort((a, b) => gradeOrder.indexOf(a.data.grade ?? "") - gradeOrder.indexOf(b.data.grade ?? ""));
+const alumni = members
+  .filter((m) => m.data.role === "alumni")
+  .sort((a, b) => (b.data.thesis?.year ?? 0) - (a.data.thesis?.year ?? 0));
+const articles = await getArticles();
+const latestBy = (id: string) => articles.find((a) => a.author.id === id);
+const careers = await getCareers();
+const kind = {
+  bachelor: ja ? "卒業論文" : "Bachelor's thesis",
+  master: ja ? "修士論文" : "Master's thesis",
+  doctor: ja ? "博士論文" : "Doctoral thesis",
+};
+const L = {
+  lead: ja
+    ? "教員・在籍学生・卒業生の研究テーマを紹介します。"
+    : "Faculty, current students, and alumni.",
+  specialty: ja ? "専門:" : "Fields: ",
+  pubs: ja ? "業績(researchmap)" : "Publications (researchmap)",
+  photo: ja ? "[写真]" : "[Photo]",
+  article: ja ? "記事" : "Article (JA)",
+  noAlumni: ja ? "[卒業生の年度・論文種別・テーマを掲載予定]" : "[To be added]",
+  careers: ja ? "進路" : "Careers",
+  noCareers: ja ? "[企業名]、[企業名]、[企業名]" : "[Company], [Company], [Company]",
+  careersNote: ja ? "企業名のみ掲載しています(五十音順)。" : "Company names only.",
+};
+const year = (y: number) => (ja ? `${y}年度` : `${y}`);
+---
+
+<BaseLayout lang={lang} title={t(lang, "nav.members")} path="/members/" current="members">
+  <PageHead label="Members" title={t(lang, "nav.members")} lead={L.lead} />
+
+  <Section title={ja ? "教員" : "Faculty"} label="Faculty" gap={104}>
+    {faculty.map((m) => (
+      <div class="faculty">
+        {m.data.photo ? (
+          <Image class="photo" src={m.data.photo} alt="" width={336} />
+        ) : (
+          <div class="photo placeholder">{L.photo}</div>
+        )}
+        <div class="faculty-body">
+          <span class="sub small">{pick(m.data.title, lang)}</span>
+          <p class="faculty-name">{pick(m.data.name, lang)}</p>
+          {m.data.specialty && (
+            <p class="specialty">
+              {L.specialty}
+              {pick(m.data.specialty, lang)}
+            </p>
+          )}
+          {m.data.bio && <p class="bio sub">{pick(m.data.bio, lang)}</p>}
+          <div class="links">
+            {m.data.researchmap && (
+              <a class="text-link" href={`https://researchmap.jp/${m.data.researchmap}`}>
+                {L.pubs} →
+              </a>
+            )}
+            <a class="text-link" href={href("/message/", lang)}>
+              {t(lang, "nav.message")} →
+            </a>
+          </div>
+        </div>
+      </div>
+    ))}
+  </Section>
+
+  <Section title={ja ? "在籍学生" : "Students"} label="Students" gap={104}>
+    <div class="rule-list">
+      {students.map((m) => {
+        const a = latestBy(m.id);
+        return (
+          <ListRow lead={32} pad={18}>
+            <span slot="lead">{m.data.grade}</span>
+            <span class="student">
+              <span class="student-name">{pick(m.data.name, lang)}</span>
+              <span class="student-research sub">{pick(m.data.research, lang)}</span>
+              {m.data.links.length > 0 && (
+                <span class="student-links">
+                  {m.data.links.map((l) => (
+                    <a href={l.url}>{l.label}</a>
+                  ))}
+                </span>
+              )}
+            </span>
+            {a && (
+              <a slot="meta" class="text-link" href={href(articleHref(a.id))} hreflang="ja">
+                {L.article} →
+              </a>
+            )}
+          </ListRow>
+        );
+      })}
+    </div>
+  </Section>
+
+  <Section title={ja ? "卒業生" : "Alumni"} label="Alumni" gap={104} id="alumni">
+    {alumni.length === 0 ? (
+      <p class="empty">{L.noAlumni}</p>
+    ) : (
+      <div class="rule-list">
+        {alumni.map((m) => (
+          <ListRow lead={216} pad={18}>
+            <span slot="lead">
+              {m.data.thesis && `${year(m.data.thesis.year)} ${kind[m.data.thesis.kind]}`}
+            </span>
+            <span class="small15">{m.data.thesis && pick(m.data.thesis.title, lang)}</span>
+          </ListRow>
+        ))}
+      </div>
+    )}
+    <h3 id="careers">{L.careers}</h3>
+    <p class="careers">
+      {careers.length === 0
+        ? L.noCareers
+        : careers.map((c) => pick(c.name, lang)).join(ja ? "、" : ", ")}
+    </p>
+    <p class="sub note">{L.careersNote}</p>
+  </Section>
+</BaseLayout>
+
+<style>
+  .faculty {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  .photo {
+    flex: 0 0 168px;
+    width: 168px;
+    height: 210px;
+    border-radius: var(--radius-card);
+    object-fit: cover;
+  }
+  .placeholder {
+    background: var(--color-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--color-text-sub);
+  }
+  .faculty-body {
+    flex: 999 1 300px;
+    min-width: 0;
+  }
+  .small {
+    font-size: 14px;
+  }
+  .faculty-name {
+    margin: 0;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 0.08em;
+  }
+  .specialty {
+    margin: 4px 0 0;
+    font-size: 15px;
+  }
+  .bio {
+    margin: 16px 0 0;
+    font-size: 15px;
+    max-width: 36em;
+  }
+  .links {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 24px;
+  }
+  .student {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 24px;
+  }
+  .student-name {
+    flex: 0 0 160px;
+    font-weight: 500;
+  }
+  .student-research {
+    flex: 999 1 220px;
+    min-width: 0;
+    font-size: 15px;
+  }
+  .student-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 16px;
+    font-size: 13px;
+  }
+  .student-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap-min);
+  }
+  .small15 {
+    font-size: 15px;
+  }
+  h3 {
+    margin: 56px 0 0;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+  }
+  .careers {
+    margin: 8px 0 0;
+    font-size: 15px;
+    line-height: 2.1;
+  }
+  .note {
+    margin: 4px 0 0;
+    font-size: 13px;
+  }
+</style>

@@ -1,0 +1,10 @@
+place: 東洋大学 情報連携学部(INIAD) 川原研究室
+address:
+  - 〒115-8650 東京都北区赤羽台1-7-11
+  - INIAD HUB-1 [階] [部屋番号]
+campusLink: { label: INIAD(赤羽台キャンパス)へのアクセス, url: "https://www.iniad.org/access/" }
+routes:
+  - { station: JR赤羽駅, detail: 西口から徒歩約10分 }
+  - { station: 東京メトロ南北線 赤羽岩淵駅, detail: 出入口2から徒歩約12分 }
+inside: "[建物に入ってから研究室までの案内。受付の有無、入館方法など]"
+contact: "[窓口と連絡方法は先生に確認後に記載]"

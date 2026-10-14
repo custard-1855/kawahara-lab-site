@@ -1,0 +1,11 @@
+# 教員。researchmap のパーマリンクがあれば、業績を自動で取得する
+name: { ja: 川原 亮一, en: Ryoichi Kawahara }
+role: faculty
+title: { ja: 教授, en: Professor }
+specialty: { ja: "[研究分野]", en: "[Research fields]" }
+bio:
+  ja: "[略歴・研究テーマの紹介を数行で]"
+  en: "[Short biography and research interests]"
+themes: [network, machine-learning, iot]
+researchmap: g0000218011
+order: 0

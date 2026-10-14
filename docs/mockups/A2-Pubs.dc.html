@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>業績</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0A5BB8}a:hover{color:#0F2547}
+</style>
+</helmet>
+<div style="font-family: 'IBM Plex Sans JP', sans-serif; color: #1B2230; background: #FFFFFF; font-size: 16px; line-height: 1.9; letter-spacing: 0.03em">
+
+<header style="border-bottom: 1px solid #E3E6EB">
+<div style="max-width: 1120px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
+<a href="A2-Top.dc.html" style="display: flex; align-items: baseline; gap: 12px; color: #1B2230; text-decoration: none">
+<span style="font-weight: 600; font-size: 18px; letter-spacing: 0.08em">川原研究室</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372; letter-spacing: 0.04em">Kawahara Lab</span>
+</a>
+<nav aria-label="メインメニュー" style="display: flex; flex-wrap: wrap; align-items: center; gap: 0 28px; font-size: 14px">
+<a href="A2-Research.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">研究</a>
+<a href="A2-Members.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">メンバー</a>
+<a href="#" aria-current="page" style="color: #1B2230; text-decoration: underline; text-decoration-color: #0F2547; text-underline-offset: 8px; text-decoration-thickness: 2px; padding: 12px 0; font-weight: 500">業績</a>
+<a href="A2-Articles.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">記事</a>
+<a href="A2-Join.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">配属希望の方へ</a>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372; display: flex; align-items: center; gap: 6px">
+<a href="#" aria-current="true" style="color: #1B2230; text-decoration: none; padding: 12px 2px; font-weight: 500">JA</a>/<a href="#" style="color: #5B6372; text-decoration: none; padding: 12px 2px">EN</a>
+</span>
+</nav>
+</div>
+</header>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 88px 32px 0">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">Publications</span>
+<h1 style="margin: 4px 0 0; font-weight: 500; font-size: 34px; line-height: 1.5; letter-spacing: 0.06em">業績</h1>
+<p style="margin: 12px 0 0; color: #5B6372; max-width: 40em">論文、国際会議、国内発表、受賞の一覧です。<b style="font-weight: 600; color: #1B2230">太字</b>は研究室のメンバーです。</p>
+<p style="margin: 4px 0 0; font-size: 13px; color: #5B6372">教員の業績は researchmap から自動で取得しています(最終更新 [日付])。</p>
+
+<div style="margin-top: 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; padding-bottom: 20px; border-bottom: 1px solid #E3E6EB">
+<div role="group" aria-label="種別で絞り込む" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="5">
+<button type="button" aria-pressed="{{t.pressed}}" onClick="{{t.pick}}" style="font-family: inherit; font-size: 14px; letter-spacing: 0.03em; border: 0; cursor: pointer; border-radius: 999px; padding: 10px 20px; background: {{t.bg}}; color: {{t.fg}}">{{t.label}} <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; opacity: 0.75">{{t.count}}</span></button>
+</sc-for>
+</div>
+<nav aria-label="年へ移動" style="display: flex; flex-wrap: wrap; gap: 0 16px; font-family: 'IBM Plex Mono', monospace; font-size: 13px">
+<sc-for list="{{years}}" as="y" hint-placeholder-count="3">
+<a href="#" style="color: #5B6372; padding: 10px 0">{{y.year}}</a>
+</sc-for>
+</nav>
+</div>
+</section>
+
+<sc-for list="{{years}}" as="y" hint-placeholder-count="3">
+<section style="max-width: 1120px; margin: 0 auto; padding: 64px 32px 0; display: flex; flex-wrap: wrap; gap: 8px 48px">
+<div style="flex: 1 1 200px">
+<h2 style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-weight: 400; font-size: 28px; letter-spacing: 0.02em; color: #0F2547">{{y.year}}</h2>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<sc-if value="{{y.empty}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; padding: 16px 0; font-size: 14px; color: #5B6372; border-top: 1px solid #E3E6EB">該当する業績はありません。</p>
+</sc-if>
+<sc-if value="{{y.hasItems}}" hint-placeholder-val="{{ true }}">
+<ol style="margin: 0; padding: 0; list-style: none; border-top: 1px solid #E3E6EB">
+<sc-for list="{{y.items}}" as="p" hint-placeholder-count="3">
+<li style="display: flex; flex-wrap: wrap; gap: 4px 20px; padding: 18px 0; border-bottom: 1px solid #E3E6EB">
+<span style="flex: 0 0 72px; font-size: 13px; color: #5B6372; padding-top: 2px">{{p.type}}</span>
+<div style="flex: 999 1 380px; min-width: 0; font-size: 15px; line-height: 1.85">
+<p style="margin: 0"><b style="font-weight: 600">[研究室メンバー]</b>, [共著者], <b style="font-weight: 600">川原 [名]</b></p>
+<p style="margin: 0; font-weight: 500">“{{p.title}}”</p>
+<p style="margin: 0; color: #5B6372; font-size: 14px">{{p.venue}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 0 16px; font-family: 'IBM Plex Mono', monospace; font-size: 12px">
+<a href="#" style="padding: 8px 0">DOI</a>
+<a href="#" style="padding: 8px 0">PDF</a>
+</div>
+</div>
+</li>
+</sc-for>
+</ol>
+</sc-if>
+</div>
+</section>
+</sc-for>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 72px 32px 136px; display: flex; flex-wrap: wrap; gap: 8px 48px">
+<div style="flex: 1 1 200px"></div>
+<div style="flex: 999 1 560px; min-width: 0; font-size: 14px; color: #5B6372">
+<a href="#" style="padding: 10px 0">これより前の業績 →</a>
+<p style="margin: 8px 0 0">教員の業績の一覧は <a href="#">researchmap</a> でも見られます。</p>
+</div>
+</section>
+
+<footer style="background: #F4F6F9">
+<div style="max-width: 1120px; margin: 0 auto; padding: 56px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px 48px; font-size: 14px; color: #5B6372">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 600; font-size: 16px; color: #1B2230; letter-spacing: 0.08em">川原研究室</span>
+<span>東洋大学 情報連携学部(INIAD)</span>
+<span>[所在地・部屋番号]</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 0 28px">
+<a href="A2-Access.dc.html" style="color: #5B6372; padding: 12px 0">アクセス</a>
+<a href="#" style="color: #5B6372; padding: 12px 0">お問い合わせ(確認中)</a>
+<a href="#" style="color: #5B6372; padding: 12px 0">GitHub</a>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2600}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { filter: 'all' };
+}
+renderVals() {
+const T = { paper: '論文', intl: '国際会議', dom: '国内発表', award: '受賞' };
+const P = (type, title, venue) => ({ type: T[type], key: type, title, venue });
+const data = [
+{ year: '2026', items: [
+P('intl', '[論文タイトル]', '[会議名], [開催地], [ページ]'),
+P('dom', '[発表タイトル]', '[研究会名], [開催地]'),
+P('award', '[賞の名前]', '[授与団体・会議名]')
+] },
+{ year: '2025', items: [
+P('paper', '[論文タイトル]', '[論文誌名], Vol. [巻], No. [号], pp. [ページ]'),
+P('intl', '[論文タイトル]', '[会議名], [開催地]'),
+P('dom', '[発表タイトル]', '[研究会名], [開催地]'),
+P('dom', '[発表タイトル]', '[研究会名], [開催地]')
+] },
+{ year: '2024', items: [
+P('paper', '[論文タイトル]', '[論文誌名], Vol. [巻], pp. [ページ]'),
+P('dom', '[発表タイトル]', '[研究会名], [開催地]')
+] }
+];
+const f = this.state.filter;
+const all = data.flatMap((y) => y.items);
+const tabs = [['all', 'すべて'], ['paper', '論文'], ['intl', '国際会議'], ['dom', '国内発表'], ['award', '受賞']].map(([key, label]) => {
+const on = f === key;
+return {
+label, pressed: on ? 'true' : 'false',
+count: key === 'all' ? all.length : all.filter((p) => p.key === key).length,
+bg: on ? '#0F2547' : '#F4F6F9', fg: on ? '#FFFFFF' : '#1B2230',
+pick: () => this.setState({ filter: key })
+};
+});
+const years = data.map((y) => {
+const items = f === 'all' ? y.items : y.items.filter((p) => p.key === f);
+return { year: y.year, items, empty: items.length === 0, hasItems: items.length > 0 };
+});
+return { tabs, years };
+}
+}
+</script>
+</body>
+</html>

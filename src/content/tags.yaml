@@ -1,0 +1,8 @@
+# 記事のタグ。記事の frontmatter には name(日本語)を書き、URL には id(英字)を使う。
+# 新しいタグを使うときは、ここに1つ追加する(未登録だとビルドが止まる)
+- id: optimal-transport
+  name: 最適輸送
+- id: duality
+  name: 双対性
+- id: sinkhorn
+  name: Sinkhorn

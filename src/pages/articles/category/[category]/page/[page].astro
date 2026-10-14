@@ -1,0 +1,30 @@
+---
+import type { GetStaticPaths } from "astro";
+import { paginate } from "../../../../../lib/articles";
+import { getArticles } from "../../../../../lib/content";
+import { categoryHref } from "../../../../../lib/url";
+import { SITE } from "../../../../../site.config";
+import ArticlesView from "../../../../../views/ArticlesView.astro";
+
+export const getStaticPaths = (async () => {
+  const all = await getArticles();
+  return (["note", "column"] as const).flatMap((category) =>
+    paginate(
+      all.filter((a) => a.category === category),
+      SITE.articlesPerPage,
+    )
+      .slice(1)
+      .map((p) => ({ params: { category, page: String(p.page) }, props: { category, ...p } })),
+  );
+}) satisfies GetStaticPaths;
+
+const { category, items, page, lastPage } = Astro.props;
+---
+
+<ArticlesView
+  items={items}
+  page={page}
+  lastPage={lastPage}
+  listPath={categoryHref(category)}
+  category={category}
+/>

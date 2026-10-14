@@ -1,0 +1,46 @@
+---
+// 404(日本語と英語を併記)
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { href } from "../lib/url";
+---
+
+<BaseLayout lang="ja" title="ページが見つかりません" path="/404.html" hasAlt={false}>
+  <section class="container nf">
+    <span class="mono sub label">404 Not Found</span>
+    <h1>ページが見つかりません</h1>
+    <p class="sub">お探しのページは移動したか、削除された可能性があります。</p>
+    <p class="sub" lang="en">
+      The page you are looking for could not be found.
+    </p>
+    <p class="links">
+      <a class="text-link" href={href("/")}>
+        トップへ戻る →
+      </a>
+      <a class="text-link" href={href("/", "en")} lang="en">
+        Back to the English top page →
+      </a>
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .nf {
+    padding-top: 88px;
+  }
+  .label {
+    font-size: 12px;
+  }
+  h1 {
+    margin: 4px 0 0;
+    font-size: var(--font-size-h1);
+    letter-spacing: 0.06em;
+  }
+  p {
+    margin: 12px 0 0;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 32px;
+  }
+</style>

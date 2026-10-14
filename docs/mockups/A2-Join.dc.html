@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>配属希望の方へ</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0A5BB8}a:hover{color:#0F2547}
+summary{cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+</style>
+</helmet>
+<div style="font-family: 'IBM Plex Sans JP', sans-serif; color: #1B2230; background: #FFFFFF; font-size: 16px; line-height: 1.9; letter-spacing: 0.03em">
+
+<header style="border-bottom: 1px solid #E3E6EB">
+<div style="max-width: 1120px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
+<a href="A2-Top.dc.html" style="display: flex; align-items: baseline; gap: 12px; color: #1B2230; text-decoration: none">
+<span style="font-weight: 600; font-size: 18px; letter-spacing: 0.08em">川原研究室</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372; letter-spacing: 0.04em">Kawahara Lab</span>
+</a>
+<nav aria-label="メインメニュー" style="display: flex; flex-wrap: wrap; align-items: center; gap: 0 28px; font-size: 14px">
+<a href="A2-Research.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">研究</a>
+<a href="A2-Members.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">メンバー</a>
+<a href="A2-Pubs.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">業績</a>
+<a href="A2-Articles.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">記事</a>
+<a href="#" aria-current="page" style="color: #1B2230; text-decoration: underline; text-decoration-color: #0F2547; text-underline-offset: 8px; text-decoration-thickness: 2px; padding: 12px 0; font-weight: 500">配属希望の方へ</a>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372; display: flex; align-items: center; gap: 6px">
+<a href="#" aria-current="true" style="color: #1B2230; text-decoration: none; padding: 12px 2px; font-weight: 500">JA</a>/<a href="#" style="color: #5B6372; text-decoration: none; padding: 12px 2px">EN</a>
+</span>
+</nav>
+</div>
+</header>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 88px 32px 0">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">For Students</span>
+<h1 style="margin: 4px 0 0; font-weight: 500; font-size: 34px; line-height: 1.5; letter-spacing: 0.06em">配属希望の方へ</h1>
+<p style="margin: 12px 0 0; color: #5B6372; max-width: 40em">研究室に入ると、どんな1年を過ごすのか。配属までに何を準備しておくとよいか。研究室選びの参考になる情報をまとめました。</p>
+<nav aria-label="このページの目次" style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px">
+<a href="#life" style="font-size: 14px; color: #1B2230; text-decoration: none; background: #F4F6F9; border-radius: 999px; padding: 10px 20px">研究室生活</a>
+<a href="#prep" style="font-size: 14px; color: #1B2230; text-decoration: none; background: #F4F6F9; border-radius: 999px; padding: 10px 20px">前提知識</a>
+<a href="#career" style="font-size: 14px; color: #1B2230; text-decoration: none; background: #F4F6F9; border-radius: 999px; padding: 10px 20px">進路</a>
+<a href="#faq" style="font-size: 14px; color: #1B2230; text-decoration: none; background: #F4F6F9; border-radius: 999px; padding: 10px 20px">よくある質問</a>
+<a href="#visit" style="font-size: 14px; color: #1B2230; text-decoration: none; background: #F4F6F9; border-radius: 999px; padding: 10px 20px">見学・面談</a>
+</nav>
+</section>
+
+<section id="life" style="max-width: 1120px; margin: 0 auto; padding: 120px 32px 0; display: flex; flex-wrap: wrap; gap: 16px 48px">
+<div style="flex: 1 1 200px">
+<h2 style="margin: 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">研究室生活</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">Lab Life</span>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<h3 style="margin: 0; font-weight: 500; font-size: 17px; letter-spacing: 0.06em">1週間</h3>
+<div style="margin-top: 12px; border-top: 1px solid #E3E6EB">
+<sc-for list="{{week}}" as="w" hint-placeholder-count="4">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 24px; padding: 16px 0; border-bottom: 1px solid #E3E6EB">
+<span style="flex: 0 0 160px; font-weight: 500">{{w.name}}</span>
+<span style="flex: 0 0 140px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5B6372">{{w.when}}</span>
+<span style="flex: 999 1 220px; min-width: 0; font-size: 15px; color: #5B6372">{{w.desc}}</span>
+</div>
+</sc-for>
+</div>
+
+<h3 style="margin: 56px 0 0; font-weight: 500; font-size: 17px; letter-spacing: 0.06em">1年の流れ</h3>
+<p style="margin: 4px 0 0; font-size: 13px; color: #5B6372">学部4年の例。時期と内容は先生に確認して埋める</p>
+<ol style="margin: 20px 0 0; padding: 0; list-style: none; position: relative">
+<sc-for list="{{year}}" as="y" hint-placeholder-count="6">
+<li style="display: flex; gap: 24px; padding: 0 0 28px">
+<div style="flex: 0 0 56px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #0F2547; font-weight: 500; text-align: right">{{y.month}}</div>
+<div style="flex: 0 0 11px; display: flex; flex-direction: column; align-items: center; padding-top: 9px">
+<span style="width: 11px; height: 11px; border-radius: 50%; background: {{y.dot}}; border: 1.5px solid #0F2547; box-sizing: border-box"></span>
+<span style="flex: 1; width: 1px; background: #CBD1DA; margin-top: 6px; min-height: 32px"></span>
+</div>
+<div style="flex: 1 1 auto; min-width: 0">
+<p style="margin: 0; font-weight: 500">{{y.title}}</p>
+<p style="margin: 2px 0 0; font-size: 14px; color: #5B6372">{{y.desc}}</p>
+</div>
+</li>
+</sc-for>
+</ol>
+<p style="margin: 8px 0 0; font-size: 14px; color: #5B6372">修士課程の流れ(中間発表・学会・修士論文)は[別途記載]</p>
+</div>
+</section>
+
+<section id="prep" style="max-width: 1120px; margin: 0 auto; padding: 120px 32px 0; display: flex; flex-wrap: wrap; gap: 16px 48px">
+<div style="flex: 1 1 200px">
+<h2 style="margin: 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">前提知識</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">Preparation</span>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<p style="margin: 0; max-width: 40em">[配属前にすべてを身につけている必要はない、という前置きを1〜2文で。何から始めればよいかが分かるように書く。]</p>
+<div style="margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+<sc-for list="{{prep}}" as="p" hint-placeholder-count="3">
+<div style="background: #F4F6F9; border-radius: 16px; padding: 24px 28px">
+<p style="margin: 0; font-weight: 500; font-size: 17px">{{p.area}}</p>
+<ul style="margin: 10px 0 0; padding-left: 1.2em; font-size: 14px; color: #3A4252; line-height: 1.9">
+<li>{{p.a}}</li>
+<li>{{p.b}}</li>
+</ul>
+</div>
+</sc-for>
+</div>
+<h3 style="margin: 48px 0 0; font-weight: 500; font-size: 17px; letter-spacing: 0.06em">おすすめの授業・本</h3>
+<div style="margin-top: 12px; border-top: 1px solid #E3E6EB">
+<sc-for list="{{books}}" as="b" hint-placeholder-count="3">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 24px; padding: 16px 0; border-bottom: 1px solid #E3E6EB">
+<span style="flex: 0 0 64px; font-size: 13px; color: #5B6372">{{b.kind}}</span>
+<span style="flex: 999 1 280px; min-width: 0">{{b.title}}</span>
+<span style="font-size: 14px; color: #5B6372">[ひとこと]</span>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section id="career" style="max-width: 1120px; margin: 0 auto; padding: 120px 32px 0; display: flex; flex-wrap: wrap; gap: 16px 48px">
+<div style="flex: 1 1 200px">
+<h2 style="margin: 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">進路</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">Careers</span>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<p style="margin: 0; font-size: 15px; line-height: 2.1">[企業名]、[企業名]、[企業名]、[企業名]、[企業名]、[企業名]、大学院進学</p>
+<p style="margin: 6px 0 0; font-size: 13px; color: #5B6372">卒業生・修了生の就職・内定先。企業名のみ掲載しています(五十音順)。</p>
+</div>
+</section>
+
+<section id="faq" style="max-width: 1120px; margin: 0 auto; padding: 120px 32px 0; display: flex; flex-wrap: wrap; gap: 16px 48px">
+<div style="flex: 1 1 200px">
+<h2 style="margin: 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">よくある質問</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">FAQ</span>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; border-top: 1px solid #E3E6EB">
+<sc-for list="{{faq}}" as="f" hint-placeholder-count="6">
+<details open="{{f.open}}" style="border-bottom: 1px solid #E3E6EB">
+<summary style="display: flex; align-items: baseline; gap: 16px; padding: 20px 0; font-weight: 500">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #0F2547">Q</span>
+<span style="flex: 1 1 auto">{{f.q}}</span>
+<span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace; color: #5B6372">+</span>
+</summary>
+<div style="display: flex; gap: 16px; padding: 0 0 24px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5B6372">A</span>
+<p style="margin: 0; font-size: 15px; color: #3A4252">[回答]</p>
+</div>
+</details>
+</sc-for>
+</div>
+</section>
+
+<section id="visit" style="max-width: 1120px; margin: 0 auto; padding: 120px 32px 136px; display: flex; flex-wrap: wrap; gap: 16px 48px">
+<div style="flex: 1 1 200px">
+<h2 style="margin: 0; font-weight: 500; font-size: 22px; letter-spacing: 0.06em">見学・面談</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">Visit</span>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; background: #F4F6F9; border-radius: 16px; padding: 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+<div style="flex: 1 1 320px; min-width: 0">
+<p style="margin: 0; font-weight: 500; font-size: 17px">研究室を見に来ませんか</p>
+<p style="margin: 6px 0 0; font-size: 14px; color: #5B6372">[受付方法・時期・対象(学内/学外)は先生に確認後に記載]</p>
+</div>
+<a href="#" style="flex: 0 0 auto; background: #0F2547; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 500; padding: 14px 28px; border-radius: 999px">申し込む(確認中)</a>
+</div>
+</section>
+
+<footer style="background: #F4F6F9">
+<div style="max-width: 1120px; margin: 0 auto; padding: 56px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px 48px; font-size: 14px; color: #5B6372">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 600; font-size: 16px; color: #1B2230; letter-spacing: 0.08em">川原研究室</span>
+<span>東洋大学 情報連携学部(INIAD)</span>
+<span>[所在地・部屋番号]</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 0 28px">
+<a href="A2-Access.dc.html" style="color: #5B6372; padding: 12px 0">アクセス</a>
+<a href="#" style="color: #5B6372; padding: 12px 0">お問い合わせ(確認中)</a>
+<a href="#" style="color: #5B6372; padding: 12px 0">GitHub</a>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":3300}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+week: [
+{ name: 'ゼミ', when: '[曜日・時間]', desc: '[形式。進捗報告、輪講など]' },
+{ name: '個別ミーティング', when: '[頻度]', desc: '[先生との1対1の相談]' },
+{ name: '勉強会', when: '[頻度]', desc: '[有志の勉強会があれば]' },
+{ name: 'コアタイム', when: '[有無]', desc: '[研究室に来る時間の決まり]' }
+],
+year: [
+{ month: '[月]', title: '[例] 配属・研究テーマ決め', desc: '[説明]', dot: '#0F2547' },
+{ month: '[月]', title: '[例] 輪講・基礎の勉強', desc: '[説明]', dot: '#FFFFFF' },
+{ month: '[月]', title: '[例] 中間発表', desc: '[説明]', dot: '#FFFFFF' },
+{ month: '[月]', title: '[例] 学会発表', desc: '[説明]', dot: '#FFFFFF' },
+{ month: '[月]', title: '[例] 卒業論文の提出', desc: '[説明]', dot: '#FFFFFF' },
+{ month: '[月]', title: '[例] 卒業研究発表会', desc: '[説明]', dot: '#0F2547' }
+],
+prep: [
+{ area: '数学', a: '[例] 線形代数', b: '[例] 確率・統計' },
+{ area: 'プログラミング', a: '[例] Python', b: '[例] Git' },
+{ area: 'ネットワーク', a: '[例] TCP/IPの基礎', b: '[項目]' }
+],
+books: [
+{ kind: '授業', title: '[授業名]' },
+{ kind: '本', title: '[書名]' },
+{ kind: '本', title: '[書名]' }
+],
+faq: [
+{ q: '配属前に、どのくらいの知識が必要ですか?', open: true },
+{ q: '数学はどのくらい使いますか?', open: false },
+{ q: '研究テーマはどうやって決まりますか?', open: false },
+{ q: '学会で発表する機会はありますか?', open: false },
+{ q: '就職活動やアルバイトと両立できますか?', open: false },
+{ q: '他大学から大学院で入ることはできますか?', open: false }
+]
+};
+}
+}
+</script>
+</body>
+</html>

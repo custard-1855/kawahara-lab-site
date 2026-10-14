@@ -1,0 +1,11 @@
+name: { ja: 竹本 志恩 }
+role: student
+grade: M1
+research: { ja: "[研究テーマ]", en: "[Research topic]" }
+bio: { ja: "[研究テーマを1行で]" }
+themes: []
+links:
+  - { label: Blog, url: "https://custard-1855.github.io/blog/" }
+  - { label: Cosense, url: "https://scrapbox.io/main-custard/" }
+  - { label: GitHub, url: "https://github.com/custard-1855" }
+order: 10

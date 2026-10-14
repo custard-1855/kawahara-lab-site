@@ -1,0 +1,41 @@
+---
+// ページ内の移動や絞り込みのための丸いリンク。選択中は紺地に白文字
+interface Props {
+  href: string;
+  current?: boolean;
+  count?: number;
+}
+const { href, current = false, count } = Astro.props;
+---
+
+<a class="pill" href={href} aria-current={current ? "page" : undefined}>
+  <slot />
+  {count !== undefined && <span class="count mono">{count}</span>}
+</a>
+
+<style>
+  .pill {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    min-height: var(--tap-min);
+    padding: 10px 20px;
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-size: 14px;
+    line-height: 1.7;
+    text-decoration: none;
+  }
+  .pill:hover {
+    color: var(--color-navy);
+  }
+  .pill[aria-current="page"] {
+    background: var(--color-navy);
+    color: var(--color-bg);
+  }
+  .count {
+    font-size: 12px;
+    opacity: 0.75;
+  }
+</style>

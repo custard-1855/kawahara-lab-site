@@ -1,0 +1,91 @@
+---
+import ListRow from "../components/ListRow.astro";
+import PageHead from "../components/PageHead.astro";
+import Section from "../components/Section.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPage } from "../lib/content";
+import { t, type Lang } from "../lib/i18n";
+import { href } from "../lib/url";
+import { SITE } from "../site.config";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const ja = lang === "ja";
+const d = (await getPage("access", lang)).data;
+---
+
+<BaseLayout lang={lang} title={t(lang, "nav.access")} path="/access/">
+  <PageHead label="Access" title={t(lang, "nav.access")} />
+
+  <Section title={ja ? "所在地" : "Address"} label="Address" gap={72}>
+    <p class="place">{d.place}</p>
+    {d.address.map((line) => (
+      <p class="line">{line}</p>
+    ))}
+    <a class="text-link" href={d.campusLink.url}>
+      {d.campusLink.label} →
+    </a>
+  </Section>
+
+  <Section title={ja ? "交通" : "Directions"} label="Directions" gap={104}>
+    <div class="rule-list">
+      {d.routes.map((r) => (
+        <ListRow lead={0} pad={16}>
+          <span class="route">
+            <span class="station">{r.station}</span>
+            <span class="detail sub">{r.detail}</span>
+          </span>
+        </ListRow>
+      ))}
+    </div>
+    <p class="inside sub">{d.inside}</p>
+  </Section>
+
+  <Section id="contact" title={t(lang, "footer.contact")} label="Contact" gap={104}>
+    {SITE.contactUrl ? (
+      <a href={SITE.contactUrl}>{SITE.contactUrl}</a>
+    ) : (
+      <p class="line">{d.contact}</p>
+    )}
+    <p class="inside sub">
+      {ja ? "見学・面談のご相談は " : "For lab visits, see "}
+      <a href={href("/join/#visit", lang)}>{t(lang, "nav.join")}</a>
+      {ja ? " をご覧ください。" : "."}
+    </p>
+  </Section>
+</BaseLayout>
+
+<style>
+  .place {
+    margin: 0;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .line {
+    margin: 4px 0 0;
+  }
+  .text-link {
+    margin-top: 8px;
+  }
+  .route {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 24px;
+  }
+  .station {
+    flex: 0 0 240px;
+    font-weight: 500;
+  }
+  .detail {
+    flex: 999 1 240px;
+    min-width: 0;
+    font-size: 15px;
+  }
+  .inside {
+    margin: 16px 0 0;
+    font-size: 14px;
+  }
+</style>

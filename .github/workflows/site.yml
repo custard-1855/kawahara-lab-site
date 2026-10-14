@@ -1,0 +1,124 @@
+# チェック・テストを行い、main なら GitHub Pages に公開する。
+# 週1回(月曜 3:00 JST)は researchmap から教員の業績を取り直し、変わっていればキャッシュをコミットしてから公開する
+name: site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 18 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  refresh:
+    name: researchmap の取得
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: 取得(失敗してもキャッシュで続ける)
+        id: fetch
+        continue-on-error: true
+        run: npm run fetch:researchmap
+      - name: 変わっていればコミット
+        if: steps.fetch.outcome == 'success'
+        run: |
+          if git diff --quiet -- src/data/researchmap-cache.json; then
+            echo "変更なし"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/data/researchmap-cache.json
+            git commit -m "researchmap の業績を更新"
+            git push
+          fi
+
+  check:
+    name: チェックとテスト (base=${{ matrix.base }})
+    needs: refresh
+    if: ${{ !failure() && !cancelled() }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        base: ["/kawahara-lab-site/", "/"]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # 定期実行では、直前に refresh がコミットしたものを使う
+          ref: ${{ github.event_name != 'pull_request' && github.ref || '' }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: 整形・型チェック(astro check)・処理のテスト
+        if: matrix.base == '/'
+        run: npm run check
+      - name: Playwright のブラウザを入れる
+        run: npx playwright install --with-deps chromium
+      - name: ビルドとブラウザのテスト
+        run: npm run test:e2e
+        env:
+          SITE_BASE: ${{ matrix.base }}
+      - name: 失敗したときの結果を残す
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-${{ strategy.job-index }}
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+
+  deploy:
+    name: 公開
+    needs: check
+    if: ${{ !failure() && !cancelled() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - id: pages
+        uses: actions/configure-pages@v5
+      - name: ビルド
+        run: npm run build
+        env:
+          # 公開先の URL は Pages の設定から取る(Organization へ移しても書き換え不要)
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          SITE_BASE: ${{ steps.pages.outputs.base_path }}/
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4

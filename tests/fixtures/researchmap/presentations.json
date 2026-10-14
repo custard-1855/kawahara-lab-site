@@ -1,0 +1,10 @@
+{
+    "@context": "https://api.researchmap.jp/researcher.jsonld",
+    "@id": "https://api.researchmap.jp/g0000218011/presentations?limit=100&format=json&start=1",
+    "@type": "presentations",
+    "@reverse": "https://api.researchmap.jp/g0000218011",
+    "total_items": 0,
+    "items": [
+
+    ]
+}

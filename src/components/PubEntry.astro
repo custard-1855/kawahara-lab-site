@@ -1,0 +1,72 @@
+---
+// 業績の1件: 著者(研究室メンバーは太字)、タイトル、会場、DOI
+import type { Lang } from "../lib/i18n";
+import { pick } from "../lib/i18n";
+import type { Pub } from "../lib/pubs";
+
+interface Props {
+  pub: Pub;
+  lang: Lang;
+  /** 1行にまとめた短い形(研究ページの「主な業績」) */
+  compact?: boolean;
+}
+const { pub, lang, compact = false } = Astro.props;
+const authors = pick(pub.authors, lang) ?? [];
+const title = pick(pub.title, lang);
+const venue = pick(pub.venue, lang);
+---
+
+{compact ? (
+  <span class="compact">
+    {authors.map((a, i) => (
+      <>
+        {i > 0 && ", "}
+        {a.member ? <b>{a.name}</b> : a.name}
+      </>
+    ))}
+    , “{title},” {venue}.
+  </span>
+) : (
+  <div class="entry">
+    <p class="authors">
+      {authors.map((a, i) => (
+        <>
+          {i > 0 && ", "}
+          {a.member ? <b>{a.name}</b> : a.name}
+        </>
+      ))}
+    </p>
+    <p class="title">“{title}”</p>
+    {venue && <p class="venue">{venue}</p>}
+    {pub.url && (
+      <p class="links mono">
+        <a href={pub.url}>{pub.doi ? "DOI" : "URL"}</a>
+      </p>
+    )}
+  </div>
+)}
+
+<style>
+  .entry {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+  .entry p {
+    margin: 0;
+  }
+  .title {
+    font-weight: 500;
+  }
+  .venue {
+    color: var(--color-text-sub);
+    font-size: 14px;
+  }
+  .links {
+    font-size: 12px;
+  }
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap-min);
+  }
+</style>

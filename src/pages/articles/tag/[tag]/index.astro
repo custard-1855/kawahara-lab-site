@@ -1,0 +1,25 @@
+---
+import type { GetStaticPaths } from "astro";
+import { paginate } from "../../../../lib/articles";
+import { getArticles, getTagIndex } from "../../../../lib/content";
+import { tagHref } from "../../../../lib/url";
+import { SITE } from "../../../../site.config";
+import ArticlesView from "../../../../views/ArticlesView.astro";
+
+// 記事で使われているタグだけページを作る
+export const getStaticPaths = (async () => {
+  const all = await getArticles();
+  const tags = (await getTagIndex()).all().filter((t) => all.some((a) => a.tags.includes(t.id)));
+  return tags.map(({ id }) => {
+    const [first] = paginate(
+      all.filter((a) => a.tags.includes(id)),
+      SITE.articlesPerPage,
+    );
+    return { params: { tag: id }, props: { tag: id, ...first } };
+  });
+}) satisfies GetStaticPaths;
+
+const { tag, items, lastPage } = Astro.props;
+---
+
+<ArticlesView items={items} page={1} lastPage={lastPage} listPath={tagHref(tag)} tag={tag} />

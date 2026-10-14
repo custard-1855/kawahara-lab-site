@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>記事一覧</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0A5BB8}a:hover{color:#0F2547}
+</style>
+</helmet>
+<div style="font-family: 'IBM Plex Sans JP', sans-serif; color: #1B2230; background: #FFFFFF; font-size: 16px; line-height: 1.9; letter-spacing: 0.03em">
+
+<header style="border-bottom: 1px solid #E3E6EB">
+<div style="max-width: 1120px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
+<a href="A2-Top.dc.html" style="display: flex; align-items: baseline; gap: 12px; color: #1B2230; text-decoration: none">
+<span style="font-weight: 600; font-size: 18px; letter-spacing: 0.08em">川原研究室</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372; letter-spacing: 0.04em">Kawahara Lab</span>
+</a>
+<nav aria-label="メインメニュー" style="display: flex; flex-wrap: wrap; align-items: center; gap: 0 28px; font-size: 14px">
+<a href="A2-Research.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">研究</a>
+<a href="A2-Members.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">メンバー</a>
+<a href="A2-Pubs.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">業績</a>
+<a href="#" aria-current="page" style="color: #1B2230; text-decoration: underline; text-decoration-color: #0F2547; text-underline-offset: 8px; text-decoration-thickness: 2px; padding: 12px 0; font-weight: 500">記事</a>
+<a href="A2-Join.dc.html" style="color: #1B2230; text-decoration: none; padding: 12px 0">配属希望の方へ</a>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372; display: flex; align-items: center; gap: 6px">
+<a href="#" aria-current="true" style="color: #1B2230; text-decoration: none; padding: 12px 2px; font-weight: 500">JA</a>/<a href="#" style="color: #5B6372; text-decoration: none; padding: 12px 2px">EN</a>
+</span>
+</nav>
+</div>
+</header>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 88px 32px 0">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B6372">Articles</span>
+<h1 style="margin: 4px 0 0; font-weight: 500; font-size: 34px; line-height: 1.5; letter-spacing: 0.06em">記事</h1>
+<div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px 40px; max-width: 880px">
+<p style="margin: 0; font-size: 15px; color: #5B6372"><b style="font-weight: 600; color: #1B2230">研究ノート</b><br>メンバーが、自分の研究で一番面白い・重要だと思う技術を紹介します。</p>
+<p style="margin: 0; font-size: 15px; color: #5B6372"><b style="font-weight: 600; color: #1B2230">コラム</b><br>研究とは別に、メンバーが個人的に興味を持っているテーマを書きます。</p>
+</div>
+
+<div style="margin-top: 48px; padding-bottom: 20px; border-bottom: 1px solid #E3E6EB; display: flex; flex-direction: column; gap: 16px">
+<div role="group" aria-label="分類で絞り込む" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{cats}}" as="c" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{c.pressed}}" onClick="{{c.pick}}" style="font-family: inherit; font-size: 14px; letter-spacing: 0.03em; border: 0; cursor: pointer; border-radius: 999px; padding: 10px 20px; background: {{c.bg}}; color: {{c.fg}}">{{c.label}} <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; opacity: 0.75">{{c.count}}</span></button>
+</sc-for>
+</div>
+<div role="group" aria-label="タグで絞り込む" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; font-size: 14px">
+<span style="font-size: 13px; color: #5B6372">タグ</span>
+<sc-for list="{{tags}}" as="t" hint-placeholder-count="6">
+<button type="button" aria-pressed="{{t.pressed}}" onClick="{{t.pick}}" style="font-family: inherit; font-size: 14px; letter-spacing: 0.03em; border: 0; background: none; cursor: pointer; padding: 10px 0; color: {{t.fg}}; text-decoration: {{t.deco}}; text-underline-offset: 6px">#{{t.name}}</button>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 8px 32px 0">
+<sc-if value="{{empty}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; padding: 40px 0; color: #5B6372">条件に合う記事はありません。</p>
+</sc-if>
+<sc-for list="{{list}}" as="a" hint-placeholder-count="6">
+<a href="{{a.href}}" style="display: flex; flex-wrap: wrap; gap: 8px 48px; padding: 32px 0; border-bottom: 1px solid #E3E6EB; color: #1B2230; text-decoration: none">
+<div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 2px; font-size: 13px; color: #5B6372">
+<span style="font-family: 'IBM Plex Mono', monospace">{{a.date}}</span>
+<span>{{a.cat}}</span>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<p style="margin: 0; font-size: 19px; font-weight: 500; line-height: 1.6; letter-spacing: 0.04em">{{a.title}}</p>
+<p style="margin: 8px 0 0; font-size: 15px; color: #5B6372; max-width: 40em">{{a.excerpt}}</p>
+<div style="margin-top: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; font-size: 13px; color: #5B6372">
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 24px; height: 24px; border-radius: 50%; background: #F4F6F9"></span>{{a.author}}</span>
+<span>{{a.tagline}}</span>
+</div>
+</div>
+</a>
+</sc-for>
+
+<nav aria-label="ページ送り" style="display: flex; justify-content: center; gap: 8px; padding: 48px 0 136px; font-family: 'IBM Plex Mono', monospace; font-size: 14px">
+<a href="#" aria-current="page" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #0F2547; color: #FFFFFF; text-decoration: none">1</a>
+<a href="#" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #1B2230; text-decoration: none">2</a>
+<a href="#" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #1B2230; text-decoration: none">3</a>
+<a href="#" aria-label="次のページ" style="height: 44px; display: flex; align-items: center; padding: 0 12px; color: #1B2230; text-decoration: none">次へ →</a>
+</nav>
+</section>
+
+<footer style="background: #F4F6F9">
+<div style="max-width: 1120px; margin: 0 auto; padding: 56px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px 48px; font-size: 14px; color: #5B6372">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 600; font-size: 16px; color: #1B2230; letter-spacing: 0.08em">川原研究室</span>
+<span>東洋大学 情報連携学部(INIAD)</span>
+<span>[所在地・部屋番号]</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 0 28px">
+<a href="A2-Access.dc.html" style="color: #5B6372; padding: 12px 0">アクセス</a>
+<a href="#" style="color: #5B6372; padding: 12px 0">お問い合わせ(確認中)</a>
+<a href="#" style="color: #5B6372; padding: 12px 0">GitHub</a>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2300}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { cat: 'all', tag: null };
+}
+renderVals() {
+const A = (date, cat, title, tags, extra) => ({
+date, cat, title, tags,
+author: '[著者名]', excerpt: '[記事の冒頭、または要約を2行ほど]', href: '#', ...extra
+});
+const data = [
+A('2026-07-10', 'コラム', 'Sinkhorn Distances:双対性で最適輸送を速く解く', ['最適輸送', '双対性'], {
+author: '竹本 志恩', href: 'A2-Article.dc.html',
+excerpt: '最適輸送は分布の形まで考慮して比べられる道具ですが、そのまま解くと計算が重いのが難点です。双対性とエントロピー正則化を使い、行列とベクトルの掛け算の繰り返しだけで近似的に解く方法を紹介します。'
+}),
+A('[日付]', '研究ノート', '[記事タイトル]', ['ネットワーク']),
+A('[日付]', '研究ノート', '[記事タイトル]', ['機械学習']),
+A('[日付]', 'コラム', '[記事タイトル]', ['アーキテクチャ']),
+A('[日付]', '研究ノート', '[記事タイトル]', ['IoT', 'ネットワーク']),
+A('[日付]', '研究ノート', '[記事タイトル]', ['機械学習'])
+];
+const { cat, tag } = this.state;
+const byCat = (a) => cat === 'all' || a.cat === cat;
+const cats = [['all', 'すべて'], ['研究ノート', '研究ノート'], ['コラム', 'コラム']].map(([key, label]) => {
+const on = cat === key;
+return {
+label, pressed: on ? 'true' : 'false',
+count: data.filter((a) => key === 'all' || a.cat === key).length,
+bg: on ? '#0F2547' : '#F4F6F9', fg: on ? '#FFFFFF' : '#1B2230',
+pick: () => this.setState({ cat: key })
+};
+});
+const tagNames = ['ネットワーク', '機械学習', 'IoT', '最適輸送', '双対性', 'アーキテクチャ'];
+const tags = tagNames.map((name) => {
+const on = tag === name;
+return {
+name, pressed: on ? 'true' : 'false',
+fg: on ? '#0F2547' : '#5B6372', deco: on ? 'underline' : 'none',
+pick: () => this.setState({ tag: on ? null : name })
+};
+});
+const list = data
+.filter((a) => byCat(a) && (!tag || a.tags.includes(tag)))
+.map((a) => ({ ...a, tagline: a.tags.map((t) => '#' + t).join(' ') }));
+return { cats, tags, list, empty: list.length === 0 };
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,5276 @@
+{
+ "fetchedAt": "2026-10-14T16:16:35.546Z",
+ "sources": [
+  {
+   "permalink": "g0000218011",
+   "papers": [
+    {
+     "rm:id": "51568455",
+     "paper_title": {
+      "en": "Optimization of Data and Model Transfer for Federated Learning to Manage Large-Scale Network."
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Kengo Tajiri"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2025-04",
+     "publication_name": {
+      "en": "IEEE Transactions on Network and Service Management"
+     },
+     "volume": "22",
+     "number": "2",
+     "starting_page": "958",
+     "ending_page": "973",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1109/TNSM.2025.3538156"
+      ],
+      "issn": [
+       "1932-4537"
+      ]
+     }
+    },
+    {
+     "rm:id": "51568467",
+     "paper_title": {
+      "en": "Method for network-anomaly detection and failure-scale estimation"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Naoya Ogawa"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2024",
+     "publication_name": {
+      "en": "IEICE COMMUNICATIONS EXPRESS"
+     },
+     "volume": "13",
+     "number": "6",
+     "starting_page": "206",
+     "ending_page": "209",
+     "identifiers": {
+      "doi": [
+       "10.23919/comex.2024XBL0028"
+      ],
+      "issn": [
+       "2187-0136"
+      ]
+     }
+    },
+    {
+     "rm:id": "51568466",
+     "paper_title": {
+      "en": "Evaluation of HTTP request anomaly detection model using fastText and convolutional autoencoder"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Haruta Yamada"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2024",
+     "publication_name": {
+      "en": "IEICE COMMUNICATIONS EXPRESS"
+     },
+     "volume": "13",
+     "number": "7",
+     "starting_page": "240",
+     "ending_page": "243",
+     "identifiers": {
+      "doi": [
+       "10.23919/comex.2024XBL0060"
+      ],
+      "issn": [
+       "2187-0136"
+      ]
+     }
+    },
+    {
+     "rm:id": "51568456",
+     "paper_title": {
+      "en": "Optimizing IoT Data Collection for Federated Learning Under Constraint of Wireless Bandwidth."
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Kengo Tajiri"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2024",
+     "publication_name": {
+      "en": "IEEE International Conference on Communications(ICC)"
+     },
+     "starting_page": "3286",
+     "ending_page": "3291",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICC51166.2024.10622332"
+      ],
+      "issn": [
+       "1550-3607"
+      ]
+     }
+    },
+    {
+     "rm:id": "45998657",
+     "paper_title": {
+      "en": "Link delay estimation under undeterministic routing using neural network"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ushizuka Yuta"
+       },
+       {
+        "name": "Kawahara Ryoichi"
+       }
+      ]
+     },
+     "publication_date": "2024-01-01",
+     "publication_name": {
+      "en": "IEICE Communications Express"
+     },
+     "volume": "13",
+     "number": "1",
+     "starting_page": "5",
+     "ending_page": "8",
+     "identifiers": {
+      "doi": [
+       "10.23919/comex.2023xbl0132"
+      ]
+     }
+    },
+    {
+     "rm:id": "45998585",
+     "paper_title": {
+      "en": "Optimizing Edge-Cloud Cooperation for Machine Learning Accuracy Considering Transmission Latency and Bandwidth Congestion."
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Kengo Tajiri"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Yoichi Matsuo"
+       }
+      ]
+     },
+     "publication_date": "2023-09",
+     "publication_name": {
+      "en": "IEICE Transactions on Communications"
+     },
+     "volume": "106",
+     "number": "9",
+     "starting_page": "827",
+     "ending_page": "836",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transcom.2022ebp3171"
+      ]
+     }
+    },
+    {
+     "rm:id": "45998587",
+     "paper_title": {
+      "en": "Optimizing Data Distribution for Federated Learning Under Bandwidth Constraint."
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Kengo Tajiri"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2023",
+     "publication_name": {
+      "en": "ICC"
+     },
+     "starting_page": "3732",
+     "ending_page": "3737",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICC45041.2023.10279294"
+      ]
+     }
+    },
+    {
+     "rm:id": "45998586",
+     "paper_title": {
+      "en": "Data Transfer for Balancing Model Convergence and Training Time in Federated Learning."
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Kengo Tajiri"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2023",
+     "publication_name": {
+      "en": "GLOBECOM"
+     },
+     "starting_page": "6777",
+     "ending_page": "6782",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/GLOBECOM54140.2023.10437284"
+      ]
+     }
+    },
+    {
+     "rm:id": "41787454",
+     "paper_title": {
+      "en": "A general-purpose calculation module for route optimization in virtualized networks"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Takefumi Wakayama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2022",
+     "publication_name": {
+      "en": "IEICE COMMUNICATIONS EXPRESS"
+     },
+     "volume": "11",
+     "number": "12",
+     "starting_page": "840",
+     "ending_page": "845",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1109/tnsm.2018.2873225"
+      ],
+      "issn": [
+       "2187-0136"
+      ]
+     }
+    },
+    {
+     "rm:id": "39937827",
+     "paper_title": {
+      "en": "Optimizing Edge-Cloud Cooperation for Machine Learning Accuracy Considering Transmission Latency and Bandwidth Congestion."
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Kengo Tajiri"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Yoichi Matsuo"
+       }
+      ]
+     },
+     "publication_date": "2022",
+     "publication_name": {
+      "en": "NOMS"
+     },
+     "starting_page": "1",
+     "ending_page": "9",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/NOMS54207.2022.9789867"
+      ]
+     }
+    },
+    {
+     "rm:id": "37087964",
+     "paper_title": {
+      "en": "Network Tomography for Information-Centric Networking"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Takuya Yano"
+       },
+       {
+        "name": "Rie Tagyo"
+       },
+       {
+        "name": "Daisuke Ikegami"
+       }
+      ]
+     },
+     "publication_date": "2022",
+     "publication_name": {
+      "en": "IEICE Trans. Commun."
+     },
+     "volume": "105-B",
+     "number": "3",
+     "starting_page": "259",
+     "ending_page": "269",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transcom.2021ebp3054"
+      ]
+     }
+    },
+    {
+     "rm:id": "36597438",
+     "paper_title": {
+      "en": "Cooperative Multi-Agent Deep Reinforcement Learning for Dynamic Virtual Network Allocation with Traffic Fluctuations"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Akito Suzuki"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Shigeaki Harada"
+       }
+      ]
+     },
+     "publication_date": "2022",
+     "publication_name": {
+      "en": "IEEE Transactions on Network and Service Management"
+     },
+     "volume": "19",
+     "number": "3",
+     "starting_page": "1982",
+     "ending_page": "2000",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1109/TNSM.2022.3149243"
+      ]
+     }
+    },
+    {
+     "rm:id": "36597427",
+     "paper_title": {
+      "en": "Virtual Network Control for Power Bills Reduction and Network Stability"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryota Nakamura"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Takefumi Wakayama"
+       },
+       {
+        "name": "Shigeaki Harada"
+       }
+      ]
+     },
+     "publication_date": "2022",
+     "publication_name": {
+      "en": "IEEE Transactions on Network and Service Management"
+     },
+     "volume": "19",
+     "number": "4",
+     "starting_page": "4338",
+     "ending_page": "4349",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1109/TNSM.2022.3158400"
+      ]
+     }
+    },
+    {
+     "rm:id": "36597428",
+     "paper_title": {
+      "en": "Network tomography using routing probability for undeterministic routing"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Rie Tagyo"
+       },
+       {
+        "name": "Daisuke Ikegami"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2021",
+     "publication_name": {
+      "en": "IEICE Transactions on Communications"
+     },
+     "volume": "E104B",
+     "number": "7",
+     "starting_page": "837",
+     "ending_page": "848",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transcom.2020EBP3149"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "36597379",
+     "paper_title": {
+      "en": "Cooperative Multi-Agent Deep Reinforcement Learning for Dynamic Virtual Network Allocation."
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Akito Suzuki"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Shigeaki Harada"
+       }
+      ]
+     },
+     "publication_date": "2021",
+     "publication_name": {
+      "en": "30th International Conference on Computer Communications and Networks(ICCCN)"
+     },
+     "starting_page": "1",
+     "ending_page": "11",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICCCN52240.2021.9522308"
+      ]
+     }
+    },
+    {
+     "rm:id": "32059988",
+     "paper_title": {
+      "en": "Extendable NFV-Integrated Control Method Using Reinforcement Learning."
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Akito Suzuki"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Masahiro Kobayashi"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Yousuke Takahashi"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       }
+      ]
+     },
+     "publication_date": "2020",
+     "publication_name": {
+      "en": "IEICE Trans. Commun."
+     },
+     "volume": "103-B",
+     "number": "8",
+     "starting_page": "826",
+     "ending_page": "841",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transcom.2019EBP3114"
+      ]
+     }
+    },
+    {
+     "rm:id": "26386117",
+     "paper_title": {
+      "ja": "Modeling Upper Layer Reaction to QoS Degradation as a Congestion Avoidance Mechanism",
+      "en": "Modeling Upper Layer Reaction to QoS Degradation as a Congestion Avoidance Mechanism"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "HARADA Shigeaki"
+       },
+       {
+        "name": "ISHIBASHI Keisuke"
+       },
+       {
+        "name": "KAWAHARA Ryoichi"
+       }
+      ],
+      "en": [
+       {
+        "name": "HARADA Shigeaki"
+       },
+       {
+        "name": "ISHIBASHI Keisuke"
+       },
+       {
+        "name": "KAWAHARA Ryoichi"
+       }
+      ]
+     },
+     "publication_date": "2020",
+     "publication_name": {
+      "ja": "IEICE Transactions on Communications",
+      "en": "IEICE Transactions on Communications"
+     },
+     "volume": "103",
+     "number": "4",
+     "starting_page": "302",
+     "ending_page": "311",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transcom.2019NRI0001"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "26385767",
+     "paper_title": {
+      "ja": "Inferring Latent Traffic Demand Offered to an Overloaded Link with Modeling QoS-Degradation Effect",
+      "en": "Inferring Latent Traffic Demand Offered to an Overloaded Link with Modeling QoS-Degradation Effect"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "ISHIBASHI Keisuke"
+       },
+       {
+        "name": "HARADA Shigeaki"
+       },
+       {
+        "name": "KAWAHARA Ryoichi"
+       }
+      ],
+      "en": [
+       {
+        "name": "ISHIBASHI Keisuke"
+       },
+       {
+        "name": "HARADA Shigeaki"
+       },
+       {
+        "name": "KAWAHARA Ryoichi"
+       }
+      ]
+     },
+     "publication_date": "2019",
+     "publication_name": {
+      "ja": "IEICE Transactions on Communications",
+      "en": "IEICE Transactions on Communications"
+     },
+     "volume": "102",
+     "number": "4",
+     "starting_page": "790",
+     "ending_page": "798",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transcom.2018EBP3093"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "26389791",
+     "paper_title": {
+      "en": "Human-Assisted Online Anomaly Detection with Normal Outlier Retraining"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Yasuhiro Ikeda"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Yusuke Nakano"
+       },
+       {
+        "name": "Keishiro Watanabe"
+       },
+       {
+        "name": "Kengo Tajiri"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2018-08",
+     "publication_name": {
+      "en": "Outlier Detection De-constructed (ODD) v5.0, ACM SIGKDD 2018 Workshop, Poster session"
+     },
+     "published_paper_type": "international_conference_proceedings"
+    },
+    {
+     "rm:id": "20553396",
+     "paper_title": {
+      "en": "Workflow extraction for service operation using multiple unstructured trouble tickets"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Akio Watanabe"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Tsuyoshi Toyono"
+       },
+       {
+        "name": "Keishiro Watanabe"
+       },
+       {
+        "name": "Tatsuaki Kimura"
+       },
+       {
+        "name": "Yoichi Matsuo"
+       },
+       {
+        "name": "Kohei Shiomoto"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2018-04-01",
+     "publication_name": {
+      "en": "IEICE Transactions on Information and Systems"
+     },
+     "volume": "E101D",
+     "number": "4",
+     "starting_page": "1030",
+     "ending_page": "1041",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transinf.2017DAP0014"
+      ],
+      "issn": [
+       "1745-1361",
+       "0916-8532"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553397",
+     "paper_title": {
+      "en": "System design for predictive road-traffic information delivery using edge-cloud computing"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Shinkuma"
+       },
+       {
+        "name": "Shingo Kato"
+       },
+       {
+        "name": "Masahiro Kanbayashi"
+       },
+       {
+        "name": "Yasuhiro Ikeda"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Takanori Hayashi"
+       }
+      ]
+     },
+     "publication_date": "2018-03-16",
+     "publication_name": {
+      "en": "CCNC 2018 - 2018 15th IEEE Annual Consumer Communications and Networking Conference"
+     },
+     "volume": "2018-",
+     "starting_page": "1",
+     "ending_page": "6",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/CCNC.2018.8319216"
+      ]
+     }
+    },
+    {
+     "rm:id": "26386490",
+     "paper_title": {
+      "ja": "ネットワークオペレーションへのAI活用",
+      "en": "Application of AI to Network Operation"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "川原 亮一"
+       },
+       {
+        "name": "渡辺 敬志郎"
+       },
+       {
+        "name": "原田 薫明"
+       },
+       {
+        "name": "川田 丈浩"
+       }
+      ],
+      "en": [
+       {
+        "name": "Kawahara Ryoichi"
+       },
+       {
+        "name": "Watanabe Keishiro"
+       },
+       {
+        "name": "Harada Shigeaki"
+       },
+       {
+        "name": "Kawata Takehiro"
+       }
+      ]
+     },
+     "publication_date": "2018",
+     "publication_name": {
+      "ja": "電子情報通信学会 通信ソサイエティマガジン",
+      "en": "IEICE Communications Society Magazine"
+     },
+     "volume": "12",
+     "number": "1",
+     "starting_page": "29",
+     "ending_page": "38",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/bplus.12.29"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553401",
+     "paper_title": {
+      "ja": "Network Tomography Using Routing Probability for Virtualized Network.",
+      "en": "Network Tomography Using Routing Probability for Virtualized Network."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Rie Tagyo"
+       },
+       {
+        "name": "Daisuke Ikegami"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ],
+      "en": [
+       {
+        "name": "Rie Tagyo"
+       },
+       {
+        "name": "Daisuke Ikegami"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2018",
+     "publication_name": {
+      "ja": "2018 IEEE International Conference on Communications, ICC 2018, Kansas City, MO, USA, May 20-24, 2018",
+      "en": "2018 IEEE International Conference on Communications, ICC 2018, Kansas City, MO, USA, May 20-24, 2018"
+     },
+     "starting_page": "1",
+     "ending_page": "7",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICC.2018.8422957"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553400",
+     "paper_title": {
+      "ja": "Extendable NFV-Integrated Control Method Using Reinforcement Learning.",
+      "en": "Extendable NFV-Integrated Control Method Using Reinforcement Learning."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Akito Suzuki"
+       },
+       {
+        "name": "Masahiro Kobayashi"
+       },
+       {
+        "name": "Yousuke Takahashi"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ],
+      "en": [
+       {
+        "name": "Akito Suzuki"
+       },
+       {
+        "name": "Masahiro Kobayashi"
+       },
+       {
+        "name": "Yousuke Takahashi"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2018",
+     "publication_name": {
+      "ja": "2018 IEEE International Conference on Communications, ICC 2018, Kansas City, MO, USA, May 20-24, 2018",
+      "en": "2018 IEEE International Conference on Communications, ICC 2018, Kansas City, MO, USA, May 20-24, 2018"
+     },
+     "starting_page": "1",
+     "ending_page": "7",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICC.2018.8422429"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553399",
+     "paper_title": {
+      "en": "Root-Cause Diagnosis for Rare Failures Using Bayesian Network with Dynamic Modification.",
+      "ja": "Root-Cause Diagnosis for Rare Failures Using Bayesian Network with Dynamic Modification."
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Yoichi Matsuo"
+       },
+       {
+        "name": "Yuusuke Nakano"
+       },
+       {
+        "name": "Akio Watanabe"
+       },
+       {
+        "name": "Keishiro Watanabe"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ],
+      "ja": [
+       {
+        "name": "Yoichi Matsuo"
+       },
+       {
+        "name": "Yuusuke Nakano"
+       },
+       {
+        "name": "Akio Watanabe"
+       },
+       {
+        "name": "Keishiro Watanabe"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2018",
+     "publication_name": {
+      "en": "2018 IEEE International Conference on Communications, ICC 2018, Kansas City, MO, USA, May 20-24, 2018",
+      "ja": "2018 IEEE International Conference on Communications, ICC 2018, Kansas City, MO, USA, May 20-24, 2018"
+     },
+     "starting_page": "1",
+     "ending_page": "6",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICC.2018.8422955"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553398",
+     "paper_title": {
+      "ja": "Root-Cause Diagnosis Using Logs Generated by User Actions.",
+      "en": "Root-Cause Diagnosis Using Logs Generated by User Actions."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Hiroki Ikeuchi"
+       },
+       {
+        "name": "Akio Watanabe"
+       },
+       {
+        "name": "Takehiro Kawata"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ],
+      "en": [
+       {
+        "name": "Hiroki Ikeuchi"
+       },
+       {
+        "name": "Akio Watanabe"
+       },
+       {
+        "name": "Takehiro Kawata"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2018",
+     "publication_name": {
+      "ja": "IEEE Global Communications Conference, GLOBECOM 2018, Abu Dhabi, United Arab Emirates, December 9-13, 2018",
+      "en": "IEEE Global Communications Conference, GLOBECOM 2018, Abu Dhabi, United Arab Emirates, December 9-13, 2018"
+     },
+     "starting_page": "1",
+     "ending_page": "7",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/GLOCOM.2018.8647957"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553404",
+     "paper_title": {
+      "en": "Disaster avoidance control against heavy rainfall"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Hiroshi Saito"
+       },
+       {
+        "name": "Hirotada Honda"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2017-10-02",
+     "publication_name": {
+      "en": "Proceedings - IEEE INFOCOM"
+     },
+     "starting_page": "1",
+     "ending_page": "9",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/INFOCOM.2017.8057154"
+      ],
+      "issn": [
+       "0743-166X"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553403",
+     "paper_title": {
+      "en": "Geometrical Characterization of Offloading through Wireless LANs"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Hiroshi Saito"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2017-01",
+     "publication_name": {
+      "en": "IEEE TRANSACTIONS ON MOBILE COMPUTING"
+     },
+     "volume": "16",
+     "number": "1",
+     "starting_page": "130",
+     "ending_page": "142",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1109/TMC.2016.2544754"
+      ],
+      "issn": [
+       "1536-1233"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553402",
+     "paper_title": {
+      "en": "Name Resolution Based on Set of Attribute-Value Pairs of Real-World Information"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Hiroshi Saito"
+       }
+      ]
+     },
+     "publication_date": "2017-01",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+     },
+     "volume": "E100B",
+     "number": "1",
+     "starting_page": "110",
+     "ending_page": "121",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transcom.2016EBP3005"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553405",
+     "paper_title": {
+      "ja": "Modeling Urban ITS Communication via Stochastic Geometry Approach.",
+      "en": "Modeling Urban ITS Communication via Stochastic Geometry Approach."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Tatsuaki Kimura"
+       },
+       {
+        "name": "Hiroshi Saito"
+       },
+       {
+        "name": "Hirotada Honda"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ],
+      "en": [
+       {
+        "name": "Tatsuaki Kimura"
+       },
+       {
+        "name": "Hiroshi Saito"
+       },
+       {
+        "name": "Hirotada Honda"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2016",
+     "publication_name": {
+      "ja": "IEEE 84th Vehicular Technology Conference, VTC Fall 2016, Montreal, QC, Canada, September 18-21, 2016",
+      "en": "IEEE 84th Vehicular Technology Conference, VTC Fall 2016, Montreal, QC, Canada, September 18-21, 2016"
+     },
+     "starting_page": "1",
+     "ending_page": "5",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/VTCFall.2016.7881091"
+      ]
+     }
+    },
+    {
+     "rm:id": "26387880",
+     "paper_title": {
+      "ja": "Generating a network reliability formula by using binary decision diagrams",
+      "en": "Generating a network reliability formula by using binary decision diagrams"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ikeda Yasuhiro"
+       },
+       {
+        "name": "Kawahara Ryoichi"
+       },
+       {
+        "name": "Saito Hiroshi"
+       }
+      ],
+      "ja": [
+       {
+        "name": "Ikeda Yasuhiro"
+       },
+       {
+        "name": "Kawahara Ryoichi"
+       },
+       {
+        "name": "Saito Hiroshi"
+       }
+      ]
+     },
+     "publication_date": "2015",
+     "publication_name": {
+      "ja": "IEICE Communications Express",
+      "en": "IEICE Communications Express"
+     },
+     "volume": "4",
+     "number": "9",
+     "starting_page": "299",
+     "ending_page": "303",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/comex.4.299"
+      ],
+      "issn": [
+       "2187-0136"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553406",
+     "paper_title": {
+      "en": "Homology-based Metaheuristics for Cell Planning with Macroscopic Diversity using Sector Antennas"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Yasuhiro Ikeda"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Hiroshi Saito"
+       }
+      ]
+     },
+     "publication_date": "2015",
+     "publication_name": {
+      "en": "2015 IEEE INTERNATIONAL CONFERENCE ON COMMUNICATIONS (ICC)"
+     },
+     "starting_page": "3442",
+     "ending_page": "3447",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICC.2015.7248857"
+      ],
+      "issn": [
+       "1550-3607"
+      ]
+     }
+    },
+    {
+     "rm:id": "26388289",
+     "paper_title": {
+      "en": "Proposal of disaster avoidance control"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Hiroshi Saito"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Takeshi Fukumoto"
+       }
+      ]
+     },
+     "publication_date": "2014-11-14",
+     "publication_name": {
+      "en": "2014 16th International Telecommunications Network Strategy and Planning Symposium, Networks 2014"
+     },
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/NETWKS.2014.6959245"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553407",
+     "paper_title": {
+      "en": "An Online Framework for Flow Round Trip Time Measurement"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Xinjie Guan"
+       },
+       {
+        "name": "Xili Wan"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Hiroshi Saito"
+       }
+      ]
+     },
+     "publication_date": "2014-10",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+     },
+     "volume": "E97B",
+     "number": "10",
+     "starting_page": "2145",
+     "ending_page": "2156",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transcom.E97.B.2145"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "24823213",
+     "paper_title": {
+      "ja": "Loss Recovery Method for Content Pre-distribution in VoD Service",
+      "en": "Loss Recovery Method for Content Pre-distribution in VoD Service"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "N. Kamiyama"
+       },
+       {
+        "name": "R. Kawahara"
+       },
+       {
+        "name": "T. Mori"
+       }
+      ],
+      "en": [
+       {
+        "name": "N. Kamiyama"
+       },
+       {
+        "name": "R. Kawahara"
+       },
+       {
+        "name": "T. Mori"
+       }
+      ]
+     },
+     "publication_date": "2014-06",
+     "publication_name": {
+      "ja": "Proceedings of the World Telecommunications Congress",
+      "en": "Proceedings of the World Telecommunications Congress"
+     },
+     "starting_page": "1",
+     "ending_page": "6",
+     "published_paper_type": "international_conference_proceedings"
+    },
+    {
+     "rm:id": "20553409",
+     "paper_title": {
+      "en": "Cell Planning with Macroscopic Diversity: Optimal Cell Deployment and SINR Evaluation under Frequency Scheduling"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Yasuhiro Ikeda"
+       },
+       {
+        "name": "Hiroshi Saito"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2014",
+     "publication_name": {
+      "en": "2014 IEEE 79TH VEHICULAR TECHNOLOGY CONFERENCE (VTC-SPRING)"
+     },
+     "starting_page": "1",
+     "ending_page": "5",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/VTCSpring.2014.7022854"
+      ],
+      "issn": [
+       "1550-2252"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553408",
+     "paper_title": {
+      "en": "Mobile QoS tomography using compressed sensing"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Yoshihide Tonomura"
+       }
+      ]
+     },
+     "publication_date": "2014",
+     "publication_name": {
+      "en": "2014 26TH INTERNATIONAL TELETRAFFIC CONGRESS (ITC)"
+     },
+     "starting_page": "1",
+     "ending_page": "9",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ITC.2014.6932955"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553412",
+     "paper_title": {
+      "en": "Optimum profit allocation in coalitional VoD service"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2013-10",
+     "publication_name": {
+      "en": "COMPUTER NETWORKS"
+     },
+     "volume": "57",
+     "number": "15",
+     "starting_page": "3081",
+     "ending_page": "3097",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1016/j.comnet.2013.07.013"
+      ],
+      "issn": [
+       "1389-1286"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553417",
+     "paper_title": {
+      "en": "Optimally Identifying Worm-Infected Hosts"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Shigeaki Harada"
+       }
+      ]
+     },
+     "publication_date": "2013-08",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+     },
+     "volume": "E96B",
+     "number": "8",
+     "starting_page": "2084",
+     "ending_page": "2094",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transcom.E96.B.2084"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553416",
+     "paper_title": {
+      "en": "Multicast Pre-Distribution VoD System"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2013-06",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+     },
+     "volume": "E96B",
+     "number": "6",
+     "starting_page": "1459",
+     "ending_page": "1471",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transcom.E96.B.1459"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553411",
+     "paper_title": {
+      "en": "Mean-variance relationship of the number of flows in traffic aggregation and its application to traffic management"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tetsuya Takine"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       }
+      ]
+     },
+     "publication_date": "2013-04",
+     "publication_name": {
+      "en": "COMPUTER NETWORKS"
+     },
+     "volume": "57",
+     "number": "6",
+     "starting_page": "1560",
+     "ending_page": "1576",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1016/j.comnet.2013.02.010"
+      ],
+      "issn": [
+       "1389-1286"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553418",
+     "paper_title": {
+      "en": "Analyzing influence of network topology on designing ISP-operated CDN"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2013-02",
+     "publication_name": {
+      "en": "TELECOMMUNICATION SYSTEMS"
+     },
+     "volume": "52",
+     "number": "2",
+     "starting_page": "969",
+     "ending_page": "977",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1007/s11235-011-9605-2"
+      ],
+      "issn": [
+       "1018-4864"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553410",
+     "paper_title": {
+      "en": "Autonomic load balancing of flow monitors"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2013-02",
+     "publication_name": {
+      "en": "COMPUTER NETWORKS"
+     },
+     "volume": "57",
+     "number": "3",
+     "starting_page": "741",
+     "ending_page": "761",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1016/j.comnet.2012.10.018"
+      ],
+      "issn": [
+       "1389-1286"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553422",
+     "paper_title": {
+      "en": "An online framework for flow round trip time measurement"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Xinjie Guan"
+       },
+       {
+        "name": "Xili Wan"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Hiroshi Saito"
+       }
+      ]
+     },
+     "publication_date": "2013",
+     "publication_name": {
+      "en": "Proceedings of the 2013 25th International Teletraffic Congress, ITC 2013"
+     },
+     "starting_page": "1",
+     "ending_page": "4",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ITC.2013.6662968"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553421",
+     "paper_title": {
+      "ja": "A periodic combined-content distribution mechanism in peer-assisted content delivery networks.",
+      "en": "A periodic combined-content distribution mechanism in peer-assisted content delivery networks."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Naoya Maki"
+       },
+       {
+        "name": "Ryoichi Shinkuma"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ],
+      "en": [
+       {
+        "name": "Naoya Maki"
+       },
+       {
+        "name": "Ryoichi Shinkuma"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2013",
+     "publication_name": {
+      "ja": "Proceedings of the 2013 ITU Kaleidoscope: Building Sustainable Communities, Kyoto, Japan, April 22-24, 2013",
+      "en": "Proceedings of the 2013 ITU Kaleidoscope: Building Sustainable Communities, Kyoto, Japan, April 22-24, 2013"
+     },
+     "starting_page": "1",
+     "ending_page": "8",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {}
+    },
+    {
+     "rm:id": "20553420",
+     "paper_title": {
+      "en": "Analysis of Content Charge by ISPs"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2013",
+     "publication_name": {
+      "en": "2013 IFIP/IEEE INTERNATIONAL SYMPOSIUM ON INTEGRATED NETWORK MANAGEMENT (IM 2013)"
+     },
+     "starting_page": "427",
+     "ending_page": "434",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {}
+    },
+    {
+     "rm:id": "20553419",
+     "paper_title": {
+      "ja": "Expected traffic reduction by content-oriented incentive in peer-assisted content delivery networks.",
+      "en": "Expected traffic reduction by content-oriented incentive in peer-assisted content delivery networks."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Naoya Maki"
+       },
+       {
+        "name": "Takayuki Nishio"
+       },
+       {
+        "name": "Ryoichi Shinkuma"
+       },
+       {
+        "name": "Tatsuro Takahashi"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ],
+      "en": [
+       {
+        "name": "Naoya Maki"
+       },
+       {
+        "name": "Takayuki Nishio"
+       },
+       {
+        "name": "Ryoichi Shinkuma"
+       },
+       {
+        "name": "Tatsuro Takahashi"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2013",
+     "publication_name": {
+      "ja": "The International Conference on Information Networking 2013, ICOIN 2013, Bangkok, Thailand, January 28-30, 2013",
+      "en": "The International Conference on Information Networking 2013, ICOIN 2013, Bangkok, Thailand, January 28-30, 2013"
+     },
+     "starting_page": "450",
+     "ending_page": "455",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICOIN.2013.6496421"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553415",
+     "paper_title": {
+      "en": "Optimally designing ISP-operated CDN"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2013",
+     "publication_name": {
+      "en": "IEICE Transactions on Communications"
+     },
+     "volume": "E96-B",
+     "number": "3",
+     "starting_page": "790",
+     "ending_page": "801",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transcom.E96.B.790"
+      ],
+      "issn": [
+       "1745-1345",
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553414",
+     "paper_title": {
+      "en": "Analyzing characteristics of TCP quality metrics with respect to type of connection through measured traffic data"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Yasuhiro Ikeda"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuaki Kimura"
+       },
+       {
+        "name": "Tatsuya Mori"
+       }
+      ]
+     },
+     "publication_date": "2013",
+     "publication_name": {
+      "en": "IEICE Transactions on Communications"
+     },
+     "volume": "E96-B",
+     "number": "2",
+     "starting_page": "533",
+     "ending_page": "542",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transcom.E96.B.533"
+      ],
+      "issn": [
+       "1745-1345",
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553413",
+     "paper_title": {
+      "en": "Effect of Limiting Pre-Distribution and Clustering Users on Multicast Pre-Distribution VoD"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2013-01",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+     },
+     "volume": "E96B",
+     "number": "1",
+     "starting_page": "143",
+     "ending_page": "154",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transcom.E96.B.143"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553425",
+     "paper_title": {
+      "en": "Traffic Engineering of Peer-Assisted Content Delivery Network with Content-Oriented Incentive Mechanism"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Naoya Maki"
+       },
+       {
+        "name": "Takayuki Nishio"
+       },
+       {
+        "name": "Ryoichi Shinkuma"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuro Takahashi"
+       }
+      ]
+     },
+     "publication_date": "2012-12",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON INFORMATION AND SYSTEMS"
+     },
+     "volume": "E95D",
+     "number": "12",
+     "starting_page": "2860",
+     "ending_page": "2869",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transinf.E95.D.2860"
+      ],
+      "issn": [
+       "1745-1361"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553424",
+     "paper_title": {
+      "en": "Analyzing and Reducing the Impact of Traffic on Large-Scale NAT"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Takeshi Yada"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       }
+      ]
+     },
+     "publication_date": "2012-09",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+     },
+     "volume": "E95B",
+     "number": "9",
+     "starting_page": "2815",
+     "ending_page": "2827",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transcom.E95.B.2815"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553423",
+     "paper_title": {
+      "en": "Effects of Sampling and Spatio/Temporal Granularity in Traffic Monitoring on Anomaly Detectability"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Tsuyoshi Kondoh"
+       },
+       {
+        "name": "Shoichiro Asano"
+       }
+      ]
+     },
+     "publication_date": "2012-02",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+     },
+     "volume": "E95B",
+     "number": "2",
+     "starting_page": "466",
+     "ending_page": "476",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1587/transcom.E95.B.466"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553426",
+     "paper_title": {
+      "ja": "Autonomic load balancing for flow monitoring.",
+      "en": "Autonomic load balancing for flow monitoring."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ],
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2012",
+     "publication_name": {
+      "ja": "Proceedings of IEEE International Conference on Communications, ICC 2012, Ottawa, ON, Canada, June 10-15, 2012",
+      "en": "Proceedings of IEEE International Conference on Communications, ICC 2012, Ottawa, ON, Canada, June 10-15, 2012"
+     },
+     "starting_page": "2684",
+     "ending_page": "2688",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICC.2012.6363789"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553429",
+     "paper_title": {
+      "en": "Detection accuracy of network anomalies using sampled flow statistics"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       },
+       {
+        "name": "Shoichiro Asano"
+       }
+      ]
+     },
+     "publication_date": "2011-11",
+     "publication_name": {
+      "en": "INTERNATIONAL JOURNAL OF NETWORK MANAGEMENT"
+     },
+     "volume": "21",
+     "number": "6",
+     "starting_page": "513",
+     "ending_page": "535",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1002/nem.777"
+      ],
+      "issn": [
+       "1055-7148"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553428",
+     "paper_title": {
+      "en": "Parallel video streaming optimizing network throughput"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2011-07",
+     "publication_name": {
+      "en": "COMPUTER COMMUNICATIONS"
+     },
+     "volume": "34",
+     "number": "10",
+     "starting_page": "1182",
+     "ending_page": "1194",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1016/j.comcom.2010.12.003"
+      ],
+      "issn": [
+       "0140-3664"
+      ]
+     }
+    },
+    {
+     "rm:id": "27829372",
+     "paper_title": {
+      "ja": "Multicast Pre-Distribution in VoD Services",
+      "en": "Multicast Pre-Distribution in VoD Services"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ],
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2011-05",
+     "publication_name": {
+      "ja": "IEEE CQR 2011",
+      "en": "IEEE CQR 2011"
+     },
+     "published_paper_type": "international_conference_proceedings"
+    },
+    {
+     "rm:id": "20553427",
+     "paper_title": {
+      "en": "Optimally designing caches to reduce P2P traffic"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2011-05",
+     "publication_name": {
+      "en": "COMPUTER COMMUNICATIONS"
+     },
+     "volume": "34",
+     "number": "7",
+     "starting_page": "883",
+     "ending_page": "897",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1016/j.comcom.2010.10.009"
+      ],
+      "issn": [
+       "0140-3664"
+      ]
+     }
+    },
+    {
+     "rm:id": "29840955",
+     "paper_title": {
+      "en": "Traffic engineering using overlay network"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       },
+       {
+        "name": "Akihiro Nakao"
+       }
+      ]
+     },
+     "publication_date": "2011",
+     "publication_name": {
+      "en": "IEEE International Conference on Communications"
+     },
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/icc.2011.5963441"
+      ],
+      "issn": [
+       "0536-1486"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553432",
+     "paper_title": {
+      "en": "Limiting pre-distribution and clustering users on multicast pre-distribution VoD"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2011",
+     "publication_name": {
+      "en": "Proceedings of the 12th IFIP/IEEE International Symposium on Integrated Network Management, IM 2011"
+     },
+     "starting_page": "706",
+     "ending_page": "709",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/INM.2011.5990661"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553431",
+     "paper_title": {
+      "en": "Traffic engineering using overlay network"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       },
+       {
+        "name": "Akihiro Nakao"
+       }
+      ]
+     },
+     "publication_date": "2011",
+     "publication_name": {
+      "en": "2011 IEEE INTERNATIONAL CONFERENCE ON COMMUNICATIONS (ICC)"
+     },
+     "starting_page": "1",
+     "ending_page": "6",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/icc.2011.5963441"
+      ],
+      "issn": [
+       "1550-3607"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553430",
+     "paper_title": {
+      "en": "Performance evaluation of peer-assisted content distribution"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2011",
+     "publication_name": {
+      "en": "2011 IEEE Consumer Communications and Networking Conference, CCNC'2011"
+     },
+     "starting_page": "725",
+     "ending_page": "729",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/CCNC.2011.5766586"
+      ]
+     }
+    },
+    {
+     "rm:id": "47808416",
+     "paper_title": {
+      "en": "Traffic engineering using overlay network"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2010-09",
+     "publication_name": {
+      "en": "NTT Technical Review"
+     },
+     "volume": "8",
+     "number": "9",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "issn": [
+       "1348-3447"
+      ]
+     }
+    },
+    {
+     "rm:id": "27376440",
+     "paper_title": {
+      "ja": "Detecting Anomalous Traffic using Communication Graphs",
+      "en": "Detecting Anomalous Traffic using Communication Graphs"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "K.Ishibashi"
+       },
+       {
+        "name": "T. Kondoh"
+       },
+       {
+        "name": "S. Harada"
+       },
+       {
+        "name": "T. Mori"
+       },
+       {
+        "name": "R. Kawahara"
+       },
+       {
+        "name": "S. Asano"
+       }
+      ],
+      "en": [
+       {
+        "name": "K.Ishibashi"
+       },
+       {
+        "name": "T. Kondoh"
+       },
+       {
+        "name": "S. Harada"
+       },
+       {
+        "name": "T. Mori"
+       },
+       {
+        "name": "R. Kawahara"
+       },
+       {
+        "name": "S. Asano"
+       }
+      ]
+     },
+     "publication_date": "2010-09",
+     "publication_name": {
+      "ja": "World Telecommunications Congress (WTC) 2010",
+      "en": "World Telecommunications Congress (WTC) 2010"
+     }
+    },
+    {
+     "rm:id": "29827979",
+     "paper_title": {
+      "en": "Analyzing influence of network topology on designing ISP-operated CDN"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2010",
+     "publication_name": {
+      "en": "Proceedings of 2010 14th International Telecommunications Network Strategy and Planning Symposium, Networks 2010"
+     },
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/NETWKS.2010.5624931"
+      ]
+     }
+    },
+    {
+     "rm:id": "29820541",
+     "paper_title": {
+      "en": "Optimally designing capacity and location of caches to reduce P2P traffic"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2010",
+     "publication_name": {
+      "en": "IEEE International Conference on Communications"
+     },
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICC.2010.5501837"
+      ],
+      "issn": [
+       "0536-1486"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553436",
+     "paper_title": {
+      "en": "Characterizing Traffic Flows Originating from Large-Scale Video Sharing Services"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       },
+       {
+        "name": "Shinsuke Shimogawa"
+       }
+      ]
+     },
+     "publication_date": "2010",
+     "publication_name": {
+      "en": "TRAFFIC MONITORING AND ANALYSIS, PROCEEDINGS"
+     },
+     "volume": "6003",
+     "starting_page": "17",
+     "ending_page": "31",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1007/978-3-642-12365-8_2"
+      ],
+      "issn": [
+       "0302-9743"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553435",
+     "paper_title": {
+      "en": "Impact of Topology on Parallel Video Streaming"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2010",
+     "publication_name": {
+      "en": "PROCEEDINGS OF THE 2010 IEEE-IFIP NETWORK OPERATIONS AND MANAGEMENT SYMPOSIUM"
+     },
+     "starting_page": "607",
+     "ending_page": "614",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/NOMS.2010.5488436"
+      ],
+      "issn": [
+       "1542-1201"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553434",
+     "paper_title": {
+      "en": "Profit allocation in coalitional VoD service"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2010",
+     "publication_name": {
+      "en": "Proceedings - 18th Annual IEEE/ACM International Symposium on Modeling, Analysis and Simulation of Computer and Telecommunication Systems, MASCOTS 2010"
+     },
+     "starting_page": "111",
+     "ending_page": "120",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/MASCOTS.2010.20"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553433",
+     "paper_title": {
+      "ja": "Optimally Designing Capacity and Location of Caches to Reduce P2P Traffic.",
+      "en": "Optimally Designing Capacity and Location of Caches to Reduce P2P Traffic."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ],
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2010",
+     "publication_name": {
+      "ja": "Proceedings of IEEE International Conference on Communications, ICC 2010, Cape Town, South Africa, 23-27 May 2010",
+      "en": "Proceedings of IEEE International Conference on Communications, ICC 2010, Cape Town, South Africa, 23-27 May 2010"
+     },
+     "starting_page": "1",
+     "ending_page": "6",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICC.2010.5501837"
+      ]
+     }
+    },
+    {
+     "rm:id": "26386595",
+     "paper_title": {
+      "ja": "ネットワークトポロジーがコンテンツ並列配信の効果に与える影響の分析",
+      "en": "Analyzing Influence of Network Topology on Effect of Parallel Download"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "上山 憲昭"
+       },
+       {
+        "name": "川原 亮一"
+       },
+       {
+        "name": "長谷川 治久"
+       }
+      ],
+      "en": [
+       {
+        "name": "KAMIYAMA Noriaki"
+       },
+       {
+        "name": "KAWAHARA Ryoichi"
+       },
+       {
+        "name": "HASEGAWA Haruhisa"
+       }
+      ]
+     },
+     "publication_date": "2009-11-01",
+     "publication_name": {
+      "ja": "電子情報通信学会論文誌. B, 通信 = The transactions of the Institute of Electronics, Information and Communication Engineers. B",
+      "en": "The IEICE transactions on communications B"
+     },
+     "volume": "92",
+     "number": "11",
+     "starting_page": "1764",
+     "ending_page": "1777",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "issn": [
+       "1344-4697"
+      ]
+     }
+    },
+    {
+     "rm:id": "26386582",
+     "paper_title": {
+      "ja": "ファイル転送残量を考慮したP2Pネットワークにおけるファイル共有方式の性能評価",
+      "en": "Efficient File Sharing Method in P2P Network Based on Residual File Transfer Load"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "川原崎 雅敏"
+       },
+       {
+        "name": "川原 亮一"
+       },
+       {
+        "name": "大沼 智洋"
+       },
+       {
+        "name": "鈴木 慧"
+       }
+      ],
+      "en": [
+       {
+        "name": "KAWARASAKI Masatoshi"
+       },
+       {
+        "name": "KAWAHARA Ryoichi"
+       },
+       {
+        "name": "OHNUMA Tomohiro"
+       },
+       {
+        "name": "SUZUKI Kei"
+       }
+      ]
+     },
+     "publication_date": "2009-08-01",
+     "publication_name": {
+      "ja": "電子情報通信学会論文誌. B, 通信 = The transactions of the Institute of Electronics, Information and Communication Engineers. B",
+      "en": "The IEICE transactions on communications B"
+     },
+     "volume": "92",
+     "number": "8",
+     "starting_page": "1212",
+     "ending_page": "1224",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "issn": [
+       "1344-4697"
+      ]
+     }
+    },
+    {
+     "rm:id": "29807621",
+     "paper_title": {
+      "en": "Adaptive bandwidth control to handle long-duration large flows"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2009",
+     "publication_name": {
+      "en": "IEEE International Conference on Communications"
+     },
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICC.2009.5198696"
+      ],
+      "issn": [
+       "0536-1486"
+      ]
+     }
+    },
+    {
+     "rm:id": "29014165",
+     "paper_title": {
+      "en": "ISP-Operated CDN"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2009",
+     "publication_name": {
+      "en": "IEEE INFOCOM 2009 - IEEE CONFERENCE ON COMPUTER COMMUNICATIONS WORKSHOPS"
+     },
+     "starting_page": "49",
+     "ending_page": "54",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {}
+    },
+    {
+     "rm:id": "20553440",
+     "paper_title": {
+      "ja": "On the Quality of Triangle Inequality Violation Aware Routing Overlay Architecture.",
+      "en": "On the Quality of Triangle Inequality Violation Aware Routing Overlay Architecture."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Eng Keong Lua"
+       },
+       {
+        "name": "Masato Uchida"
+       },
+       {
+        "name": "Satoshi Kamei"
+       },
+       {
+        "name": "Hideaki Yoshino"
+       }
+      ],
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Eng Keong Lua"
+       },
+       {
+        "name": "Masato Uchida"
+       },
+       {
+        "name": "Satoshi Kamei"
+       },
+       {
+        "name": "Hideaki Yoshino"
+       }
+      ]
+     },
+     "publication_date": "2009",
+     "publication_name": {
+      "ja": "INFOCOM 2009. 28th IEEE International Conference on Computer Communications, Joint Conference of the IEEE Computer and Communications Societies, 19-25 April 2009, Rio de Janeiro, Brazil",
+      "en": "INFOCOM 2009. 28th IEEE International Conference on Computer Communications, Joint Conference of the IEEE Computer and Communications Societies, 19-25 April 2009, Rio de Janeiro, Brazil"
+     },
+     "starting_page": "2761",
+     "ending_page": "2765",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/INFCOM.2009.5062227"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553439",
+     "paper_title": {
+      "ja": "Adaptive Bandwidth Control to Handle Long-Duration Large Flows.",
+      "en": "Adaptive Bandwidth Control to Handle Long-Duration Large Flows."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ],
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2009",
+     "publication_name": {
+      "ja": "Proceedings of IEEE International Conference on Communications, ICC 2009, Dresden, Germany, 14-18 June 2009",
+      "en": "Proceedings of IEEE International Conference on Communications, ICC 2009, Dresden, Germany, 14-18 June 2009"
+     },
+     "starting_page": "1",
+     "ending_page": "6",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICC.2009.5198696"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553438",
+     "paper_title": {
+      "ja": "Improving Deployability of Peer-Assisted CDN Platform with Incentive.",
+      "en": "Improving Deployability of Peer-Assisted CDN Platform with Incentive."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ],
+      "en": [
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2009",
+     "publication_name": {
+      "ja": "Proceedings of the Global Communications Conference, 2009. GLOBECOM 2009, Honolulu, Hawaii, USA, 30 November - 4 December 2009",
+      "en": "Proceedings of the Global Communications Conference, 2009. GLOBECOM 2009, Honolulu, Hawaii, USA, 30 November - 4 December 2009"
+     },
+     "starting_page": "1",
+     "ending_page": "7",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/GLOCOM.2009.5425962"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553437",
+     "paper_title": {
+      "ja": "A Method of Constructing QoS Overlay Network and Its Evaluation.",
+      "en": "A Method of Constructing QoS Overlay Network and Its Evaluation."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Satoshi Kamei"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       },
+       {
+        "name": "Hideaki Yoshino"
+       },
+       {
+        "name": "Eng Keong Lua"
+       },
+       {
+        "name": "Akihiro Nakao"
+       }
+      ],
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Satoshi Kamei"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       },
+       {
+        "name": "Hideaki Yoshino"
+       },
+       {
+        "name": "Eng Keong Lua"
+       },
+       {
+        "name": "Akihiro Nakao"
+       }
+      ]
+     },
+     "publication_date": "2009",
+     "publication_name": {
+      "ja": "Proceedings of the Global Communications Conference, 2009. GLOBECOM 2009, Honolulu, Hawaii, USA, 30 November - 4 December 2009",
+      "en": "Proceedings of the Global Communications Conference, 2009. GLOBECOM 2009, Honolulu, Hawaii, USA, 30 November - 4 December 2009"
+     },
+     "starting_page": "1",
+     "ending_page": "6",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/GLOCOM.2009.5425935"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553443",
+     "paper_title": {
+      "en": "Inconsistency of logical and physical topologies for overlay networks and its effect on file transfer delay"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Yasuo Tamura"
+       },
+       {
+        "name": "Shoji Kasahara"
+       },
+       {
+        "name": "Yutaka Takahashi"
+       },
+       {
+        "name": "Satoshi Kamei"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2008-10",
+     "publication_name": {
+      "en": "PERFORMANCE EVALUATION"
+     },
+     "volume": "65",
+     "number": "10",
+     "starting_page": "725",
+     "ending_page": "741",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1016/j.peva.2008.04.005"
+      ],
+      "issn": [
+       "0166-5316"
+      ]
+     }
+    },
+    {
+     "rm:id": "25974075",
+     "paper_title": {
+      "ja": "Network topology design considering detour traffic caused by link failure",
+      "en": "Network topology design considering detour traffic caused by link failure"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "N. Kamiyama"
+       },
+       {
+        "name": "R. Kawahara"
+       },
+       {
+        "name": "H. Yoshino"
+       }
+      ],
+      "en": [
+       {
+        "name": "N. Kamiyama"
+       },
+       {
+        "name": "R. Kawahara"
+       },
+       {
+        "name": "H. Yoshino"
+       }
+      ]
+     },
+     "publication_date": "2008-09",
+     "publication_name": {
+      "ja": "Networks 2008 - The 13th International Telecommunications Network Strategy and Planning Symposium",
+      "en": "Networks 2008 - The 13th International Telecommunications Network Strategy and Planning Symposium"
+     },
+     "volume": "CDROM",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/NETWKS.2008.6231354"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553442",
+     "paper_title": {
+      "en": "Finding cardinality heavy-hitters in mussive traffic data and its application to anomaly detection"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawarara"
+       },
+       {
+        "name": "Yutaka Hrrokawa"
+       },
+       {
+        "name": "Atsushi Kobayashi"
+       },
+       {
+        "name": "Kimihiro Yamamoto"
+       },
+       {
+        "name": "Hitoaki Sakamoto"
+       },
+       {
+        "name": "Shoichiro Asano"
+       }
+      ]
+     },
+     "publication_date": "2008-05",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+     },
+     "volume": "E91B",
+     "number": "5",
+     "starting_page": "1331",
+     "ending_page": "1339",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1093/ietcom/e91-b.5.1331"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553441",
+     "paper_title": {
+      "en": "Packet sampling TCP flow rate estimation and performance degradation detection method"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Hideaki Yoshino"
+       }
+      ]
+     },
+     "publication_date": "2008-05",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+     },
+     "volume": "E91B",
+     "number": "5",
+     "starting_page": "1309",
+     "ending_page": "1319",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1093/ietcom/e91-b.5.1309"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "29110884",
+     "paper_title": {
+      "en": "Performance evaluation of parallel download in streaming services"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       }
+      ]
+     },
+     "publication_date": "2008",
+     "publication_name": {
+      "en": "CSNDSP 08: PROCEEDINGS OF THE SIXTH INTERNATIONAL SYMPOSIUM ON COMMUNICATION SYSTEMS, NETWORKS AND DIGITAL SIGNAL PROCESSING"
+     },
+     "starting_page": "208",
+     "ending_page": "212",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {}
+    },
+    {
+     "rm:id": "20553448",
+     "paper_title": {
+      "en": "Extracting worm-infected hosts using white list"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Hideaki Yoshino"
+       }
+      ]
+     },
+     "publication_date": "2008",
+     "publication_name": {
+      "en": "Proceedings - 2008 International Symposium on Applications and the Internet, SAINT 2008"
+     },
+     "starting_page": "68",
+     "ending_page": "75",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/SAINT.2008.77"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553447",
+     "paper_title": {
+      "en": "Optimum Identification of Worm-Infected Hosts"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Shigeaki Harada"
+       }
+      ]
+     },
+     "publication_date": "2008",
+     "publication_name": {
+      "en": "IP OPERATIONS AND MANAGEMENT, PROCEEDINGS"
+     },
+     "volume": "5275",
+     "starting_page": "103",
+     "ending_page": "116",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1007/978-3-540-87357-0_9"
+      ],
+      "issn": [
+       "0302-9743"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553446",
+     "paper_title": {
+      "en": "A Method of Detecting Network Anomalies in Cyclic Traffic"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       },
+       {
+        "name": "Hideaki Yoshino"
+       }
+      ]
+     },
+     "publication_date": "2008",
+     "publication_name": {
+      "en": "GLOBECOM 2008 - 2008 IEEE GLOBAL TELECOMMUNICATIONS CONFERENCE"
+     },
+     "starting_page": "2057",
+     "ending_page": "2061",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/GLOCOM.2008.ECP.396"
+      ],
+      "issn": [
+       "1930-529X"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553445",
+     "paper_title": {
+      "en": "Identifying anomalous traffic sources using flow statistics"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Haruhisa Hasegawa"
+       },
+       {
+        "name": "Shoichiro Asano"
+       }
+      ]
+     },
+     "publication_date": "2008",
+     "publication_name": {
+      "en": "GLOBECOM 2008 - 2008 IEEE GLOBAL TELECOMMUNICATIONS CONFERENCE"
+     },
+     "starting_page": "1509",
+     "ending_page": "1513",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/GLOCOM.2008.ECP.294"
+      ],
+      "issn": [
+       "1930-529X"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553444",
+     "paper_title": {
+      "ja": "Detection of Leaps/sLumps in Traffic Volume of Internet Backbone.",
+      "en": "Detection of Leaps/sLumps in Traffic Volume of Internet Backbone."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Yutaka Hirokawa"
+       },
+       {
+        "name": "Kimihiro Yamamoto"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ],
+      "en": [
+       {
+        "name": "Yutaka Hirokawa"
+       },
+       {
+        "name": "Kimihiro Yamamoto"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2008",
+     "publication_name": {
+      "ja": "Challenges for Next Generation Network Operations and Service Management, 11th Asia-Pacific Network Operations and Management Symposium, APNOMS 2008, Beijing, China, October 22-24, 2008. Proceedings",
+      "en": "Challenges for Next Generation Network Operations and Service Management, 11th Asia-Pacific Network Operations and Management Symposium, APNOMS 2008, Beijing, China, October 22-24, 2008. Proceedings"
+     },
+     "starting_page": "409",
+     "ending_page": "418",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1007/978-3-540-88623-5_42"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553449",
+     "paper_title": {
+      "en": "Identifying heavy-hitter flows from sampled flow statistics"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Tetsuya Takine"
+       },
+       {
+        "name": "Jianping Pan"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Masato Uchida"
+       },
+       {
+        "name": "Shigeki Goto"
+       }
+      ]
+     },
+     "publication_date": "2007-11",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+     },
+     "volume": "E90B",
+     "number": "11",
+     "starting_page": "3061",
+     "ending_page": "3072",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1093/ietcom/e90-b.11.3061"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "28801579",
+     "paper_title": {
+      "en": "Effect of sampling rate and monitoring granularity on anomaly detectability"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Mori Tatsuya"
+       },
+       {
+        "name": "Tsuyoshi Kondoh"
+       },
+       {
+        "name": "Shoichiro Asano"
+       }
+      ]
+     },
+     "publication_date": "2007",
+     "publication_name": {
+      "en": "2007 IEEE GLOBAL INTERNET SYMPOSIUM"
+     },
+     "starting_page": "25",
+     "ending_page": "+",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {}
+    },
+    {
+     "rm:id": "20553455",
+     "paper_title": {
+      "en": "Inferring original traffic pattern from sampled flow statistics"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Shigeaki Harada"
+       }
+      ]
+     },
+     "publication_date": "2007",
+     "publication_name": {
+      "en": "SAINT - 2007 International Symposium on Applications and the Internet - Workshops, SAINT-W"
+     },
+     "starting_page": "85",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/SAINT-W.2007.51"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553454",
+     "paper_title": {
+      "en": "2-D bitmap for summarizing inter-host communication patterns"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Katsuyasu Toyama"
+       },
+       {
+        "name": "Shunichi Osawa"
+       },
+       {
+        "name": "Shoichiro Asano"
+       }
+      ]
+     },
+     "publication_date": "2007",
+     "publication_name": {
+      "en": "SAINT - 2007 International Symposium on Applications and the Internet - Workshops, SAINT-W"
+     },
+     "starting_page": "83",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/SAINT-W.2007.1"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553453",
+     "paper_title": {
+      "en": "A study on detecting network anomalies using sampled flow statistics"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Shoichiro Asano"
+       }
+      ]
+     },
+     "publication_date": "2007",
+     "publication_name": {
+      "en": "SAINT - 2007 International Symposium on Applications and the Internet - Workshops, SAINT-W"
+     },
+     "starting_page": "81",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/SAINT-W.2007.17"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553452",
+     "paper_title": {
+      "ja": "Simple and Adaptive Identification of Superspreaders by Flow Sampling.",
+      "en": "Simple and Adaptive Identification of Superspreaders by Flow Sampling."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ],
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2007",
+     "publication_name": {
+      "ja": "INFOCOM 2007. 26th IEEE International Conference on Computer Communications, Joint Conference of the IEEE Computer and Communications Societies, 6-12 May 2007, Anchorage, Alaska, USA",
+      "en": "INFOCOM 2007. 26th IEEE International Conference on Computer Communications, Joint Conference of the IEEE Computer and Communications Societies, 6-12 May 2007, Anchorage, Alaska, USA"
+     },
+     "starting_page": "2481",
+     "ending_page": "2485",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/INFCOM.2007.305"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553451",
+     "paper_title": {
+      "en": "Efficient timeout checking mechanism for traffic control"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Eng Keong Lua"
+       }
+      ]
+     },
+     "publication_date": "2007",
+     "publication_name": {
+      "en": "PROCEEDINGS - 16TH INTERNATIONAL CONFERENCE ON COMPUTER COMMUNICATIONS AND NETWORKS, VOLS 1-3"
+     },
+     "starting_page": "327",
+     "ending_page": "333",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICCCN.2007.4317840"
+      ],
+      "issn": [
+       "1095-2055"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553450",
+     "paper_title": {
+      "ja": "Detection Accuracy of Network Anomalies Using Sampled Flow Statistics.",
+      "en": "Detection Accuracy of Network Anomalies Using Sampled Flow Statistics."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Shoichiro Asano"
+       }
+      ],
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Shigeaki Harada"
+       },
+       {
+        "name": "Shoichiro Asano"
+       }
+      ]
+     },
+     "publication_date": "2007",
+     "publication_name": {
+      "ja": "Proceedings of the Global Communications Conference, 2007. GLOBECOM '07, Washington, DC, USA, 26-30 November 2007",
+      "en": "Proceedings of the Global Communications Conference, 2007. GLOBECOM '07, Washington, DC, USA, 26-30 November 2007"
+     },
+     "starting_page": "1959",
+     "ending_page": "1964",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/GLOCOM.2007.376"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553457",
+     "paper_title": {
+      "en": "QoS-aware overlay routing with limited number of alternative route candidates and its evaluation"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Masato Uchida"
+       },
+       {
+        "name": "Satoshi Kamei"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Takeo Abe"
+       }
+      ]
+     },
+     "publication_date": "2006-09",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+     },
+     "volume": "E89B",
+     "number": "9",
+     "starting_page": "2361",
+     "ending_page": "2374",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1093/ietcom/e89-b.9.2361"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "29783794",
+     "paper_title": {
+      "en": "QoS control to handle long-duration large flows and its performance evaluation"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Takeo Abe"
+       }
+      ]
+     },
+     "publication_date": "2006",
+     "publication_name": {
+      "en": "IEEE International Conference on Communications"
+     },
+     "volume": "2",
+     "starting_page": "579",
+     "ending_page": "584",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICC.2006.254857"
+      ],
+      "issn": [
+       "0536-1486"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553461",
+     "paper_title": {
+      "en": "Performance evaluation of QoS-aware routing in overlay network"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Masato Uchida"
+       },
+       {
+        "name": "Satoshi Kamei"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2006",
+     "publication_name": {
+      "en": "INFORMATION NETWORKING"
+     },
+     "volume": "3961",
+     "starting_page": "925",
+     "ending_page": "934",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1007/11919568_92"
+      ],
+      "issn": [
+       "0302-9743"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553460",
+     "paper_title": {
+      "en": "Estimating top N hosts in cardinality using small memory resources"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Yutaka Hirokawa"
+       },
+       {
+        "name": "Atsushi Kobayashi"
+       },
+       {
+        "name": "Kimihiro Yamamoto"
+       },
+       {
+        "name": "Hitoaki Sakamoto"
+       }
+      ]
+     },
+     "publication_date": "2006",
+     "publication_name": {
+      "en": "ICDEW 2006 - Proceedings of the 22nd International Conference on Data Engineering Workshops"
+     },
+     "starting_page": "29",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICDEW.2006.56"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553459",
+     "paper_title": {
+      "en": "QoS control to handle long-duration large flows and its performance evaluation"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Takeo Abe"
+       }
+      ]
+     },
+     "publication_date": "2006",
+     "publication_name": {
+      "en": "2006 IEEE INTERNATIONAL CONFERENCE ON COMMUNICATIONS, VOLS 1-12"
+     },
+     "starting_page": "579",
+     "ending_page": "584",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICC.2006.254857"
+      ],
+      "issn": [
+       "1550-3607"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553458",
+     "paper_title": {
+      "ja": "Estimating Flow Rate from Sampled Packet Streams for Detection of Performance Degradation at TCP Flow Level.",
+      "en": "Estimating Flow Rate from Sampled Packet Streams for Detection of Performance Degradation at TCP Flow Level."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Takeo Abe"
+       }
+      ],
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Noriaki Kamiyama"
+       },
+       {
+        "name": "Takeo Abe"
+       }
+      ]
+     },
+     "publication_date": "2006",
+     "publication_name": {
+      "ja": "Proceedings of the Global Telecommunications Conference, 2006. GLOBECOM '06, San Francisco, CA, USA, 27 November - 1 December 2006",
+      "en": "Proceedings of the Global Telecommunications Conference, 2006. GLOBECOM '06, San Francisco, CA, USA, 27 November - 1 December 2006"
+     },
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/GLOCOM.2006.446"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553456",
+     "paper_title": {
+      "en": "Detection of TCP performance degradation using link utilization statistics"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "K Ishibashi"
+       },
+       {
+        "name": "R Kawahara"
+       },
+       {
+        "name": "T Asaka"
+       },
+       {
+        "name": "M Aida"
+       },
+       {
+        "name": "S Ono"
+       },
+       {
+        "name": "S Asano"
+       }
+      ]
+     },
+     "publication_date": "2006-01",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+     },
+     "volume": "E89B",
+     "number": "1",
+     "starting_page": "47",
+     "ending_page": "56",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1093/ietcom/e89-b.1.47"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553463",
+     "paper_title": {
+      "en": "Method of bandwidth dimensioning and management for aggregated TCP flows with heterogeneous access links"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "R Kawahara"
+       },
+       {
+        "name": "K Ishibashi"
+       },
+       {
+        "name": "T Mori"
+       },
+       {
+        "name": "T Ozawa"
+       },
+       {
+        "name": "T Abe"
+       }
+      ]
+     },
+     "publication_date": "2005-12",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+     },
+     "volume": "E88B",
+     "number": "12",
+     "starting_page": "4605",
+     "ending_page": "4615",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1093/ietcom/e88-b.12.4605"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553462",
+     "paper_title": {
+      "en": "A method of bandwidth dimensioning and management using flow statistics"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "R Kawahara"
+       },
+       {
+        "name": "K Ishibashi"
+       },
+       {
+        "name": "T Asaka"
+       },
+       {
+        "name": "S Sumita"
+       },
+       {
+        "name": "T Abe"
+       }
+      ]
+     },
+     "publication_date": "2005-02",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+     },
+     "volume": "E88B",
+     "number": "2",
+     "starting_page": "643",
+     "ending_page": "653",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1093/ietcom/E88-B.2.643"
+      ],
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "28699749",
+     "paper_title": {
+      "en": "A method of detecting performance degradation at TCP flow level from sampled packet streams"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "R Kawahara"
+       },
+       {
+        "name": "K Ishibashi"
+       },
+       {
+        "name": "T Mori"
+       },
+       {
+        "name": "T Abe"
+       }
+      ]
+     },
+     "publication_date": "2005",
+     "publication_name": {
+      "en": "2005 Workshop on High Performance Switching and Routing"
+     },
+     "starting_page": "157",
+     "ending_page": "161",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {}
+    },
+    {
+     "rm:id": "20553464",
+     "paper_title": {
+      "en": "On the characteristics of Internet traffic variability: Spikes and elephants"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "T Mori"
+       },
+       {
+        "name": "R Kawahara"
+       },
+       {
+        "name": "S Naito"
+       },
+       {
+        "name": "S Goto"
+       }
+      ]
+     },
+     "publication_date": "2004-12",
+     "publication_name": {
+      "en": "IEICE TRANSACTIONS ON INFORMATION AND SYSTEMS"
+     },
+     "volume": "E87D",
+     "number": "12",
+     "starting_page": "2644",
+     "ending_page": "2653",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "issn": [
+       "1745-1361"
+      ]
+     }
+    },
+    {
+     "rm:id": "26387955",
+     "paper_title": {
+      "ja": "An Adaptive Load Balancing Method for Multiple Paths Using Flow Statistics and Its Performance Analysis",
+      "en": "An Adaptive Load Balancing Method for Multiple Paths Using Flow Statistics and Its Performance Analysis"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "KAWAHARA Ryoichi"
+       }
+      ],
+      "en": [
+       {
+        "name": "KAWAHARA Ryoichi"
+       }
+      ]
+     },
+     "publication_date": "2004-07-01",
+     "publication_name": {
+      "ja": "IEICE transactions on communications",
+      "en": "IEICE Trans. Commun., B"
+     },
+     "volume": "87",
+     "number": "7",
+     "starting_page": "1993",
+     "ending_page": "2003",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "26388290",
+     "paper_title": {
+      "en": "A method of bandwidth dimensioning and management for aggregated TCP flows with heterogeneous access links"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Toshihisa Ozawa"
+       },
+       {
+        "name": "Shuichi Sumita"
+       },
+       {
+        "name": "Takeo Abe"
+       }
+      ]
+     },
+     "publication_date": "2004",
+     "publication_name": {
+      "en": "Networks 2004 - 11th International Telecommunications Network Strategy and Planning Symposium"
+     },
+     "starting_page": "15",
+     "ending_page": "20",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {}
+    },
+    {
+     "rm:id": "20553468",
+     "paper_title": {
+      "en": "On the characteristics of Internet traffic variability: Spikes and elephants"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "T Mori"
+       },
+       {
+        "name": "R Kawahara"
+       },
+       {
+        "name": "S Naito"
+       },
+       {
+        "name": "S Goto"
+       }
+      ]
+     },
+     "publication_date": "2004",
+     "publication_name": {
+      "en": "2004 INTERNATIONAL SYMPOSIUM ON APPLICATIONS AND THE INTERNET, PROCEEDINGS"
+     },
+     "starting_page": "99",
+     "ending_page": "106",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/SAINT.2004.1266104"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553467",
+     "paper_title": {
+      "ja": "Identifying elephant flows through periodically sampled packets.",
+      "en": "Identifying elephant flows through periodically sampled packets."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Masato Uchida"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Jianping P"
+       },
+       {
+        "name": "Shigeki Goto"
+       }
+      ],
+      "en": [
+       {
+        "name": "Tatsuya Mori"
+       },
+       {
+        "name": "Masato Uchida"
+       },
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Jianping P"
+       },
+       {
+        "name": "Shigeki Goto"
+       }
+      ]
+     },
+     "publication_date": "2004",
+     "publication_name": {
+      "ja": "Proceedings of the 4th ACM SIGCOMM Internet Measurement Conference, IMC 2004, Taormina, Sicily, Italy, October 25-27, 2004",
+      "en": "Proceedings of the 4th ACM SIGCOMM Internet Measurement Conference, IMC 2004, Taormina, Sicily, Italy, October 25-27, 2004"
+     },
+     "starting_page": "115",
+     "ending_page": "120",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1145/1028788.1028803"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553466",
+     "paper_title": {
+      "en": "Detection of TCP performance degradation using link utilization statistics"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "K Ishibashi"
+       },
+       {
+        "name": "R Kawahara"
+       },
+       {
+        "name": "A Takuya"
+       },
+       {
+        "name": "A Masaki"
+       }
+      ]
+     },
+     "publication_date": "2004",
+     "publication_name": {
+      "en": "GLOBECOM '04: IEEE GLOBAL TELECOMMUNICATIONS CONFERENCE, VOLS 1-6"
+     },
+     "starting_page": "845",
+     "ending_page": "850",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/GLOCOM.2004.1378079"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553465",
+     "paper_title": {
+      "ja": "A method of bandwidth dimensioning and management using flow statistics [IP networks].",
+      "en": "A method of bandwidth dimensioning and management using flow statistics [IP networks]."
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Takuya Asaka"
+       },
+       {
+        "name": "Shuichi Sumita"
+       },
+       {
+        "name": "Takeo Abe"
+       }
+      ],
+      "en": [
+       {
+        "name": "Ryoichi Kawahara"
+       },
+       {
+        "name": "Keisuke Ishibashi"
+       },
+       {
+        "name": "Takuya Asaka"
+       },
+       {
+        "name": "Shuichi Sumita"
+       },
+       {
+        "name": "Takeo Abe"
+       }
+      ]
+     },
+     "publication_date": "2004",
+     "publication_name": {
+      "ja": "Proceedings of the Global Telecommunications Conference, 2004. GLOBECOM '04, Dallas, Texas, USA, 29 November - 3 December 2004",
+      "en": "Proceedings of the Global Telecommunications Conference, 2004. GLOBECOM '04, Dallas, Texas, USA, 29 November - 3 December 2004"
+     },
+     "starting_page": "670",
+     "ending_page": "674",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/GLOCOM.2004.1378046"
+      ]
+     }
+    },
+    {
+     "rm:id": "26387956",
+     "paper_title": {
+      "ja": "A Method of IP Traffic Management Using the Relationship between TCP Flow Behavior and Link Utilization",
+      "en": "A Method of IP Traffic Management Using the Relationship between TCP Flow Behavior and Link Utilization"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "KAWAHARA Ryoichi"
+       },
+       {
+        "name": "ISHIBASHI Keisuke"
+       },
+       {
+        "name": "ASAKA Takuya"
+       },
+       {
+        "name": "ORI Katsunori"
+       }
+      ],
+      "en": [
+       {
+        "name": "KAWAHARA Ryoichi"
+       },
+       {
+        "name": "ISHIBASHI Keisuke"
+       },
+       {
+        "name": "ASAKA Takuya"
+       },
+       {
+        "name": "ORI Katsunori"
+       }
+      ]
+     },
+     "publication_date": "2003-11-01",
+     "publication_name": {
+      "ja": "IEICE transactions on communications",
+      "en": "IEICE Trans. Commun., B"
+     },
+     "volume": "86",
+     "number": "11",
+     "starting_page": "3244",
+     "ending_page": "3256",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553469",
+     "paper_title": {
+      "en": "A method of IP traffic management using TCP flow statistics"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "R Kawahara"
+       },
+       {
+        "name": "K Ishibashi"
+       },
+       {
+        "name": "T Asaka"
+       },
+       {
+        "name": "K Ori"
+       }
+      ]
+     },
+     "publication_date": "2003",
+     "publication_name": {
+      "en": "GLOBECOM'03: IEEE GLOBAL TELECOMMUNICATIONS CONFERENCE, VOLS 1-7"
+     },
+     "starting_page": "4059",
+     "ending_page": "4063",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/GLOCOM.2003.1258991"
+      ],
+      "issn": [
+       "1930-529X"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553471",
+     "paper_title": {
+      "en": "Dynamically weighted queueing for fair bandwidth allocation and its performance analysis"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "R Kawahara"
+       },
+       {
+        "name": "N Komatsu"
+       }
+      ]
+     },
+     "publication_date": "2002",
+     "publication_name": {
+      "en": "2002 IEEE INTERNATIONAL CONFERENCE ON COMMUNICATIONS, VOLS 1-5, CONFERENCE PROCEEDINGS"
+     },
+     "starting_page": "2379",
+     "ending_page": "2383",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICC.2002.997270"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553470",
+     "paper_title": {
+      "en": "Evaluation of congestion control of the PDC mobile packet data communication system"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "K Yoshihara"
+       },
+       {
+        "name": "T Suzuki"
+       },
+       {
+        "name": "A Miura"
+       },
+       {
+        "name": "R Kawahara"
+       }
+      ]
+     },
+     "publication_date": "2002",
+     "publication_name": {
+      "en": "GLOBECOM'02: IEEE GLOBAL TELECOMMUNICATIONS CONFERENCE, VOLS 1-3, CONFERENCE RECORDS"
+     },
+     "starting_page": "1965",
+     "ending_page": "1969",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/GLOCOM.2002.1188543"
+      ]
+     }
+    },
+    {
+     "rm:id": "26387957",
+     "paper_title": {
+      "ja": "A Scalable IP Traffic Control Method for Weighted Bandwidth Allocation per Flow",
+      "en": "A Scalable IP Traffic Control Method for Weighted Bandwidth Allocation per Flow"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "KAWAHARA Ryoichi"
+       },
+       {
+        "name": "KOMATSU Naohisa"
+       }
+      ],
+      "en": [
+       {
+        "name": "KAWAHARA Ryoichi"
+       },
+       {
+        "name": "KOMATSU Naohisa"
+       }
+      ]
+     },
+     "publication_date": "2001-10-01",
+     "publication_name": {
+      "ja": "IEICE transactions on communications",
+      "en": "IEICE Trans. Commun."
+     },
+     "volume": "84",
+     "number": "10",
+     "starting_page": "2815",
+     "ending_page": "2829",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553472",
+     "paper_title": {
+      "en": "Traffic measurement and analysis in an ATM-based internet backbone"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "R Kawahara"
+       },
+       {
+        "name": "K Ishibashi"
+       },
+       {
+        "name": "T Hirano"
+       },
+       {
+        "name": "H Saito"
+       },
+       {
+        "name": "H Ohara"
+       },
+       {
+        "name": "D Satoh"
+       },
+       {
+        "name": "S Asano"
+       },
+       {
+        "name": "J Matsukata"
+       }
+      ]
+     },
+     "publication_date": "2001-10",
+     "publication_name": {
+      "en": "COMPUTER COMMUNICATIONS"
+     },
+     "volume": "24",
+     "number": "15-16",
+     "starting_page": "1508",
+     "ending_page": "1524",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1016/S0140-3664(01)00309-7"
+      ],
+      "issn": [
+       "0140-3664"
+      ]
+     }
+    },
+    {
+     "rm:id": "27376428",
+     "paper_title": {
+      "ja": "Network Engineering Based on Real-time Traffic Monitoring for an Internet Backbone",
+      "en": "Network Engineering Based on Real-time Traffic Monitoring for an Internet Backbone"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "S. ASANO"
+       },
+       {
+        "name": "J. MATSUKATA"
+       },
+       {
+        "name": "S. SAITO"
+       },
+       {
+        "name": "R. KAWAHARA"
+       },
+       {
+        "name": "S. URUSHIDANI"
+       }
+      ],
+      "en": [
+       {
+        "name": "S. ASANO"
+       },
+       {
+        "name": "J. MATSUKATA"
+       },
+       {
+        "name": "S. SAITO"
+       },
+       {
+        "name": "R. KAWAHARA"
+       },
+       {
+        "name": "S. URUSHIDANI"
+       }
+      ]
+     },
+     "publication_date": "2000-05",
+     "publication_name": {
+      "ja": "Proceedings of International Switching Symposium (ISS'2000, Birmingham), (May 2000)",
+      "en": "Proceedings of International Switching Symposium (ISS'2000, Birmingham), (May 2000)"
+     },
+     "number": "39784",
+     "starting_page": "122.1",
+     "ending_page": "122.7",
+     "published_paper_type": "international_conference_proceedings"
+    },
+    {
+     "rm:id": "26387958",
+     "paper_title": {
+      "ja": "Performance of TCP/IP over ATM over an ADSL",
+      "en": "Performance of TCP/IP over ATM over an ADSL"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "KAWAHARA Ryoichi"
+       },
+       {
+        "name": "SAITO Hiroshi"
+       }
+      ],
+      "en": [
+       {
+        "name": "KAWAHARA Ryoichi"
+       },
+       {
+        "name": "SAITO Hiroshi"
+       }
+      ]
+     },
+     "publication_date": "2000-02-25",
+     "publication_name": {
+      "ja": "IEICE transactions on communications",
+      "en": "IEICE Trans. Commun., B"
+     },
+     "volume": "83",
+     "number": "2",
+     "starting_page": "140",
+     "ending_page": "154",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "26387959",
+     "paper_title": {
+      "ja": "Metohd of Implementing GFR Service in Large-Scale Networks Using ABR Control Mechanism and Its Performance Analysis",
+      "en": "Metohd of Implementing GFR Service in Large-Scale Networks Using ABR Control Mechanism and Its Performance Analysis"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "KAWAHARA Ryoichi"
+       },
+       {
+        "name": "KAMADO Yuki"
+       },
+       {
+        "name": "OMOTANI Masaaki"
+       },
+       {
+        "name": "NAGATA Shunsaku"
+       }
+      ],
+      "en": [
+       {
+        "name": "KAWAHARA Ryoichi"
+       },
+       {
+        "name": "KAMADO Yuki"
+       },
+       {
+        "name": "OMOTANI Masaaki"
+       },
+       {
+        "name": "NAGATA Shunsaku"
+       }
+      ]
+     },
+     "publication_date": "1999-12-01",
+     "publication_name": {
+      "ja": "IEICE transactions on communications",
+      "en": "IEICE Trans. Commun."
+     },
+     "volume": "82",
+     "number": "12",
+     "starting_page": "2081",
+     "ending_page": "2094",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    },
+    {
+     "rm:id": "26386573",
+     "paper_title": {
+      "ja": "ABRの重み付け帯域割当てを用いたIPスループット最低保証のためのトラヒック制御方式",
+      "en": "ATM Traffic Control for Guaranteed IP Throughput Using ABR Weighted Bandwidth Allocation"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "川原 亮一"
+       },
+       {
+        "name": "小沢 利久"
+       }
+      ],
+      "en": [
+       {
+        "name": "KAWAHARA Ryoichi"
+       },
+       {
+        "name": "OZAWA Toshihisa"
+       }
+      ]
+     },
+     "publication_date": "1999-05-25",
+     "publication_name": {
+      "ja": "電子情報通信学会論文誌. B, 通信",
+      "en": "The Transactions of the Institute of Electronics,Information and Communication Engineers B"
+     },
+     "volume": "82",
+     "number": "5",
+     "starting_page": "908",
+     "ending_page": "919",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "issn": [
+       "1344-4697"
+      ]
+     }
+    },
+    {
+     "rm:id": "26386566",
+     "paper_title": {
+      "ja": "最低スループット保証に適した開ループ制御型ATM転送方式のサービス特性分析",
+      "en": "Performance Analysis of ATM Traffic Control Mechanisms for Guaranteed Througput Service"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "朝香 卓也"
+       },
+       {
+        "name": "川原 亮一"
+       },
+       {
+        "name": "小沢 利久"
+       }
+      ],
+      "en": [
+       {
+        "name": "ASAKA Takuya"
+       },
+       {
+        "name": "KAWAHARA Ryoichi"
+       },
+       {
+        "name": "OZAWA Toshihisa"
+       }
+      ]
+     },
+     "publication_date": "1998-11",
+     "publication_name": {
+      "ja": "電子情報通信学会論文誌. B-1, 通信1-情報通信システム・理論",
+      "en": "The Transactions of the Institute of Electronics,Information and Communication Engineers B-(0xF9C1)"
+     },
+     "volume": "81",
+     "number": "11",
+     "starting_page": "731",
+     "ending_page": "740",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "issn": [
+       "0915-1877"
+      ]
+     }
+    },
+    {
+     "rm:id": "26386523",
+     "paper_title": {
+      "ja": "大規模網におけるABRレート制御アルゴリズム",
+      "en": "A Simple and Efficient ABR Control Algorithm in Large Scale Networks"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "川原 亮一"
+       },
+       {
+        "name": "小沢 利久"
+       }
+      ],
+      "en": [
+       {
+        "name": "KAWAHARA Ryoichi"
+       },
+       {
+        "name": "OZAWA Toshihisa"
+       }
+      ]
+     },
+     "publication_date": "1998-11",
+     "publication_name": {
+      "ja": "電子情報通信学会論文誌. B-1, 通信1-情報通信システム・理論",
+      "en": "The Transactions of the Institute of Electronics,Information and Communication Engineers B-(0xF9C1)"
+     },
+     "volume": "81",
+     "number": "11",
+     "starting_page": "720",
+     "ending_page": "730",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "issn": [
+       "0915-1877"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553473",
+     "paper_title": {
+      "en": "Characteristics of ABR explicit rate control algorithms in WAN environments and an ABR control algorithm suitable for public networks"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "R Kawahara"
+       },
+       {
+        "name": "H Saito"
+       },
+       {
+        "name": "M Kawarasaki"
+       }
+      ]
+     },
+     "publication_date": "1998-05",
+     "publication_name": {
+      "en": "INTERNATIONAL JOURNAL OF COMMUNICATION SYSTEMS"
+     },
+     "volume": "11",
+     "number": "3",
+     "starting_page": "189",
+     "ending_page": "209",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "doi": [
+       "10.1002/(SICI)1099-1131(199805/06)11:3<189::AID-DAC360>3.0.CO;2-V"
+      ],
+      "issn": [
+       "1074-5351"
+      ]
+     }
+    },
+    {
+     "rm:id": "20553474",
+     "paper_title": {
+      "en": "Characteristics of ABR explicit rate control algorithms in WAN environment"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "R Kawahara"
+       },
+       {
+        "name": "A Koike"
+       },
+       {
+        "name": "M Ishizuka"
+       },
+       {
+        "name": "M Koshiishi"
+       },
+       {
+        "name": "M Kawarasaki"
+       }
+      ]
+     },
+     "publication_date": "1997",
+     "publication_name": {
+      "en": "ICC'97: 1997 IEEE INTERNATIONAL CONFERENCE ON COMMUNICATIONS - TOWARDS THE KNOWLEDGE MILLENNIUM, CONFERENCE RECORD - VOLS 1-3"
+     },
+     "starting_page": "1396",
+     "ending_page": "1400",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {
+      "doi": [
+       "10.1109/ICC.1997.595018"
+      ]
+     }
+    },
+    {
+     "rm:id": "28169530",
+     "paper_title": {
+      "en": "Overload control for intelligent networks based on an estimation of maximum number of calls in a node"
+     },
+     "authors": {
+      "en": [
+       {
+        "name": "R Kawahara"
+       },
+       {
+        "name": "T Asaka"
+       }
+      ]
+     },
+     "publication_date": "1996",
+     "publication_name": {
+      "en": "INTELLIGENT NETWORK '96, WORKSHOP RECORD, VOLS 1 AND 2"
+     },
+     "starting_page": "71",
+     "ending_page": "82",
+     "published_paper_type": "international_conference_proceedings",
+     "identifiers": {}
+    },
+    {
+     "rm:id": "26387960",
+     "paper_title": {
+      "ja": "Overload Control for the Intelligent Network and Its Analysis by Simulation",
+      "en": "Overload Control for the Intelligent Network and Its Analysis by Simulation"
+     },
+     "authors": {
+      "ja": [
+       {
+        "name": "KAWAHARA Ryoichi"
+       },
+       {
+        "name": "ASAKA Takuya"
+       },
+       {
+        "name": "SUMITA Shuichi"
+       }
+      ],
+      "en": [
+       {
+        "name": "KAWAHARA Ryoichi"
+       },
+       {
+        "name": "ASAKA Takuya"
+       },
+       {
+        "name": "SUMITA Shuichi"
+       }
+      ]
+     },
+     "publication_date": "1995-04-25",
+     "publication_name": {
+      "ja": "IEICE transactions on communications",
+      "en": "IEICE transactions on communications"
+     },
+     "volume": "78",
+     "number": "4",
+     "starting_page": "494",
+     "ending_page": "503",
+     "published_paper_type": "scientific_journal",
+     "identifiers": {
+      "issn": [
+       "0916-8516"
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

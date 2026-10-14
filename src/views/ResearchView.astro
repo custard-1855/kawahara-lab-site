@@ -1,0 +1,201 @@
+---
+import Button from "../components/Button.astro";
+import ListRow from "../components/ListRow.astro";
+import PageHead from "../components/PageHead.astro";
+import PillLink from "../components/PillLink.astro";
+import PubEntry from "../components/PubEntry.astro";
+import Section from "../components/Section.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getArticles, getMembers, getPage, getPubs, getThemes } from "../lib/content";
+import { pick, t, type Lang } from "../lib/i18n";
+import { yearOf } from "../lib/pubs";
+import { articleHref, href } from "../lib/url";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const ja = lang === "ja";
+const home = (await getPage("home", lang)).data;
+const themes = await getThemes();
+const members = (await getMembers()).filter((m) => m.data.role === "student");
+const articles = await getArticles();
+const pubs = (await getPubs()).sort((a, b) => b.date.localeCompare(a.date));
+const no = (n: number) => String(n).padStart(2, "0");
+const L = {
+  members: ja ? "取り組んでいるメンバー" : "Members",
+  articles: ja ? "関連する記事" : "Related articles",
+  pubs: ja ? "主な業績" : "Selected publications",
+  allPubs: ja ? "業績をすべて見る" : "All publications",
+  keywords: ja ? "キーワード:" : "Keywords: ",
+  none: ja ? "まだありません。" : "None yet.",
+  ctaTitle: ja ? "この研究室で研究してみたい方へ" : "Interested in joining?",
+  ctaBody: ja
+    ? "研究室生活や、配属までに準備しておくとよいことをまとめています。"
+    : "Learn about lab life and how to prepare.",
+};
+---
+
+<BaseLayout lang={lang} title={t(lang, "nav.research")} path="/research/" current="research">
+  <PageHead label="Research" title={t(lang, "nav.research")} lead={home.researchLead}>
+    <nav class="pills" aria-label={ja ? "研究テーマ" : "Research themes"}>
+      {themes.map((theme) => (
+        <PillLink href={`#${theme.id}`}>
+          <span class="mono pill-no">{no(theme.data.order)}</span>
+          {pick(theme.data.name, lang)}
+        </PillLink>
+      ))}
+    </nav>
+  </PageHead>
+
+  {themes.map((theme) => {
+    const tm = members.filter((m) => m.data.themes.includes(theme.id));
+    const ta = articles.filter((a) => a.themes.includes(theme.id)).slice(0, 3);
+    const tp = pubs.filter((p) => p.themes.includes(theme.id)).slice(0, 3);
+    return (
+      <Section
+        id={theme.id}
+        no={no(theme.data.order)}
+        title={pick(theme.data.name, lang)}
+        label={theme.data.label}
+        gap={120}
+      >
+        <p class="body">{pick(theme.data.body, lang)}</p>
+        <p class="keywords sub">
+          {L.keywords}
+          {theme.data.keywords.join(ja ? "、" : ", ")}
+        </p>
+        <div class="grid">
+          <div>
+            <h3>{L.members}</h3>
+            <div class="rule-list small">
+              {tm.length === 0 && <p class="none sub">{L.none}</p>}
+              {tm.map((m) => (
+                <ListRow href={href("/members/", lang)} lead={28} pad={12}>
+                  <span slot="lead">{m.data.grade}</span>
+                  <b class="name">{pick(m.data.name, lang)}</b>{" "}
+                  <span class="sub">{pick(m.data.research, lang)}</span>
+                </ListRow>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3>{L.articles}</h3>
+            <div class="rule-list small">
+              {ta.length === 0 && <p class="none sub">{L.none}</p>}
+              {ta.map((a) => (
+                <ListRow href={href(articleHref(a.id))} lead={0} pad={12}>
+                  <span lang="ja">{a.title}</span>
+                  <span slot="meta">
+                    {t(lang, `category.${a.category}`)}
+                    {!ja && ` · ${t(lang, "common.japaneseOnly")}`}
+                  </span>
+                </ListRow>
+              ))}
+            </div>
+          </div>
+        </div>
+        <h3 class="pubs-title">{L.pubs}</h3>
+        <div class="rule-list small">
+          {tp.length === 0 && <p class="none sub">{L.none}</p>}
+          {tp.map((p) => (
+            <ListRow lead={40} pad={12}>
+              <span slot="lead">{yearOf(p)}</span>
+              <PubEntry pub={p} lang={lang} compact />
+            </ListRow>
+          ))}
+        </div>
+        <a class="text-link" href={href("/publications/", lang)}>
+          {L.allPubs} →
+        </a>
+      </Section>
+    );
+  })}
+
+  <section class="container cta-wrap">
+    <div class="cta">
+      <div class="cta-text">
+        <p class="cta-title">{L.ctaTitle}</p>
+        <p class="sub">{L.ctaBody}</p>
+      </div>
+      <Button href={href("/join/", lang)}>{t(lang, "nav.join")}</Button>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .pills {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .pill-no {
+    font-size: 12px;
+    color: var(--color-text-sub);
+  }
+  .body {
+    margin: 0;
+    font-size: 17px;
+    line-height: 2;
+    max-width: 38em;
+  }
+  .keywords {
+    margin: 16px 0 0;
+    font-size: 14px;
+  }
+  .grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px 40px;
+  }
+  h3 {
+    margin: 0 0 8px;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+  }
+  .pubs-title {
+    margin-top: 40px;
+  }
+  .small {
+    font-size: 15px;
+  }
+  .name {
+    font-weight: 500;
+  }
+  .none {
+    margin: 0;
+    padding: 12px 0;
+    font-size: 14px;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .cta-wrap {
+    padding-top: 136px;
+  }
+  .cta {
+    background: var(--color-surface);
+    border-radius: var(--radius-card);
+    padding: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .cta-text {
+    flex: 1 1 320px;
+    min-width: 0;
+  }
+  .cta-text p {
+    margin: 0;
+  }
+  .cta-title {
+    font-weight: 500;
+    font-size: 17px;
+  }
+  .cta-text .sub {
+    margin-top: 4px;
+    font-size: 14px;
+  }
+</style>

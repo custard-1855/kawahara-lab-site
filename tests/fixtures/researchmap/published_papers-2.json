@@ -1,0 +1,2444 @@
+{
+    "@context": "https://api.researchmap.jp/researcher.jsonld",
+    "@id": "https://api.researchmap.jp/g0000218011/published_papers?limit=100&start=101&format=json",
+    "@type": "published_papers",
+    "@reverse": "https://api.researchmap.jp/g0000218011",
+    "total_items": 129,
+    "_links": {
+        "previous": {
+            "href": "https://api.researchmap.jp/g0000218011/published_papers?start=1&limit=100"
+        }
+    },
+    "items": [
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553459",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553459",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:54Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-05-16T19:18:12Z",
+            "paper_title": {
+                "en": "QoS control to handle long-duration large flows and its performance evaluation"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Ryoichi Kawahara"
+                    },
+                    {
+                        "name": "Tatsuya Mori"
+                    },
+                    {
+                        "name": "Takeo Abe"
+                    }
+                ]
+            },
+            "publication_date": "2006",
+            "publication_name": {
+                "en": "2006 IEEE INTERNATIONAL CONFERENCE ON COMMUNICATIONS, VOLS 1-12"
+            },
+            "starting_page": "579",
+            "ending_page": "584",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/icc/KawaharaMA06"
+                ],
+                "doi": [
+                    "10.1109/ICC.2006.254857"
+                ],
+                "issn": [
+                    "1550-3607"
+                ],
+                "wos_id": [
+                    "WOS:000287032700095"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/icc/KawaharaMA06",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1109/ICC.2006.254857",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000287032700095&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/icc/icc2006.html#conf/icc/KawaharaMA06",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553458",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553458",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:54Z",
+            "rm:modifier_id": "B000292423",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2020-04-15T07:26:16Z",
+            "paper_title": {
+                "ja": "Estimating Flow Rate from Sampled Packet Streams for Detection of Performance Degradation at TCP Flow Level.",
+                "en": "Estimating Flow Rate from Sampled Packet Streams for Detection of Performance Degradation at TCP Flow Level."
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "Ryoichi Kawahara"
+                    },
+                    {
+                        "name": "Tatsuya Mori"
+                    },
+                    {
+                        "name": "Keisuke Ishibashi"
+                    },
+                    {
+                        "name": "Noriaki Kamiyama"
+                    },
+                    {
+                        "name": "Takeo Abe"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Ryoichi Kawahara"
+                    },
+                    {
+                        "name": "Tatsuya Mori"
+                    },
+                    {
+                        "name": "Keisuke Ishibashi"
+                    },
+                    {
+                        "name": "Noriaki Kamiyama"
+                    },
+                    {
+                        "name": "Takeo Abe"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "IEEE",
+                "en": "IEEE"
+            },
+            "publication_date": "2006",
+            "publication_name": {
+                "ja": "Proceedings of the Global Telecommunications Conference, 2006. GLOBECOM '06, San Francisco, CA, USA, 27 November - 1 December 2006",
+                "en": "Proceedings of the Global Telecommunications Conference, 2006. GLOBECOM '06, San Francisco, CA, USA, 27 November - 1 December 2006"
+            },
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1109/GLOCOM.2006.446"
+                ],
+                "dblp_id": [
+                    "conf/globecom/KawaharaMIKA06"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1109/GLOCOM.2006.446",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/globecom/KawaharaMIKA06",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/globecom/globecom2006qrp.html#conf/globecom/KawaharaMIKA06",
+                    "label": "url",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553456",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553456",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:53Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-05-16T20:01:24Z",
+            "paper_title": {
+                "en": "Detection of TCP performance degradation using link utilization statistics"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "K Ishibashi"
+                    },
+                    {
+                        "name": "R Kawahara"
+                    },
+                    {
+                        "name": "T Asaka"
+                    },
+                    {
+                        "name": "M Aida"
+                    },
+                    {
+                        "name": "S Ono"
+                    },
+                    {
+                        "name": "S Asano"
+                    }
+                ]
+            },
+            "publication_date": "2006-01",
+            "publication_name": {
+                "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+            },
+            "volume": "E89B",
+            "number": "1",
+            "starting_page": "47",
+            "ending_page": "56",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "journals/ieicet/IshibashiKAAOA06"
+                ],
+                "doi": [
+                    "10.1093/ietcom/e89-b.1.47"
+                ],
+                "issn": [
+                    "0916-8516"
+                ],
+                "e_issn": [
+                    "1745-1345"
+                ],
+                "wos_id": [
+                    "WOS:000234951500006"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/journals/ieicet/IshibashiKAAOA06",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1093/ietcom/e89-b.1.47",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000234951500006&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/journals/ieicet/ieicet89b.html#journals/ieicet/IshibashiKAAOA06",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553463",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553463",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:54Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-05-08T21:34:52Z",
+            "paper_title": {
+                "en": "Method of bandwidth dimensioning and management for aggregated TCP flows with heterogeneous access links"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "R Kawahara"
+                    },
+                    {
+                        "name": "K Ishibashi"
+                    },
+                    {
+                        "name": "T Mori"
+                    },
+                    {
+                        "name": "T Ozawa"
+                    },
+                    {
+                        "name": "T Abe"
+                    }
+                ]
+            },
+            "publication_date": "2005-12",
+            "publication_name": {
+                "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+            },
+            "volume": "E88B",
+            "number": "12",
+            "starting_page": "4605",
+            "ending_page": "4615",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "journals/ieicet/KawaharaIMOA05"
+                ],
+                "doi": [
+                    "10.1093/ietcom/e88-b.12.4605"
+                ],
+                "issn": [
+                    "0916-8516"
+                ],
+                "e_issn": [
+                    "1745-1345"
+                ],
+                "wos_id": [
+                    "WOS:000234281100023"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/journals/ieicet/KawaharaIMOA05",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1093/ietcom/e88-b.12.4605",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000234281100023&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/journals/ieicet/ieicet88b.html#journals/ieicet/KawaharaIMOA05",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553462",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553462",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:54Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-05-08T17:19:54Z",
+            "paper_title": {
+                "en": "A method of bandwidth dimensioning and management using flow statistics"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "R Kawahara"
+                    },
+                    {
+                        "name": "K Ishibashi"
+                    },
+                    {
+                        "name": "T Asaka"
+                    },
+                    {
+                        "name": "S Sumita"
+                    },
+                    {
+                        "name": "T Abe"
+                    }
+                ]
+            },
+            "publication_date": "2005-02",
+            "publication_name": {
+                "en": "IEICE TRANSACTIONS ON COMMUNICATIONS"
+            },
+            "volume": "E88B",
+            "number": "2",
+            "starting_page": "643",
+            "ending_page": "653",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "journals/ieicet/KawaharaIASA05"
+                ],
+                "doi": [
+                    "10.1093/ietcom/E88-B.2.643"
+                ],
+                "issn": [
+                    "0916-8516"
+                ],
+                "e_issn": [
+                    "1745-1345"
+                ],
+                "wos_id": [
+                    "WOS:000226793300026"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/journals/ieicet/KawaharaIASA05",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1093/ietcom/E88-B.2.643",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000226793300026&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/journals/ieicet/ieicet88b.html#journals/ieicet/KawaharaIASA05",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/28699749",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "28699749",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-07-07T21:50:25Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-07-07T21:50:25Z",
+            "paper_title": {
+                "en": "A method of detecting performance degradation at TCP flow level from sampled packet streams"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "R Kawahara"
+                    },
+                    {
+                        "name": "K Ishibashi"
+                    },
+                    {
+                        "name": "T Mori"
+                    },
+                    {
+                        "name": "T Abe"
+                    }
+                ]
+            },
+            "publication_date": "2005",
+            "publication_name": {
+                "en": "2005 Workshop on High Performance Switching and Routing"
+            },
+            "starting_page": "157",
+            "ending_page": "161",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "wos_id": [
+                    "WOS:000231187500032"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000231187500032&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553464",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553464",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:54Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-04-28T05:41:21Z",
+            "paper_title": {
+                "en": "On the characteristics of Internet traffic variability: Spikes and elephants"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "T Mori"
+                    },
+                    {
+                        "name": "R Kawahara"
+                    },
+                    {
+                        "name": "S Naito"
+                    },
+                    {
+                        "name": "S Goto"
+                    }
+                ]
+            },
+            "publication_date": "2004-12",
+            "publication_name": {
+                "en": "IEICE TRANSACTIONS ON INFORMATION AND SYSTEMS"
+            },
+            "volume": "E87D",
+            "number": "12",
+            "starting_page": "2644",
+            "ending_page": "2653",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "journals/ieicet/MoriKNG04"
+                ],
+                "issn": [
+                    "1745-1361"
+                ],
+                "wos_id": [
+                    "WOS:000225776800015"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/journals/ieicet/MoriKNG04",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000225776800015&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://search.ieice.org/bin/summary.php?id=e87-d_12_2644",
+                    "is_downloadable": false,
+                    "label": "url"
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/journals/ieicet/ieicet87d.html#journals/ieicet/MoriKNG04",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/26387955",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "26387955",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2020-04-15T05:32:52Z",
+            "rm:modifier_id": "B000292423",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2020-04-15T07:29:39Z",
+            "paper_title": {
+                "ja": "An Adaptive Load Balancing Method for Multiple Paths Using Flow Statistics and Its Performance Analysis",
+                "en": "An Adaptive Load Balancing Method for Multiple Paths Using Flow Statistics and Its Performance Analysis"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "KAWAHARA Ryoichi"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "KAWAHARA Ryoichi"
+                    }
+                ]
+            },
+            "description": {
+                "ja": "We propose an adaptive load balancing method for multiple paths that makes it possible to achieve high TCP performance on each path. In conventional load balancing methods, link utilization is the main parameter to be balanced among multiple paths that are established between an ingress and egress node pair. However, when we take into account TCP-level performance, balancing the traffic in terms of only link utilization may not always result in balanced TCP performance on each path. Our method utilizes flow statistics such as the number of active flows in each path, which is easy to measure, and can treat TCP performance. By adaptively equalizing the average bandwidth used per active flow in each path, which is calculated by dividing the input rate to the path by the mean number of active flows, our method achieves fair and high TCP performance on each path. Unlike other methods, intermediate nodes between an ingress-egress pair are not required to perform traffic controls or measurements besides normal packet forwarding. We describe a load balancing method for adaptively equalizing the average bandwidth used per active flow on each path and show its effectiveness under heterogeneous conditions through simulation analysis.",
+                "en": "We propose an adaptive load balancing method for multiple paths that makes it possible to achieve high TCP performance on each path. In conventional load balancing methods, link utilization is the main parameter to be balanced among multiple paths that are established between an ingress and egress node pair. However, when we take into account TCP-level performance, balancing the traffic in terms of only link utilization may not always result in balanced TCP performance on each path. Our method utilizes flow statistics such as the number of active flows in each path, which is easy to measure, and can treat TCP performance. By adaptively equalizing the average bandwidth used per active flow in each path, which is calculated by dividing the input rate to the path by the mean number of active flows, our method achieves fair and high TCP performance on each path. Unlike other methods, intermediate nodes between an ingress-egress pair are not required to perform traffic controls or measurements besides normal packet forwarding. We describe a load balancing method for adaptively equalizing the average bandwidth used per active flow on each path and show its effectiveness under heterogeneous conditions through simulation analysis."
+            },
+            "publisher": {
+                "ja": "一般社団法人電子情報通信学会",
+                "en": "The Institute of Electronics, Information and Communication Engineers"
+            },
+            "publication_date": "2004-07-01",
+            "publication_name": {
+                "ja": "IEICE transactions on communications",
+                "en": "IEICE Trans. Commun., B"
+            },
+            "volume": "87",
+            "number": "7",
+            "starting_page": "1993",
+            "ending_page": "2003",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "issn": [
+                    "0916-8516"
+                ],
+                "cinii_na_id": [
+                    "110003222454"
+                ],
+                "cinii_nc_id": [
+                    "AA10826261"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/110003222454",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AA10826261",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/26388290",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "26388290",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2020-04-15T06:01:43Z",
+            "rm:modifier_id": "B000292423",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2020-04-15T06:01:43Z",
+            "paper_title": {
+                "en": "A method of bandwidth dimensioning and management for aggregated TCP flows with heterogeneous access links"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Ryoichi Kawahara"
+                    },
+                    {
+                        "name": "Keisuke Ishibashi"
+                    },
+                    {
+                        "name": "Tatsuya Mori"
+                    },
+                    {
+                        "name": "Toshihisa Ozawa"
+                    },
+                    {
+                        "name": "Shuichi Sumita"
+                    },
+                    {
+                        "name": "Takeo Abe"
+                    }
+                ]
+            },
+            "publication_date": "2004",
+            "publication_name": {
+                "en": "Networks 2004 - 11th International Telecommunications Network Strategy and Planning Symposium"
+            },
+            "starting_page": "15",
+            "ending_page": "20",
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "scopus_id": [
+                    "4644293189"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "scopus",
+                    "@id": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=4644293189&origin=inward",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "scopus_citedby",
+                    "@id": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=4644293189&origin=inward",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553468",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553468",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:54Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-04-28T08:40:17Z",
+            "paper_title": {
+                "en": "On the characteristics of Internet traffic variability: Spikes and elephants"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "T Mori"
+                    },
+                    {
+                        "name": "R Kawahara"
+                    },
+                    {
+                        "name": "S Naito"
+                    },
+                    {
+                        "name": "S Goto"
+                    }
+                ]
+            },
+            "publication_date": "2004",
+            "publication_name": {
+                "en": "2004 INTERNATIONAL SYMPOSIUM ON APPLICATIONS AND THE INTERNET, PROCEEDINGS"
+            },
+            "starting_page": "99",
+            "ending_page": "106",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/saint/MoriKNG04"
+                ],
+                "doi": [
+                    "10.1109/SAINT.2004.1266104"
+                ],
+                "wos_id": [
+                    "WOS:000189297400019"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/saint/MoriKNG04",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1109/SAINT.2004.1266104",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000189297400019&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/saint/saint2004.html#conf/saint/MoriKNG04",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553467",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553467",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:54Z",
+            "rm:modifier_id": "B000292423",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2020-04-15T07:32:05Z",
+            "paper_title": {
+                "ja": "Identifying elephant flows through periodically sampled packets.",
+                "en": "Identifying elephant flows through periodically sampled packets."
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "Tatsuya Mori"
+                    },
+                    {
+                        "name": "Masato Uchida"
+                    },
+                    {
+                        "name": "Ryoichi Kawahara"
+                    },
+                    {
+                        "name": "Jianping P"
+                    },
+                    {
+                        "name": "Shigeki Goto"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Tatsuya Mori"
+                    },
+                    {
+                        "name": "Masato Uchida"
+                    },
+                    {
+                        "name": "Ryoichi Kawahara"
+                    },
+                    {
+                        "name": "Jianping P"
+                    },
+                    {
+                        "name": "Shigeki Goto"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "ACM",
+                "en": "ACM"
+            },
+            "publication_date": "2004",
+            "publication_name": {
+                "ja": "Proceedings of the 4th ACM SIGCOMM Internet Measurement Conference, IMC 2004, Taormina, Sicily, Italy, October 25-27, 2004",
+                "en": "Proceedings of the 4th ACM SIGCOMM Internet Measurement Conference, IMC 2004, Taormina, Sicily, Italy, October 25-27, 2004"
+            },
+            "starting_page": "115",
+            "ending_page": "120",
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/1028788.1028803"
+                ],
+                "dblp_id": [
+                    "conf/imc/MoriUKPG04"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/1028788.1028803",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/imc/MoriUKPG04",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/imc/imc2004.html#conf/imc/MoriUKPG04",
+                    "label": "url",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553466",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553466",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:54Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-04-26T20:56:38Z",
+            "paper_title": {
+                "en": "Detection of TCP performance degradation using link utilization statistics"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "K Ishibashi"
+                    },
+                    {
+                        "name": "R Kawahara"
+                    },
+                    {
+                        "name": "A Takuya"
+                    },
+                    {
+                        "name": "A Masaki"
+                    }
+                ]
+            },
+            "publication_date": "2004",
+            "publication_name": {
+                "en": "GLOBECOM '04: IEEE GLOBAL TELECOMMUNICATIONS CONFERENCE, VOLS 1-6"
+            },
+            "starting_page": "845",
+            "ending_page": "850",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/globecom/IshibashiKTM04"
+                ],
+                "doi": [
+                    "10.1109/GLOCOM.2004.1378079"
+                ],
+                "wos_id": [
+                    "WOS:000226689900162"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/globecom/IshibashiKTM04",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1109/GLOCOM.2004.1378079",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000226689900162&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/globecom/globecom2004.html#conf/globecom/IshibashiKTM04",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553465",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553465",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:54Z",
+            "rm:modifier_id": "B000292423",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2020-04-15T07:33:28Z",
+            "paper_title": {
+                "ja": "A method of bandwidth dimensioning and management using flow statistics [IP networks].",
+                "en": "A method of bandwidth dimensioning and management using flow statistics [IP networks]."
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "Ryoichi Kawahara"
+                    },
+                    {
+                        "name": "Keisuke Ishibashi"
+                    },
+                    {
+                        "name": "Takuya Asaka"
+                    },
+                    {
+                        "name": "Shuichi Sumita"
+                    },
+                    {
+                        "name": "Takeo Abe"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Ryoichi Kawahara"
+                    },
+                    {
+                        "name": "Keisuke Ishibashi"
+                    },
+                    {
+                        "name": "Takuya Asaka"
+                    },
+                    {
+                        "name": "Shuichi Sumita"
+                    },
+                    {
+                        "name": "Takeo Abe"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "IEEE",
+                "en": "IEEE"
+            },
+            "publication_date": "2004",
+            "publication_name": {
+                "ja": "Proceedings of the Global Telecommunications Conference, 2004. GLOBECOM '04, Dallas, Texas, USA, 29 November - 3 December 2004",
+                "en": "Proceedings of the Global Telecommunications Conference, 2004. GLOBECOM '04, Dallas, Texas, USA, 29 November - 3 December 2004"
+            },
+            "starting_page": "670",
+            "ending_page": "674",
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1109/GLOCOM.2004.1378046"
+                ],
+                "dblp_id": [
+                    "conf/globecom/KawaharaIASA04"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1109/GLOCOM.2004.1378046",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/globecom/KawaharaIASA04",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/globecom/globecom2004.html#conf/globecom/KawaharaIASA04",
+                    "label": "url",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/26387956",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "26387956",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2020-04-15T05:32:52Z",
+            "rm:modifier_id": "B000292423",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2020-04-15T07:34:47Z",
+            "paper_title": {
+                "ja": "A Method of IP Traffic Management Using the Relationship between TCP Flow Behavior and Link Utilization",
+                "en": "A Method of IP Traffic Management Using the Relationship between TCP Flow Behavior and Link Utilization"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "KAWAHARA Ryoichi"
+                    },
+                    {
+                        "name": "ISHIBASHI Keisuke"
+                    },
+                    {
+                        "name": "ASAKA Takuya"
+                    },
+                    {
+                        "name": "ORI Katsunori"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "KAWAHARA Ryoichi"
+                    },
+                    {
+                        "name": "ISHIBASHI Keisuke"
+                    },
+                    {
+                        "name": "ASAKA Takuya"
+                    },
+                    {
+                        "name": "ORI Katsunori"
+                    }
+                ]
+            },
+            "description": {
+                "ja": "We propose a method of IP traffic management where the TCP performance at a bottleneck link is estimated from monitored data about the behavior of the number of active flows versus link utilization, which are both easy to measure This method is based on our findings that (i) TCP performance remains constant as long as the link utilization is below some threshold value, but becomes degraded when it exceeds this value and (ii) the number of active flows increases linearly with link utilization up to the same value, and the increase becomes nonlinear above it. Though this threshold may vary depending on traffic/network conditions, our method requires neither predetermination of a threshold on the basis of assumed traffic conditions nor direct measurement of TCP performance",
+                "en": "We propose a method of IP traffic management where the TCP performance at a bottleneck link is estimated from monitored data about the behavior of the number of active flows versus link utilization, which are both easy to measure This method is based on our findings that (i) TCP performance remains constant as long as the link utilization is below some threshold value, but becomes degraded when it exceeds this value and (ii) the number of active flows increases linearly with link utilization up to the same value, and the increase becomes nonlinear above it. Though this threshold may vary depending on traffic/network conditions, our method requires neither predetermination of a threshold on the basis of assumed traffic conditions nor direct measurement of TCP performance"
+            },
+            "publisher": {
+                "ja": "一般社団法人電子情報通信学会",
+                "en": "The Institute of Electronics, Information and Communication Engineers"
+            },
+            "publication_date": "2003-11-01",
+            "publication_name": {
+                "ja": "IEICE transactions on communications",
+                "en": "IEICE Trans. Commun., B"
+            },
+            "volume": "86",
+            "number": "11",
+            "starting_page": "3244",
+            "ending_page": "3256",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "issn": [
+                    "0916-8516"
+                ],
+                "cinii_na_id": [
+                    "110003221551"
+                ],
+                "cinii_nc_id": [
+                    "AA10826261"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/110003221551",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AA10826261",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553469",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553469",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:54Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-04-30T06:04:38Z",
+            "paper_title": {
+                "en": "A method of IP traffic management using TCP flow statistics"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "R Kawahara"
+                    },
+                    {
+                        "name": "K Ishibashi"
+                    },
+                    {
+                        "name": "T Asaka"
+                    },
+                    {
+                        "name": "K Ori"
+                    }
+                ]
+            },
+            "publication_date": "2003",
+            "publication_name": {
+                "en": "GLOBECOM'03: IEEE GLOBAL TELECOMMUNICATIONS CONFERENCE, VOLS 1-7"
+            },
+            "starting_page": "4059",
+            "ending_page": "4063",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/globecom/KawaharaIAO03"
+                ],
+                "doi": [
+                    "10.1109/GLOCOM.2003.1258991"
+                ],
+                "issn": [
+                    "1930-529X"
+                ],
+                "wos_id": [
+                    "WOS:000189451400784"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/globecom/KawaharaIAO03",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1109/GLOCOM.2003.1258991",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000189451400784&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/globecom/globecom2003.html#conf/globecom/KawaharaIAO03",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553471",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553471",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:55Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-05-01T05:41:55Z",
+            "paper_title": {
+                "en": "Dynamically weighted queueing for fair bandwidth allocation and its performance analysis"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "R Kawahara"
+                    },
+                    {
+                        "name": "N Komatsu"
+                    }
+                ]
+            },
+            "publication_date": "2002",
+            "publication_name": {
+                "en": "2002 IEEE INTERNATIONAL CONFERENCE ON COMMUNICATIONS, VOLS 1-5, CONFERENCE PROCEEDINGS"
+            },
+            "starting_page": "2379",
+            "ending_page": "2383",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/icc/KawaharaK02"
+                ],
+                "doi": [
+                    "10.1109/ICC.2002.997270"
+                ],
+                "wos_id": [
+                    "WOS:000177818300457"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/icc/KawaharaK02",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1109/ICC.2002.997270",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000177818300457&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/icc/icc2002.html#conf/icc/KawaharaK02",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553470",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553470",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:55Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-05-02T06:14:37Z",
+            "paper_title": {
+                "en": "Evaluation of congestion control of the PDC mobile packet data communication system"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "K Yoshihara"
+                    },
+                    {
+                        "name": "T Suzuki"
+                    },
+                    {
+                        "name": "A Miura"
+                    },
+                    {
+                        "name": "R Kawahara"
+                    }
+                ]
+            },
+            "publication_date": "2002",
+            "publication_name": {
+                "en": "GLOBECOM'02: IEEE GLOBAL TELECOMMUNICATIONS CONFERENCE, VOLS 1-3, CONFERENCE RECORDS"
+            },
+            "starting_page": "1965",
+            "ending_page": "1969",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/globecom/YoshiharaSMK02"
+                ],
+                "doi": [
+                    "10.1109/GLOCOM.2002.1188543"
+                ],
+                "wos_id": [
+                    "WOS:000182118500389"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/globecom/YoshiharaSMK02",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1109/GLOCOM.2002.1188543",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000182118500389&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/globecom/globecom2002.html#conf/globecom/YoshiharaSMK02",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/26387957",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "26387957",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2020-04-15T05:32:53Z",
+            "rm:modifier_id": "B000292423",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2020-04-15T07:37:16Z",
+            "paper_title": {
+                "ja": "A Scalable IP Traffic Control Method for Weighted Bandwidth Allocation per Flow",
+                "en": "A Scalable IP Traffic Control Method for Weighted Bandwidth Allocation per Flow"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "KAWAHARA Ryoichi"
+                    },
+                    {
+                        "name": "KOMATSU Naohisa"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "KAWAHARA Ryoichi"
+                    },
+                    {
+                        "name": "KOMATSU Naohisa"
+                    }
+                ]
+            },
+            "description": {
+                "ja": "A method is described that can allocate bandwidth to each user flow fairly in a scalable network architecture such as differentiated services architecture. As promising queueing techniques for providing differentiated services, classbased packet scheduling and selective packet discarding have been attracting attention. However, if we consider that bandwidth should be allocated to each flow in a weighted manner, the parameters used in these methods such as the weight assigned to each class queue should be pre-determined appropriately based on an assumption about the number of flows in each class. Thus, when the actual traffic pattern differs from the assumed one, they may not work well. Instead of assuming the traffic conditions, our method estimates the number of active flows in each class by simple traffic measurement and dynamically changes the weight assigned to each class queue based on the estimated number. Our method does not need to maintain the per-flow state, which gives it scalability. Simulation showed that this method is effective under various patterns of the number of active flows.",
+                "en": "A method is described that can allocate bandwidth to each user flow fairly in a scalable network architecture such as differentiated services architecture. As promising queueing techniques for providing differentiated services, classbased packet scheduling and selective packet discarding have been attracting attention. However, if we consider that bandwidth should be allocated to each flow in a weighted manner, the parameters used in these methods such as the weight assigned to each class queue should be pre-determined appropriately based on an assumption about the number of flows in each class. Thus, when the actual traffic pattern differs from the assumed one, they may not work well. Instead of assuming the traffic conditions, our method estimates the number of active flows in each class by simple traffic measurement and dynamically changes the weight assigned to each class queue based on the estimated number. Our method does not need to maintain the per-flow state, which gives it scalability. Simulation showed that this method is effective under various patterns of the number of active flows."
+            },
+            "publisher": {
+                "ja": "一般社団法人電子情報通信学会",
+                "en": "The Institute of Electronics, Information and Communication Engineers"
+            },
+            "publication_date": "2001-10-01",
+            "publication_name": {
+                "ja": "IEICE transactions on communications",
+                "en": "IEICE Trans. Commun."
+            },
+            "volume": "84",
+            "number": "10",
+            "starting_page": "2815",
+            "ending_page": "2829",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "issn": [
+                    "0916-8516"
+                ],
+                "cinii_na_id": [
+                    "110003218880"
+                ],
+                "cinii_nc_id": [
+                    "AA10826261"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/110003218880",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AA10826261",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553472",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553472",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:55Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-06-06T03:57:58Z",
+            "paper_title": {
+                "en": "Traffic measurement and analysis in an ATM-based internet backbone"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "R Kawahara"
+                    },
+                    {
+                        "name": "K Ishibashi"
+                    },
+                    {
+                        "name": "T Hirano"
+                    },
+                    {
+                        "name": "H Saito"
+                    },
+                    {
+                        "name": "H Ohara"
+                    },
+                    {
+                        "name": "D Satoh"
+                    },
+                    {
+                        "name": "S Asano"
+                    },
+                    {
+                        "name": "J Matsukata"
+                    }
+                ]
+            },
+            "publication_date": "2001-10",
+            "publication_name": {
+                "en": "COMPUTER COMMUNICATIONS"
+            },
+            "volume": "24",
+            "number": "15-16",
+            "starting_page": "1508",
+            "ending_page": "1524",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "journals/comcom/KawaharaIHSOSAM01"
+                ],
+                "doi": [
+                    "10.1016/S0140-3664(01)00309-7"
+                ],
+                "issn": [
+                    "0140-3664"
+                ],
+                "wos_id": [
+                    "WOS:000171402700003"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/journals/comcom/KawaharaIHSOSAM01",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1016/S0140-3664(01)00309-7",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000171402700003&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/journals/comcom/comcom24.html#journals/comcom/KawaharaIHSOSAM01",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/27376428",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "27376428",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_papers",
+            "rm:creator_type": "coauthor",
+            "rm:created": "2020-05-27T06:54:09Z",
+            "rm:modifier_id": "ai:assign_based_papers",
+            "rm:modifier_type": "coauthor",
+            "rm:modified": "2020-05-27T06:54:09Z",
+            "paper_title": {
+                "ja": "Network Engineering Based on Real-time Traffic Monitoring for an Internet Backbone",
+                "en": "Network Engineering Based on Real-time Traffic Monitoring for an Internet Backbone"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "S. ASANO"
+                    },
+                    {
+                        "name": "J. MATSUKATA"
+                    },
+                    {
+                        "name": "S. SAITO"
+                    },
+                    {
+                        "name": "R. KAWAHARA"
+                    },
+                    {
+                        "name": "S. URUSHIDANI"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "S. ASANO"
+                    },
+                    {
+                        "name": "J. MATSUKATA"
+                    },
+                    {
+                        "name": "S. SAITO"
+                    },
+                    {
+                        "name": "R. KAWAHARA"
+                    },
+                    {
+                        "name": "S. URUSHIDANI"
+                    }
+                ]
+            },
+            "publication_date": "2000-05",
+            "publication_name": {
+                "ja": "Proceedings of International Switching Symposium (ISS'2000, Birmingham), (May 2000)",
+                "en": "Proceedings of International Switching Symposium (ISS'2000, Birmingham), (May 2000)"
+            },
+            "number": "39784",
+            "starting_page": "122.1",
+            "ending_page": "122.7",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/26387958",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "26387958",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2020-04-15T05:32:53Z",
+            "rm:modifier_id": "B000292423",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2020-04-15T07:38:54Z",
+            "paper_title": {
+                "ja": "Performance of TCP/IP over ATM over an ADSL",
+                "en": "Performance of TCP/IP over ATM over an ADSL"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "KAWAHARA Ryoichi"
+                    },
+                    {
+                        "name": "SAITO Hiroshi"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "KAWAHARA Ryoichi"
+                    },
+                    {
+                        "name": "SAITO Hiroshi"
+                    }
+                ]
+            },
+            "description": {
+                "ja": "The performance of TCP / IP over ATM over an asymmetric digital subscriber line (ADSL) was investigated. Because the bandwidth of an ADSL link can vary over time due to changes in the link's physical conditions, which degrades TCP performance, we performed simulations for various ATM traffic controls, including available bit rate (ABR) and generic flow control, used to handle variations in the ADSL bandwidth.This analysis showed that using an ABR control is effective under various traffic conditions. An ABR switch algorithm that can achieve good performance under any condition was investigated.",
+                "en": "The performance of TCP / IP over ATM over an asymmetric digital subscriber line (ADSL) was investigated. Because the bandwidth of an ADSL link can vary over time due to changes in the link's physical conditions, which degrades TCP performance, we performed simulations for various ATM traffic controls, including available bit rate (ABR) and generic flow control, used to handle variations in the ADSL bandwidth.This analysis showed that using an ABR control is effective under various traffic conditions. An ABR switch algorithm that can achieve good performance under any condition was investigated."
+            },
+            "publisher": {
+                "ja": "一般社団法人電子情報通信学会",
+                "en": "The Institute of Electronics, Information and Communication Engineers"
+            },
+            "publication_date": "2000-02-25",
+            "publication_name": {
+                "ja": "IEICE transactions on communications",
+                "en": "IEICE Trans. Commun., B"
+            },
+            "volume": "83",
+            "number": "2",
+            "starting_page": "140",
+            "ending_page": "154",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "issn": [
+                    "0916-8516"
+                ],
+                "cinii_na_id": [
+                    "110003218609"
+                ],
+                "cinii_nc_id": [
+                    "AA10826261"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/110003218609",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AA10826261",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/26387959",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "26387959",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2020-04-15T05:32:53Z",
+            "rm:modifier_id": "B000292423",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2020-04-15T07:39:48Z",
+            "paper_title": {
+                "ja": "Metohd of Implementing GFR Service in Large-Scale Networks Using ABR Control Mechanism and Its Performance Analysis",
+                "en": "Metohd of Implementing GFR Service in Large-Scale Networks Using ABR Control Mechanism and Its Performance Analysis"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "KAWAHARA Ryoichi"
+                    },
+                    {
+                        "name": "KAMADO Yuki"
+                    },
+                    {
+                        "name": "OMOTANI Masaaki"
+                    },
+                    {
+                        "name": "NAGATA Shunsaku"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "KAWAHARA Ryoichi"
+                    },
+                    {
+                        "name": "KAMADO Yuki"
+                    },
+                    {
+                        "name": "OMOTANI Masaaki"
+                    },
+                    {
+                        "name": "NAGATA Shunsaku"
+                    }
+                ]
+            },
+            "description": {
+                "ja": "This paper proposes implementing guaranteed frame rate (GFR) service using the available bit rate (ABR) control mechanism in large-scale networks. GFR is being standardized as a new ATM service category to provide a minimum cell rate (MCR) guarantee to each virtual channel (VC) at the frame level. Although ABR also can support MCR, a source must adjust its cell emission rate according to the network congestion indication. In contrast, GFR service is intended for users who are not equipped to comply with the source behavior rules required by ABR. It is expected that many existing users will fall into this category. As one implementation of GFR, weighted round robin (WRR) with per-VC queueing at each switch is well known. However, WRR is hard to implement in a switch supporting a large number of VCs because it needs to determine in one cell time which VC queue should be served. In addition, it may result in ineffective bandwidth utilization at the network level because its control mechanism is closed at the node level. On the other hand, progress in ABR service standardization has led to the development of some ABR control algorithms that can handle a large number of connections. Thus, we propose implementing GFR using an already developed ABR control mechanism that can cope with many connections. It consists of an explicit rate (ER) control mechanism and a virtual source/virtual destination (VS/VD) mechanism. Allocating VSs/VDs to edge switches and ER control to backbone switches enables us to apply ABR control up to the entrance of a network, which results in effective bandwidth utilization at the network level. Our method also makes it possible to share resources between GFR and ABR connections, which decreases the link cost. Through simulation analysis, we show that our method can work better than WRR under various traffic conditions.",
+                "en": "This paper proposes implementing guaranteed frame rate (GFR) service using the available bit rate (ABR) control mechanism in large-scale networks. GFR is being standardized as a new ATM service category to provide a minimum cell rate (MCR) guarantee to each virtual channel (VC) at the frame level. Although ABR also can support MCR, a source must adjust its cell emission rate according to the network congestion indication. In contrast, GFR service is intended for users who are not equipped to comply with the source behavior rules required by ABR. It is expected that many existing users will fall into this category. As one implementation of GFR, weighted round robin (WRR) with per-VC queueing at each switch is well known. However, WRR is hard to implement in a switch supporting a large number of VCs because it needs to determine in one cell time which VC queue should be served. In addition, it may result in ineffective bandwidth utilization at the network level because its control mechanism is closed at the node level. On the other hand, progress in ABR service standardization has led to the development of some ABR control algorithms that can handle a large number of connections. Thus, we propose implementing GFR using an already developed ABR control mechanism that can cope with many connections. It consists of an explicit rate (ER) control mechanism and a virtual source/virtual destination (VS/VD) mechanism. Allocating VSs/VDs to edge switches and ER control to backbone switches enables us to apply ABR control up to the entrance of a network, which results in effective bandwidth utilization at the network level. Our method also makes it possible to share resources between GFR and ABR connections, which decreases the link cost. Through simulation analysis, we show that our method can work better than WRR under various traffic conditions."
+            },
+            "publisher": {
+                "ja": "一般社団法人電子情報通信学会",
+                "en": "The Institute of Electronics, Information and Communication Engineers"
+            },
+            "publication_date": "1999-12-01",
+            "publication_name": {
+                "ja": "IEICE transactions on communications",
+                "en": "IEICE Trans. Commun."
+            },
+            "volume": "82",
+            "number": "12",
+            "starting_page": "2081",
+            "ending_page": "2094",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "issn": [
+                    "0916-8516"
+                ],
+                "cinii_na_id": [
+                    "110003218338"
+                ],
+                "cinii_nc_id": [
+                    "AA10826261"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/110003218338",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AA10826261",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/26386573",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "26386573",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2020-04-15T02:49:50Z",
+            "rm:modifier_id": "B000292423",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2020-04-15T07:41:14Z",
+            "paper_title": {
+                "ja": "ABRの重み付け帯域割当てを用いたIPスループット最低保証のためのトラヒック制御方式",
+                "en": "ATM Traffic Control for Guaranteed IP Throughput Using ABR Weighted Bandwidth Allocation"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "川原 亮一"
+                    },
+                    {
+                        "name": "小沢 利久"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "KAWAHARA Ryoichi"
+                    },
+                    {
+                        "name": "OZAWA Toshihisa"
+                    }
+                ]
+            },
+            "description": {
+                "ja": "ATMを用いて大規模なIP中継サービス網を構築する方法として, パケットハンドリング機能をもつノードを網内に配備し, そのノード内でATMコネクションをいったん終端させ, パケットレベルでのルーチングを行う方法が考えられている. この方法では, ユーザフロー(IPパケットフロー)ごとのATMコネクションの設定/解放が不要となり, また各ノード間に張られたATMコネクションに複数のユーザフローを多重化することで, 帯域の有効利用も図れる. 本論文ではこのような網構成を前提として, 各ユーザに対するIPパケット通信としての最低スループット保証のためのトラヒック制御方式を提案する. ユーザフローごとにATMコネクションが設定されていれば, 各コネクションに対しあらかじめ定めたMCR(Minimum Cell Rate)を保証することで各ユーザの最低スループットは保証される. しかし, 1本のATMコネクションに複数のユーザフローが多重される上記の方法では, そのときのアクティブユーザフロー数に応じた帯域を各コネクションに割り当てる必要がある. そこで, バックボーンATM網にABR(AVailable Bit Rate)を適用し, ABRの帯域割当てにおける重み付けをトラヒック測定値に基づいて動的に変化させることで, そのような帯域割当てを実現する方式を構成する. 更に, 提案方式により, さまざまなトラヒック条件下においでも各ユーザに対してIPパケットレベルでの最低スループットが保証されることをシミュレーション評価を通じて示す."
+            },
+            "publisher": {
+                "ja": "一般社団法人電子情報通信学会",
+                "en": "The Institute of Electronics, Information and Communication Engineers"
+            },
+            "publication_date": "1999-05-25",
+            "publication_name": {
+                "ja": "電子情報通信学会論文誌. B, 通信",
+                "en": "The Transactions of the Institute of Electronics,Information and Communication Engineers B"
+            },
+            "volume": "82",
+            "number": "5",
+            "starting_page": "908",
+            "ending_page": "919",
+            "languages": [
+                "jpn"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "issn": [
+                    "1344-4697"
+                ],
+                "cinii_na_id": [
+                    "110003181891"
+                ],
+                "cinii_nc_id": [
+                    "AA11325909"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/110003181891",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AA11325909",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://id.ndl.go.jp/bib/4749651",
+                    "label": "url",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/26386566",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "26386566",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2020-04-15T02:48:42Z",
+            "rm:modifier_id": "B000292423",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2020-04-15T07:41:52Z",
+            "paper_title": {
+                "ja": "最低スループット保証に適した開ループ制御型ATM転送方式のサービス特性分析",
+                "en": "Performance Analysis of ATM Traffic Control Mechanisms for Guaranteed Througput Service"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "朝香 卓也"
+                    },
+                    {
+                        "name": "川原 亮一"
+                    },
+                    {
+                        "name": "小沢 利久"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "ASAKA Takuya"
+                    },
+                    {
+                        "name": "KAWAHARA Ryoichi"
+                    },
+                    {
+                        "name": "OZAWA Toshihisa"
+                    }
+                ]
+            },
+            "description": {
+                "ja": "ATMレイヤにおける最低帯域の保証機能をもったサービスカテゴリーとして, すでに標準化ずみであるVBR(Variable Bit Rate)と標準化が進行中であるGFR(Guaranteed Frame Rate)があげられる.これらサービスカテゴリーはその機能上, ATMレイヤでの最低帯域を保証するものであり, それを用いてコンピュータ通信を行った場合の性能を直接保証するものではない.特に上位プロトコルとしてTCP/IPを用いた場合, TCPレイヤでの性能はTCPのフロー制御に大きく依存する.よって, これらのサービスカテゴリーをコンピュータ通信へ適用していくにあたっては, TCPレイヤでの最低スループットをはじめとしたさまざまな性能特性を事前に把握し, それをネットワーク構成やトラヒック設計に生かしていく必要がある.そこで, 本論文では, FIFOキュー方式で実現されたVBRと個別キュー方式で実現されたGFRを対象にシミュレーション評価を行い, TCPレイヤでの性能特性を分析した.結果として, どちらのサービスカテゴリーとも目標とする最低スループットの保証が可能であること, VC間における公平性の実現については個別キュー方式であるGFRが有効であることなどが明らかになった."
+            },
+            "publisher": {
+                "ja": "一般社団法人電子情報通信学会",
+                "en": "The Institute of Electronics, Information and Communication Engineers"
+            },
+            "publication_date": "1998-11",
+            "publication_name": {
+                "ja": "電子情報通信学会論文誌. B-1, 通信1-情報通信システム・理論",
+                "en": "The Transactions of the Institute of Electronics,Information and Communication Engineers B-(0xF9C1)"
+            },
+            "volume": "81",
+            "number": "11",
+            "starting_page": "731",
+            "ending_page": "740",
+            "languages": [
+                "jpn"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "issn": [
+                    "0915-1877"
+                ],
+                "cinii_na_id": [
+                    "110003277678"
+                ],
+                "cinii_nc_id": [
+                    "AA11359944"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/110003277678",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AA11359944",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://id.ndl.go.jp/bib/4612030",
+                    "label": "url",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/26386523",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "26386523",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2020-04-15T02:46:55Z",
+            "rm:modifier_id": "B000292423",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2020-04-15T07:42:31Z",
+            "paper_title": {
+                "ja": "大規模網におけるABRレート制御アルゴリズム",
+                "en": "A Simple and Efficient ABR Control Algorithm in Large Scale Networks"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "川原 亮一"
+                    },
+                    {
+                        "name": "小沢 利久"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "KAWAHARA Ryoichi"
+                    },
+                    {
+                        "name": "OZAWA Toshihisa"
+                    }
+                ]
+            },
+            "description": {
+                "ja": "大規模網において各コネクションへ帯域を重み付けして割り当てることのできるABR(Available Bit Rate)レート制御アルゴリズムを提案する.ATMレイヤにおけるABRサービスは, VC(Virtual Connection)ごとにPCR(Peak Cell Rate)とMCR(Minimum Cell Rate)を呼設定時に定め, 通信中は網からのフィードバック情報により各VCの送信レートをそれらの間で制御しながら運用する.従来の制御アルゴリズムのうち, スイッチにてVCごとに状態管理を行わない方法ではVCごとに区別せずに一律に送信レートを通知するため, 網から通知する送信レートより低いPCRや高いMCRのVCが混在した場合には, リンク使用率の低下やふくそう状態の継続をまねく恐れがある.またこのような制御方法では, 例えば料金格差に応じて各VCへの帯域の割当てを重み付けしたい場合にも対応できない.これに対し, VCごとに状態やパラメータ(PCR, MCR等)を管理して各VCへの通知レートを計算できれば, そのときのトラヒック条件に応じた各VCへの帯域の重み付け割当てを容易に実現することができると考えられる.しかしながら, 多重VC数の大きい公衆網のような大規模網を構築する場合, VCごとに状態を管理する方法を実装するのは困難となる.そこで本論文では, VCごとに状態を管理することなく, 大規模網においてさまざまなPCRやMCRのVCが混在した場合にも, そのときのトラヒック条件に応じて各VCへの帯域を重み付けして割り当てることができる制御アルゴリズムを提案する.また, 提案方式の有効性をシミュレーションにより評価する."
+            },
+            "publisher": {
+                "ja": "一般社団法人電子情報通信学会",
+                "en": "The Institute of Electronics, Information and Communication Engineers"
+            },
+            "publication_date": "1998-11",
+            "publication_name": {
+                "ja": "電子情報通信学会論文誌. B-1, 通信1-情報通信システム・理論",
+                "en": "The Transactions of the Institute of Electronics,Information and Communication Engineers B-(0xF9C1)"
+            },
+            "volume": "81",
+            "number": "11",
+            "starting_page": "720",
+            "ending_page": "730",
+            "languages": [
+                "jpn"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "issn": [
+                    "0915-1877"
+                ],
+                "cinii_na_id": [
+                    "110003277677"
+                ],
+                "cinii_nc_id": [
+                    "AA11359944"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/110003277677",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AA11359944",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://id.ndl.go.jp/bib/4612029",
+                    "label": "url",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553473",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553473",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:55Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-04-24T19:03:52Z",
+            "paper_title": {
+                "en": "Characteristics of ABR explicit rate control algorithms in WAN environments and an ABR control algorithm suitable for public networks"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "R Kawahara"
+                    },
+                    {
+                        "name": "H Saito"
+                    },
+                    {
+                        "name": "M Kawarasaki"
+                    }
+                ]
+            },
+            "publication_date": "1998-05",
+            "publication_name": {
+                "en": "INTERNATIONAL JOURNAL OF COMMUNICATION SYSTEMS"
+            },
+            "volume": "11",
+            "number": "3",
+            "starting_page": "189",
+            "ending_page": "209",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "journals/ijcomsys/KawaharaSK98"
+                ],
+                "doi": [
+                    "10.1002/(SICI)1099-1131(199805/06)11:3<189::AID-DAC360>3.0.CO;2-V"
+                ],
+                "issn": [
+                    "1074-5351"
+                ],
+                "e_issn": [
+                    "1099-1131"
+                ],
+                "wos_id": [
+                    "WOS:000074968300005"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/journals/ijcomsys/KawaharaSK98",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1002/(SICI)1099-1131(199805/06)11:3<189::AID-DAC360>3.0.CO;2-V",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000074968300005&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/journals/ijcomsys/ijcomsys11.html#journals/ijcomsys/KawaharaSK98",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/20553474",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "20553474",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-05-20T07:01:55Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-05-16T13:08:39Z",
+            "paper_title": {
+                "en": "Characteristics of ABR explicit rate control algorithms in WAN environment"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "R Kawahara"
+                    },
+                    {
+                        "name": "A Koike"
+                    },
+                    {
+                        "name": "M Ishizuka"
+                    },
+                    {
+                        "name": "M Koshiishi"
+                    },
+                    {
+                        "name": "M Kawarasaki"
+                    }
+                ]
+            },
+            "publication_date": "1997",
+            "publication_name": {
+                "en": "ICC'97: 1997 IEEE INTERNATIONAL CONFERENCE ON COMMUNICATIONS - TOWARDS THE KNOWLEDGE MILLENNIUM, CONFERENCE RECORD - VOLS 1-3"
+            },
+            "starting_page": "1396",
+            "ending_page": "1400",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/icc/KawaharaKIKK97"
+                ],
+                "doi": [
+                    "10.1109/ICC.1997.595018"
+                ],
+                "wos_id": [
+                    "WOS:A1997BJ13Y00265"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/icc/KawaharaKIKK97",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1109/ICC.1997.595018",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:A1997BJ13Y00265&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/icc/icc1997-3.html#conf/icc/KawaharaKIKK97",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/28169530",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "28169530",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-07-01T10:40:50Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-07-01T10:40:50Z",
+            "paper_title": {
+                "en": "Overload control for intelligent networks based on an estimation of maximum number of calls in a node"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "R Kawahara"
+                    },
+                    {
+                        "name": "T Asaka"
+                    }
+                ]
+            },
+            "publication_date": "1996",
+            "publication_name": {
+                "en": "INTELLIGENT NETWORK '96, WORKSHOP RECORD, VOLS 1 AND 2"
+            },
+            "starting_page": "71",
+            "ending_page": "82",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "wos_id": [
+                    "WOS:A1996BG21P00007"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:A1996BG21P00007&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/g0000218011/published_papers/26387960",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/g0000218011/published_papers",
+            "rm:id": "26387960",
+            "rm:user_id": "B000292423",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000292423",
+            "rm:creator_type": "myself",
+            "rm:created": "2020-04-15T05:32:53Z",
+            "rm:modifier_id": "B000292423",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2020-04-15T07:44:27Z",
+            "paper_title": {
+                "ja": "Overload Control for the Intelligent Network and Its Analysis by Simulation",
+                "en": "Overload Control for the Intelligent Network and Its Analysis by Simulation"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "KAWAHARA Ryoichi"
+                    },
+                    {
+                        "name": "ASAKA Takuya"
+                    },
+                    {
+                        "name": "SUMITA Shuichi"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "KAWAHARA Ryoichi"
+                    },
+                    {
+                        "name": "ASAKA Takuya"
+                    },
+                    {
+                        "name": "SUMITA Shuichi"
+                    }
+                ]
+            },
+            "description": {
+                "ja": "This paper reports an overload control method for the Intelligent Network (IN). The IN, which is being investigated as a future communication network, facilitates both rapid introduction of new services and easy modification of existing services. In the IN, the call processing functions and data needed to achieve IN services are distributed over several nodes. Therefore, traffic demand for the various services may cause varying patterns of node overloads. It is therefore important to develop effective overload control methods and to evaluate their characteristics. We propose an overload control method and evaluate its characteristics in comparison with other methods under various overload traffic patterns with a network simulator that models all nodes and their relationships in the IN. In particular, we focus on three aspects of overload control : how can high throughput be maintained, how can an overloaded node be stabilized, and how can fair access be guaranteed.",
+                "en": "This paper reports an overload control method for the Intelligent Network (IN). The IN, which is being investigated as a future communication network, facilitates both rapid introduction of new services and easy modification of existing services. In the IN, the call processing functions and data needed to achieve IN services are distributed over several nodes. Therefore, traffic demand for the various services may cause varying patterns of node overloads. It is therefore important to develop effective overload control methods and to evaluate their characteristics. We propose an overload control method and evaluate its characteristics in comparison with other methods under various overload traffic patterns with a network simulator that models all nodes and their relationships in the IN. In particular, we focus on three aspects of overload control : how can high throughput be maintained, how can an overloaded node be stabilized, and how can fair access be guaranteed."
+            },
+            "publisher": {
+                "ja": "一般社団法人電子情報通信学会",
+                "en": "The Institute of Electronics, Information and Communication Engineers"
+            },
+            "publication_date": "1995-04-25",
+            "publication_name": {
+                "ja": "IEICE transactions on communications",
+                "en": "IEICE transactions on communications"
+            },
+            "volume": "78",
+            "number": "4",
+            "starting_page": "494",
+            "ending_page": "503",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "issn": [
+                    "0916-8516"
+                ],
+                "cinii_na_id": [
+                    "110003217344"
+                ],
+                "cinii_nc_id": [
+                    "AA10826261"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/110003217344",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AA10826261",
+                    "is_downloadable": false
+                }
+            ]
+        }
+    ]
+}
