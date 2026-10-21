@@ -157,7 +157,8 @@ export function startHero(hero: HTMLElement) {
   if (devPanelEnabled()) setupDevPanel(hero, scene, draw);
 
   if (reduceMotion) {
-    // 動きを減らす設定では、パケットが飛んでいる状態の1枚で止める(ドラッグとクリックには応じる)
+    // 動きを減らす設定では、パケットが飛んでいる状態の1枚で止める(ドラッグとクリックには応じる)。
+    // 時間を進めないので、クリックで故障させても描き直すのは故障だけで、自動では直らない
     scene.settle();
     draw();
   } else {
