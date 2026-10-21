@@ -5,7 +5,7 @@ import { smooth } from "./math";
 import { C } from "./palette";
 import type { Projected, Scene } from "./scene";
 
-export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: boolean) {
+export function createRenderer(ctx: CanvasRenderingContext2D) {
   /* 光の粒(色ごとに1枚作って使い回す) */
   const glowCache = new Map<string, HTMLCanvasElement>();
   function glow(c: RGB, x: number, y: number, r: number, a: number) {
@@ -59,8 +59,12 @@ export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: bool
   /** リンク(奥行きで3段階の濃さ) */
   function links(scene: Scene, Q: Projected[], a0: number) {
     const bands = [new Path2D(), new Path2D(), new Path2D()];
+    const dead = new Path2D(); // 故障した機器につながるリンクは薄く描く
     for (const [a, b] of scene.shape.edges) {
-      const path = bands[Math.min(2, Math.floor(((Q[a].d + Q[b].d) / 2) * 3))];
+      const path =
+        scene.down.has(a) || scene.down.has(b)
+          ? dead
+          : bands[Math.min(2, Math.floor(((Q[a].d + Q[b].d) / 2) * 3))];
       path.moveTo(Q[a].x, Q[a].y);
       path.lineTo(Q[b].x, Q[b].y);
     }
@@ -69,6 +73,10 @@ export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: bool
       ctx.strokeStyle = rgba(C.edge, (0.22 + i * 0.22) * a0);
       ctx.stroke(pa);
     });
+    ctx.setLineDash([3, 4]);
+    ctx.strokeStyle = rgba(C.edge, 0.3 * a0);
+    ctx.stroke(dead);
+    ctx.setLineDash([]);
   }
 
   /** ホバー: いちばん近い機器と、その隣を照らす */
@@ -78,6 +86,8 @@ export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: bool
     if (hv < 0 || ha <= 0.01) return;
     ctx.beginPath();
     for (const j of scene.nbrs[hv]) {
+      // 故障した機器につながるリンクは、薄いまま見せる
+      if (scene.down.has(hv) || scene.down.has(j)) continue;
       ctx.moveTo(Q[hv].x, Q[hv].y);
       ctx.lineTo(Q[j].x, Q[j].y);
     }
@@ -98,7 +108,7 @@ export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: bool
     ctx.stroke();
   }
 
-  /** パケットと、通過・到着した機器の光。尾はまとめて描く */
+  /** パケットと、通過・到着した機器の光(パケットが落ちた機器は橙)。尾はまとめて描く */
   function packets(scene: Scene, Q: Projected[], a0: number) {
     const tails = new Path2D();
     const heads: number[] = [];
@@ -129,19 +139,29 @@ export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: bool
           (10 + 22 * nd.flash) * q.k,
           0.75 * nd.flash * (0.3 + 0.7 * q.d) * a0,
         );
+      if (nd.drop > 0.05) glow(C.accent2, q.x, q.y, (12 + 26 * nd.drop) * q.k, 0.9 * nd.drop * a0);
     }
   }
 
-  /** 機器の点。中継機器は端末より大きく描く */
+  /** 機器の点。中継機器は端末より大きく描く。故障した機器は橙の輪、届かない端末は薄く描く */
   function nodes(scene: Scene, Q: Projected[], a0: number) {
     for (let i = 0; i < scene.n; i++) {
       const nd = scene.nodes[i],
         q = Q[i];
       const relay = scene.shape.roles[i] === "relay";
-      const col: RGB = mix(relay ? C.ink : C.muted, C.accent, Math.min(1, nd.flash));
+      const r = (relay ? 4 + 2.4 * q.d : 2 + 1.8 * q.d) * q.k;
+      const depth = 0.35 + 0.65 * q.d;
       ctx.beginPath();
-      ctx.arc(q.x, q.y, (relay ? 4 + 2.4 * q.d : 2 + 1.8 * q.d) * q.k, 0, Math.PI * 2);
-      ctx.fillStyle = rgba(col, (0.35 + 0.65 * q.d) * a0);
+      ctx.arc(q.x, q.y, scene.down.has(i) ? r + 2 : r, 0, Math.PI * 2);
+      if (scene.down.has(i)) {
+        ctx.strokeStyle = rgba(C.accent2, (0.6 + 0.4 * q.d) * a0);
+        ctx.lineWidth = 1.8;
+        ctx.stroke();
+        ctx.lineWidth = 1;
+        continue;
+      }
+      const col: RGB = mix(relay ? C.ink : C.muted, C.accent, Math.min(1, nd.flash));
+      ctx.fillStyle = rgba(col, depth * (scene.cut.has(i) ? 0.3 : 1) * a0);
       ctx.fill();
     }
   }

@@ -1,7 +1,7 @@
-// 回転するトポロジと、その上を飛ぶパケットの状態。時間を進める(update)が、描き方と DOM は知らない
+// 回転するトポロジと、その上を飛ぶパケット、見る人が起こした故障の状態。時間を進める(update)が、描き方と DOM は知らない
 import { BASE_TILT, CFG } from "./config";
 import { clamp, smooth, type Vec3 } from "./math";
-import { route } from "./routing";
+import { reachable, route } from "./routing";
 import { ring, star, toGraph, tree, type Topology } from "./topologies";
 
 /** 見せるトポロジ(この順に切り替える) */
@@ -9,14 +9,14 @@ export const showcase = (): Topology[] => [star(), ring(), tree()];
 
 /** path に沿って1ホップずつ進むパケット。今は path[hop] → path[hop + 1] のリンクの上にいる */
 export type Packet = { id: number; path: number[]; hop: number; t: number; dur: number };
-/** flash は通過・到着したときに光る強さ(1 から減っていく) */
-export type NodeState = { p: Vec3; flash: number };
+/** flash は通過・到着したとき、drop はパケットが落ちたときに光る強さ(1 から減っていく) */
+export type NodeState = { p: Vec3; flash: number; drop: number };
 /** 画面に投影した機器。k は遠近の倍率、d は手前ほど 1 に近い奥行き */
 export type Projected = { x: number; y: number; k: number; d: number };
 
 export type SceneHooks = {
-  /** トポロジを読み込んだ */
-  onShapeLoad(shape: Topology): void;
+  /** 右下の名前が変わった(`STAR`、`STAR · 1 DOWN` など) */
+  onLabel(label: string): void;
 };
 
 export class Scene {
@@ -47,6 +47,10 @@ export class Scene {
   /** パケットの送信元・宛先になる機器 */
   terminals: number[] = [];
   packets: Packet[] = [];
+  /** 故障した機器 → 直るまでの秒数 */
+  down = new Map<number, number>();
+  /** 故障していないのに、どの端末にも届かなくなった端末 */
+  cut = new Set<number>();
   timer = 0;
   nodes: NodeState[] = [];
   proj: Projected[] = [];
@@ -62,9 +66,35 @@ export class Scene {
     const { n, nbrs, len } = toGraph(shape);
     Object.assign(this, { shape, n, nbrs, len, packets: [], timer: 0, hover: -1, hoverA: 0 });
     this.terminals = shape.roles.flatMap((r, i) => (r === "terminal" ? [i] : []));
-    this.nodes = shape.nodes.map((p) => ({ p, flash: 0 }));
+    this.nodes = shape.nodes.map((p) => ({ p, flash: 0, drop: 0 }));
     this.proj = this.nodes.map(() => ({ x: 0, y: 0, k: 1, d: 0 }));
-    this.hooks.onShapeLoad(shape);
+    this.down = new Map();
+    this.cut = new Set();
+    this.hooks.onLabel(this.label);
+  }
+
+  get label() {
+    return this.down.size ? `${this.shape.name} · ${this.down.size} DOWN` : this.shape.name;
+  }
+
+  /** 機器 i を故障させる。故障していれば直す */
+  fail(i: number) {
+    if (this.down.has(i)) this.down.delete(i);
+    else this.down.set(i, CFG.repair);
+    this.faultsChanged();
+  }
+
+  private faultsChanged() {
+    this.cut = new Set(
+      this.terminals.filter((a) => !this.down.has(a) && this.peers(a).length === 0),
+    );
+    this.hooks.onLabel(this.label);
+  }
+
+  /** 端末 a から届く、ほかの端末 */
+  private peers(a: number) {
+    const r = reachable(this.nbrs, a, this.down);
+    return this.terminals.filter((b) => b !== a && r[b]);
   }
 
   /** リンク a→b を渡るのにかかる秒数 */
@@ -72,16 +102,15 @@ export class Scene {
     return 0.25 + this.len.get(a * this.n + b)! * CFG.pace;
   }
 
-  /** 端末からランダムに2台選び、その間を最短経路で送る */
+  /** 届く組の端末からランダムに2台選び、その間を最短経路で送る */
   send() {
-    const T = this.terminals;
-    if (T.length < 2 || this.packets.length >= CFG.maxPackets) return;
-    const ia = (Math.random() * T.length) | 0;
-    let ib = (Math.random() * (T.length - 1)) | 0;
-    if (ib >= ia) ib++;
-    const [a, b] = [T[ia], T[ib]];
-    const path = route(this.nbrs, a, b);
-    if (!path) return;
+    if (this.packets.length >= CFG.maxPackets) return;
+    const senders = this.terminals.filter((a) => !this.down.has(a) && !this.cut.has(a));
+    if (!senders.length) return;
+    const a = senders[(Math.random() * senders.length) | 0];
+    const peers = this.peers(a);
+    const b = peers[(Math.random() * peers.length) | 0];
+    const path = route(this.nbrs, a, b, this.down)!;
     this.nodes[a].flash = 1;
     this.packets.push({ id: ++this.pid, path, hop: 0, t: 0, dur: this.hopDur(a, path[1]) });
   }
@@ -102,8 +131,14 @@ export class Scene {
       this.timer -= CFG.interval;
       this.send();
     }
-    // 触っている間は、形を切り替えない
-    if (this.lock === null && !this.dragging && this.idle > 4) this.shapeT += dt;
+    let repaired = false;
+    for (const [i, left] of this.down) {
+      if (left > dt) this.down.set(i, left - dt);
+      else repaired = this.down.delete(i);
+    }
+    if (repaired) this.faultsChanged();
+    // 触っている間と故障している間は、形を切り替えない
+    if (this.lock === null && !this.dragging && !this.down.size && this.idle > 4) this.shapeT += dt;
     if (this.shapeT > CFG.hold) {
       this.fade = Math.max(0, this.fade - dt * 1.5);
       if (this.fade === 0) {
@@ -115,13 +150,21 @@ export class Scene {
       this.fade = Math.min(1, this.fade + dt * 1.5);
     }
     const fl = Math.exp(-dt * 2.4);
-    for (const nd of this.nodes) nd.flash *= fl;
+    for (const nd of this.nodes) {
+      nd.flash *= fl;
+      nd.drop *= fl;
+    }
     this.packets = this.packets.filter((q) => {
       q.t += dt;
       while (q.t >= q.dur) {
         q.t -= q.dur;
         q.hop++;
         const v = q.path[q.hop];
+        // 故障した機器に着いたパケットは、そこで落ちる
+        if (this.down.has(v)) {
+          this.nodes[v].drop = 1;
+          return false;
+        }
         this.nodes[v].flash = 1;
         if (q.hop === q.path.length - 1) return false;
         q.dur = this.hopDur(v, q.path[q.hop + 1]);
@@ -207,8 +250,10 @@ export class Scene {
     return best;
   }
 
-  // クリック: 故障(#21)が入るまでは、触ったことだけを記録する
-  click(_x: number, _y: number) {
+  // クリック: いちばん近い機器を故障させる(故障していれば直す)
+  click(x: number, y: number) {
     this.idle = 0;
+    const i = this.nearest(x, y, 40);
+    if (i >= 0) this.fail(i);
   }
 }
