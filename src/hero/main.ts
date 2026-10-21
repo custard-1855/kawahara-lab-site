@@ -13,7 +13,7 @@ export function startHero(hero: HTMLElement) {
   const nameEl = hero.querySelector<HTMLElement>("[data-shape-name]")!;
 
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const renderer = createRenderer(ctx, reduceMotion);
+  const renderer = createRenderer(ctx);
   let W = 0,
     H = 0;
   let visible = true,
@@ -41,7 +41,7 @@ export function startHero(hero: HTMLElement) {
     draw();
   }
 
-  /* 操作: ドラッグで回す / ホバーで隣を照らす / クリック */
+  /* 操作: ドラッグで回す / ホバーで隣を照らす / クリックで機器を故障させる */
   const local = (e: PointerEvent): [number, number] => {
     const r = cv.getBoundingClientRect();
     return [e.clientX - r.left, e.clientY - r.top];
@@ -148,8 +148,8 @@ export function startHero(hero: HTMLElement) {
   sizeCanvas();
   const scene = new Scene(
     {
-      onShapeLoad: (shape) => {
-        nameEl.textContent = shape.name;
+      onLabel: (label) => {
+        nameEl.textContent = label;
       },
     },
     reduceMotion,

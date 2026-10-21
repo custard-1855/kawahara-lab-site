@@ -50,3 +50,34 @@ test("TREE: 同じ中間の下なら中間だけを、違う中間の下なら�
     for (const v of expected.slice(1, -1)) expect(t.roles[v]).toBe("relay");
   }
 });
+
+describe("故障した機器を避ける", () => {
+  test("RING: 隣が故障すると、輪を反対向きに回って迂回する", () => {
+    const { nbrs } = toGraph(ring());
+    const path = route(nbrs, 0, 2, new Set([1]))!;
+    expect(path).toEqual([0, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2]);
+  });
+
+  test("STAR: ハブが故障すると、どの端末の組にも経路がない", () => {
+    const t = star();
+    const hub = t.roles.indexOf("relay");
+    for (const [a, b] of pairs(t)) expect(route(toGraph(t).nbrs, a, b, new Set([hub]))).toBeNull();
+  });
+
+  test("TREE: 根が故障しても、同じ中間の下の端末どうしは届く", () => {
+    const t = tree();
+    const { nbrs } = toGraph(t);
+    const mid = (leaf: number) => nbrs[leaf][0];
+    for (const [a, b] of pairs(t)) {
+      const path = route(nbrs, a, b, new Set([0]));
+      if (mid(a) === mid(b)) expect(path).toEqual([a, mid(a), b]);
+      else expect(path).toBeNull();
+    }
+  });
+
+  test("送信元か宛先が故障していれば、経路はない", () => {
+    const { nbrs } = toGraph(ring());
+    expect(route(nbrs, 0, 2, new Set([0]))).toBeNull();
+    expect(route(nbrs, 0, 2, new Set([2]))).toBeNull();
+  });
+});

@@ -186,6 +186,22 @@ test.describe("操作性", () => {
   });
 });
 
+test.describe("ヒーロー", () => {
+  test("?dev で STAR に固定してハブ(画面の中央)をクリックすると、右下に故障の台数が出る", async ({
+    page,
+  }) => {
+    await page.goto("?dev");
+    await page
+      .getByRole("navigation", { name: "検証用の図形切り替え" })
+      .getByRole("button", { name: "STAR" })
+      .click();
+    const name = page.locator("[data-hero] [data-shape-name]");
+    await expect(name).toHaveText("STAR");
+    await page.locator("[data-hero] canvas").click();
+    await expect(name).toHaveText("STAR · 1 DOWN");
+  });
+});
+
 test.describe("動きを減らす設定", () => {
   test.use({ reducedMotion: "reduce" });
   test("トップのモーションが止まる", async ({ page }) => {
