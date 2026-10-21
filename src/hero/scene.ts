@@ -2,7 +2,7 @@
 import { ALGOS, type Algo, type AlgoId, type SceneEvent } from "./algorithms";
 import { BASE_TILT, CFG } from "./config";
 import { fullerene, geodesic, hypercube, toGraph, torus, type Shape } from "./graphs";
-import { clamp, type Vec3 } from "./math";
+import { clamp, smooth, type Vec3 } from "./math";
 import { PAL } from "./palette";
 
 /** 見せる形と、クリックで実行する処理 */
@@ -68,6 +68,8 @@ export class Scene {
   hoverA = 0;
   hoverOn = false;
   ptr = { x: 0, y: 0, inside: false, mouse: false };
+  /** 最後に投影した画面の大きさと、形の中心 */
+  view = { W: 1, H: 1, cx: 0.5, cy: 0.5 };
 
   shape!: ShowcaseShape;
   n = 0;
@@ -214,6 +216,45 @@ export class Scene {
       this.update(1 / 30);
     }
     this.fade = 1;
+  }
+
+  /** 画面の大きさに合わせて頂点を投影し、ポインタの近くの頂点を照らす対象に選ぶ。描く前に呼ぶ */
+  project(W: number, H: number) {
+    const wide = W > H * 1.3;
+    // サイトでは文言を枠の外に置くので、形は枠の中央に描く
+    const cx = W / 2,
+      cy = H / 2;
+    const S =
+      (wide ? Math.min(H * 0.6, W * 0.34) : Math.min(W, H) * 0.56) *
+      CFG.size *
+      (0.85 + 0.15 * smooth(this.fade));
+    const m0 = Math.cos(this.rot),
+      m1 = Math.sin(this.rot),
+      m2 = Math.cos(this.tilt),
+      m3 = Math.sin(this.tilt);
+    this.view = { W, H, cx, cy };
+    this.nodes.forEach(({ p }, i) => {
+      const out = this.proj[i];
+      const x = p[0] * m0 + p[2] * m1,
+        z1 = -p[0] * m1 + p[2] * m0;
+      const y = -p[1] * m2 - z1 * m3,
+        z = -p[1] * m3 + z1 * m2;
+      const k = 3 / (3 - z);
+      out.x = cx + x * S * k;
+      out.y = cy + y * S * k;
+      out.k = k;
+      out.d = clamp((z + 1.2) / 2.4, 0, 1);
+    });
+    this.updateHover();
+  }
+
+  private updateHover() {
+    const { ptr } = this;
+    const h = ptr.inside && ptr.mouse && !this.dragging ? this.nearest(ptr.x, ptr.y, 40) : -1;
+    this.hoverOn = h >= 0;
+    if (h >= 0) this.hover = h;
+    else if (this.hoverA < 0.02) this.hover = -1;
+    if (this.reduceMotion) this.hoverA = this.hoverOn ? 1 : 0;
   }
 
   nearest(x: number, y: number, radius: number) {

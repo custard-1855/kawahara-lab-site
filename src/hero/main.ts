@@ -19,7 +19,10 @@ export function startHero(hero: HTMLElement) {
     H = 0;
   let visible = true,
     last = 0;
-  const draw = () => renderer.draw(scene, W, H);
+  const draw = () => {
+    scene.project(W, H);
+    renderer.draw(scene);
+  };
 
   function sizeCanvas() {
     const r = hero.getBoundingClientRect();

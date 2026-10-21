@@ -1,7 +1,7 @@
-// canvas への描画。シーンの状態を読んで1コマ描く
+// canvas への描画。シーンの状態を読んで1コマ描く(シーンは書き換えない)
 import { mix, rgba, type RGB } from "./color";
 import { CFG } from "./config";
-import { clamp, smooth, type Vec3 } from "./math";
+import { clamp, smooth } from "./math";
 import type { EdgeEvent } from "./algorithms";
 import { C } from "./palette";
 import type { Projected, Scene } from "./scene";
@@ -57,45 +57,8 @@ export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: bool
     bgKey = "";
   }
 
-  function draw(scene: Scene, W: number, H: number) {
-    const wide = W > H * 1.3;
-    // サイトでは文言を枠の外に置くので、形は枠の中央に描く
-    const cx = W / 2,
-      cy = H / 2;
-    const S =
-      (wide ? Math.min(H * 0.6, W * 0.34) : Math.min(W, H) * 0.56) *
-      CFG.size *
-      (0.85 + 0.15 * smooth(scene.fade));
-    const m0 = Math.cos(scene.rot),
-      m1 = Math.sin(scene.rot),
-      m2 = Math.cos(scene.tilt),
-      m3 = Math.sin(scene.tilt);
-    const P = (p: Vec3, out: Projected) => {
-      const x = p[0] * m0 + p[2] * m1,
-        z1 = -p[0] * m1 + p[2] * m0;
-      const y = -p[1] * m2 - z1 * m3,
-        z = -p[1] * m3 + z1 * m2;
-      const k = 3 / (3 - z);
-      out.x = cx + x * S * k;
-      out.y = cy + y * S * k;
-      out.k = k;
-      out.d = clamp((z + 1.2) / 2.4, 0, 1);
-      return out;
-    };
-    background(W, H, cx, cy);
-    const a0 = smooth(scene.fade);
-    scene.nodes.forEach((nd, i) => P(nd.p, scene.proj[i]));
-    const Q = scene.proj;
-    const h =
-      scene.ptr.inside && scene.ptr.mouse && !scene.dragging
-        ? scene.nearest(scene.ptr.x, scene.ptr.y, 40)
-        : -1;
-    scene.hoverOn = h >= 0;
-    if (h >= 0) scene.hover = h;
-    else if (scene.hoverA < 0.02) scene.hover = -1;
-    if (reduceMotion) scene.hoverA = scene.hoverOn ? 1 : 0;
-
-    // 辺(奥行きで3段階の濃さ)
+  /** 辺(奥行きで3段階の濃さ) */
+  function links(scene: Scene, Q: Projected[], a0: number) {
     const bands = [new Path2D(), new Path2D(), new Path2D()];
     for (const [a, b] of scene.shape.edges) {
       const path = bands[Math.min(2, Math.floor(((Q[a].d + Q[b].d) / 2) * 3))];
@@ -107,39 +70,45 @@ export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: bool
       ctx.strokeStyle = rgba(C.edge, (0.22 + i * 0.22) * a0);
       ctx.stroke(pa);
     });
+  }
 
-    // ホバー: いちばん近い頂点と、その隣を照らす
+  /** ホバー: いちばん近い頂点と、その隣を照らす */
+  function hover(scene: Scene, Q: Projected[], a0: number) {
     const hv = scene.hover,
       ha = scene.hoverA * a0;
-    if (hv >= 0 && ha > 0.01) {
+    if (hv < 0 || ha <= 0.01) return;
+    ctx.beginPath();
+    for (const j of scene.nbrs[hv]) {
+      ctx.moveTo(Q[hv].x, Q[hv].y);
+      ctx.lineTo(Q[j].x, Q[j].y);
+    }
+    ctx.strokeStyle = rgba(C.ink, 0.6 * ha);
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ctx.lineWidth = 1;
+    for (const j of scene.nbrs[hv]) {
       ctx.beginPath();
-      for (const j of scene.nbrs[hv]) {
-        ctx.moveTo(Q[hv].x, Q[hv].y);
-        ctx.lineTo(Q[j].x, Q[j].y);
-      }
-      ctx.strokeStyle = rgba(C.ink, 0.6 * ha);
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-      ctx.lineWidth = 1;
-      for (const j of scene.nbrs[hv]) {
-        ctx.beginPath();
-        ctx.arc(Q[j].x, Q[j].y, (3 + 1.8 * Q[j].d) * Q[j].k + 2, 0, Math.PI * 2);
-        ctx.strokeStyle = rgba(C.ink, 0.55 * ha);
-        ctx.stroke();
-      }
-      ctx.beginPath();
-      ctx.arc(Q[hv].x, Q[hv].y, (3 + 1.8 * Q[hv].d) * Q[hv].k + 6, 0, Math.PI * 2);
-      ctx.strokeStyle = rgba(C.accent, 0.9 * ha);
-      ctx.lineWidth = 1.5;
+      ctx.arc(Q[j].x, Q[j].y, (3 + 1.8 * Q[j].d) * Q[j].k + 2, 0, Math.PI * 2);
+      ctx.strokeStyle = rgba(C.ink, 0.55 * ha);
       ctx.stroke();
     }
+    ctx.beginPath();
+    ctx.arc(Q[hv].x, Q[hv].y, (3 + 1.8 * Q[hv].d) * Q[hv].k + 6, 0, Math.PI * 2);
+    ctx.strokeStyle = rgba(C.accent, 0.9 * ha);
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+  }
 
-    ctx.globalCompositeOperation = C.dark ? "lighter" : "source-over";
-    ctx.lineCap = "round";
-    // クリックした処理: 出来事を時刻順にたどり、済んだ分だけ描く
-    const waveCol = new Int8Array(scene.n).fill(-1),
-      waveA = new Float32Array(scene.n),
-      waveBig = new Uint8Array(scene.n);
+  /** 頂点ごとの、クリックした処理の色・濃さ・大きく描くか */
+  type WaveMarks = { col: Int8Array; a: Float32Array; big: Uint8Array };
+
+  /** クリックした処理: 出来事を時刻順にたどり、済んだ分だけ描く */
+  function waves(scene: Scene, Q: Projected[], a0: number): WaveMarks {
+    const marks: WaveMarks = {
+      col: new Int8Array(scene.n).fill(-1),
+      a: new Float32Array(scene.n),
+      big: new Uint8Array(scene.n),
+    };
     for (const w of scene.waves) {
       const tt = w.t,
         out = clamp((w.end - tt) / 0.8, 0, 1) * a0;
@@ -166,9 +135,9 @@ export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: bool
             else kept.set(key, ev);
           }
         } else {
-          waveCol[ev.v] = ev.c;
-          waveA[ev.v] = out;
-          waveBig[ev.v] = ev.big ? 1 : 0;
+          marks.col[ev.v] = ev.c;
+          marks.a[ev.v] = out;
+          marks.big[ev.v] = ev.big ? 1 : 0;
           const age = tt - ev.t;
           if (ev.c >= 0 && age < 0.6)
             glow(
@@ -201,8 +170,11 @@ export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: bool
       }
       if (tt < 0.5) glow(w.c0, Q[w.src].x, Q[w.src].y, 46 * Q[w.src].k, (1 - tt / 0.5) * out);
     }
+    return marks;
+  }
 
-    // 環境の信号: 尾は色ごとにまとめて描く
+  /** 環境の信号と、届いた頂点の光。尾は色ごとにまとめて描く */
+  function pulses(scene: Scene, Q: Projected[], a0: number) {
     const tails = C.pal.map(() => new Path2D());
     const heads: number[] = [];
     for (const q of scene.pulses) {
@@ -229,24 +201,47 @@ export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: bool
       if (nd.flash > 0.05)
         glow(nd.ci, q.x, q.y, (10 + 26 * nd.flash) * q.k, 0.75 * nd.flash * (0.3 + 0.7 * q.d) * a0);
     }
-    ctx.globalCompositeOperation = "source-over";
+  }
+
+  /** 頂点の点 */
+  function nodes(scene: Scene, Q: Projected[], a0: number, marks: WaveMarks) {
     for (let i = 0; i < scene.n; i++) {
       const nd = scene.nodes[i],
         q = Q[i];
       let col: RGB = mix(C.muted, C.dark ? mix(C.pal[nd.ci], C.ink, 0.2) : C.pal[nd.ci], nd.heat);
-      if (waveCol[i] >= 0)
-        col = mix(col, C.dark ? mix(C.pal[waveCol[i]], C.ink, 0.15) : C.pal[waveCol[i]], waveA[i]);
+      if (marks.col[i] >= 0)
+        col = mix(
+          col,
+          C.dark ? mix(C.pal[marks.col[i]], C.ink, 0.15) : C.pal[marks.col[i]],
+          marks.a[i],
+        );
       ctx.beginPath();
       ctx.arc(
         q.x,
         q.y,
-        (1.5 + 1.8 * q.d) * q.k + (waveCol[i] >= 0 ? waveA[i] * (waveBig[i] ? 3 : 1) : 0),
+        (1.5 + 1.8 * q.d) * q.k + (marks.col[i] >= 0 ? marks.a[i] * (marks.big[i] ? 3 : 1) : 0),
         0,
         Math.PI * 2,
       );
       ctx.fillStyle = rgba(col, (0.3 + 0.7 * q.d) * a0);
       ctx.fill();
     }
+  }
+
+  /** 1コマ描く。先に scene.project() で投影しておく */
+  function draw(scene: Scene) {
+    const { W, H, cx, cy } = scene.view;
+    const Q = scene.proj,
+      a0 = smooth(scene.fade);
+    background(W, H, cx, cy);
+    links(scene, Q, a0);
+    hover(scene, Q, a0);
+    ctx.globalCompositeOperation = C.dark ? "lighter" : "source-over";
+    ctx.lineCap = "round";
+    const marks = waves(scene, Q, a0);
+    pulses(scene, Q, a0);
+    ctx.globalCompositeOperation = "source-over";
+    nodes(scene, Q, a0, marks);
   }
 
   return { draw, resetCaches };
