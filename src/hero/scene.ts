@@ -2,10 +2,10 @@
 import { BASE_TILT, CFG } from "./config";
 import { clamp, smooth, type Vec3 } from "./math";
 import { reachable, route } from "./routing";
-import { ring, star, toGraph, tree, type Topology } from "./topologies";
+import { mesh, ring, star, toGraph, tree, type Topology } from "./topologies";
 
 /** 見せるトポロジ(この順に切り替える) */
-export const showcase = (): Topology[] => [star(), ring(), tree()];
+export const showcase = (): Topology[] => [star(), ring(), tree(), mesh()];
 
 /** path に沿って1ホップずつ進むパケット。今は path[hop] → path[hop + 1] のリンクの上にいる */
 export type Packet = { id: number; path: number[]; hop: number; t: number; dur: number };
@@ -44,8 +44,10 @@ export class Scene {
   n = 0;
   nbrs: number[][] = [];
   len = new Map<number, number>();
-  /** パケットの送信元・宛先になる機器 */
+  /** パケットの送信元になる機器 */
   terminals: number[] = [];
+  /** パケットの宛先になる機器。無線メッシュではゲートウェイだけ、ほかは端末すべて */
+  targets: number[] = [];
   packets: Packet[] = [];
   /** 故障した機器 → 直るまでの秒数 */
   down = new Map<number, number>();
@@ -66,6 +68,8 @@ export class Scene {
     const { n, nbrs, len } = toGraph(shape);
     Object.assign(this, { shape, n, nbrs, len, packets: [], timer: 0, hover: -1, hoverA: 0 });
     this.terminals = shape.roles.flatMap((r, i) => (r === "terminal" ? [i] : []));
+    const gateway = shape.roles.indexOf("gateway");
+    this.targets = gateway >= 0 ? [gateway] : this.terminals;
     this.nodes = shape.nodes.map((p) => ({ p, flash: 0, drop: 0 }));
     this.proj = this.nodes.map(() => ({ x: 0, y: 0, k: 1, d: 0 }));
     this.down = new Map();
@@ -91,10 +95,10 @@ export class Scene {
     this.hooks.onLabel(this.label);
   }
 
-  /** 端末 a から届く、ほかの端末 */
+  /** 端末 a から届く宛先 */
   private peers(a: number) {
     const r = reachable(this.nbrs, a, this.down);
-    return this.terminals.filter((b) => b !== a && r[b]);
+    return this.targets.filter((b) => b !== a && r[b]);
   }
 
   /** リンク a→b を渡るのにかかる秒数 */
@@ -102,7 +106,7 @@ export class Scene {
     return 0.25 + this.len.get(a * this.n + b)! * CFG.pace;
   }
 
-  /** 届く組の端末からランダムに2台選び、その間を最短経路で送る */
+  /** 届く組の送信元と宛先をランダムに選び、その間を最短経路で送る */
   send() {
     if (this.packets.length >= CFG.maxPackets) return;
     const senders = this.terminals.filter((a) => !this.down.has(a) && !this.cut.has(a));

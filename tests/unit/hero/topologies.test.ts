@@ -1,6 +1,7 @@
 // トポロジ: 機器の台数と役割、つながり方、配置
 import { describe, expect, test } from "vitest";
-import { ring, star, tree, type Topology } from "../../../src/hero/topologies";
+import { seededRandom } from "./random";
+import { mesh, RADIO_RANGE, ring, star, tree, type Topology } from "../../../src/hero/topologies";
 
 const count = (t: Topology, role: string) => t.roles.filter((r) => r === role).length;
 const dist = (p: number[], q: number[]) => Math.hypot(p[0] - q[0], p[1] - q[1], p[2] - q[2]);
@@ -108,10 +109,46 @@ describe("TREE", () => {
   });
 });
 
+describe("WIRELESS MESH", () => {
+  const t = mesh();
+  const gateway = t.roles.indexOf("gateway");
+
+  test("センサー40台とゲートウェイ1台", () => {
+    expect(t.name).toBe("WIRELESS MESH");
+    expect([count(t, "terminal"), count(t, "gateway"), count(t, "relay")]).toEqual([40, 1, 0]);
+  });
+
+  test("ゲートウェイは中心の近くにある", () => {
+    expect(Math.hypot(...t.nodes[gateway])).toBeLessThan(0.2);
+  });
+
+  test("電波の届く距離の中にいるもの同士だけが、すべてつながる", () => {
+    const linked = new Set(t.edges.map(([a, b]) => `${Math.min(a, b)},${Math.max(a, b)}`));
+    for (let a = 0; a < t.nodes.length; a++)
+      for (let b = a + 1; b < t.nodes.length; b++)
+        expect(linked.has(`${a},${b}`)).toBe(dist(t.nodes[a], t.nodes[b]) <= RADIO_RANGE);
+  });
+
+  test("少しつぶした球の中にばらまかれる", () => {
+    for (const [x, y, z] of t.nodes)
+      expect(Math.hypot(x, z, y / 0.6)).toBeLessThanOrEqual(1 + 1e-9);
+    const spread = (k: number) => Math.max(...t.nodes.map((p) => Math.abs(p[k])));
+    expect(spread(1)).toBeLessThan(spread(0));
+  });
+
+  test("読み込むたびに同じ配置になる(Math.random に左右されない)", () => {
+    Math.random = seededRandom(7);
+    const again = mesh();
+    expect(again.nodes).toEqual(t.nodes);
+    expect(again.edges).toEqual(t.edges);
+  });
+});
+
 describe.each([
   ["STAR", star],
   ["RING", ring],
   ["TREE", tree],
+  ["WIRELESS MESH", mesh],
 ])("%s", (_, make) => {
   const t = make();
 

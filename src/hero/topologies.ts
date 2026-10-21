@@ -1,8 +1,8 @@
 // ネットワークのトポロジ。機器は原点を中心とした半径1以内の3次元の点
-import { dist3, type Vec3 } from "./math";
+import { dist3, seededRandom, type Vec3 } from "./math";
 
-/** 機器の役割。relay は中継機器、terminal は端末 */
-export type Role = "relay" | "terminal";
+/** 機器の役割。relay は中継機器、terminal は端末、gateway は無線メッシュのゲートウェイ */
+export type Role = "relay" | "terminal" | "gateway";
 
 export type Topology = {
   name: string;
@@ -84,4 +84,36 @@ export function tree(): Topology {
     }
   }
   return { name: "TREE", nodes, edges, roles };
+}
+
+/** 無線メッシュで、リンクができる距離 */
+export const RADIO_RANGE = 0.42;
+
+/**
+ * センサー40台とゲートウェイ1台を、少しつぶした球の中にばらまき、電波の届く距離の中にいる
+ * もの同士をつなぐ。ゲートウェイは中心に置く。センサーは、すでに置いた機器のどれかに電波が
+ * 届く場所にだけ置くので、全体は必ずつながる。乱数の種は固定なので、毎回同じ配置になる
+ */
+export function mesh(): Topology {
+  const rand = seededRandom(2026),
+    squash = 0.6,
+    gap = 0.17; // 機器どうしが重なって見えないよう、これより近くには置かない
+  const nodes: Vec3[] = [[0, 0, 0]];
+  while (nodes.length < 41) {
+    const p: Vec3 = [rand() * 2 - 1, (rand() * 2 - 1) * squash, rand() * 2 - 1];
+    if (Math.hypot(p[0], p[1] / squash, p[2]) > 1) continue;
+    const d = nodes.map((q) => dist3(p, q));
+    if (Math.min(...d) < gap || !d.some((x) => x <= RADIO_RANGE)) continue;
+    nodes.push(p);
+  }
+  const edges: [number, number][] = [];
+  for (let a = 0; a < nodes.length; a++)
+    for (let b = a + 1; b < nodes.length; b++)
+      if (dist3(nodes[a], nodes[b]) <= RADIO_RANGE) edges.push([a, b]);
+  return {
+    name: "WIRELESS MESH",
+    nodes,
+    edges,
+    roles: nodes.map((_, i): Role => (i === 0 ? "gateway" : "terminal")),
+  };
 }
