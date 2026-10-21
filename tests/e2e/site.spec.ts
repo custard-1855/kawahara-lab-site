@@ -215,6 +215,30 @@ test.describe("動きを減らす設定", () => {
     expect(a.equals(b)).toBe(true);
   });
 
+  test("STAR のハブをクリックすると故障だけを描き直し、そのあとは変わらず、自動では直らない", async ({
+    page,
+  }) => {
+    await page.clock.install();
+    await page.goto("?dev");
+    await page
+      .getByRole("navigation", { name: "検証用の図形切り替え" })
+      .getByRole("button", { name: "STAR" })
+      .click();
+    const canvas = page.locator("[data-hero] canvas");
+    const name = page.locator("[data-hero] [data-shape-name]");
+    const before = await canvas.screenshot();
+    await canvas.click();
+    await expect(name).toHaveText("STAR · 1 DOWN");
+    const a = await canvas.screenshot();
+    expect(a.equals(before)).toBe(false);
+    await page.clock.fastForward(9000);
+    const b = await canvas.screenshot();
+    expect(b.equals(a)).toBe(true);
+    await expect(name).toHaveText("STAR · 1 DOWN");
+    await canvas.click();
+    await expect(name).toHaveText("STAR");
+  });
+
   test("?dev から形を選んでも、「自動」に戻しても、ヒーローに何か描かれている", async ({
     page,
   }) => {
