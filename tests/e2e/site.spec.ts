@@ -198,4 +198,29 @@ test.describe("動きを減らす設定", () => {
     const b = await canvas.screenshot();
     expect(a.equals(b)).toBe(true);
   });
+
+  test("?dev から形を選んでも、「自動」に戻しても、ヒーローに何か描かれている", async ({
+    page,
+  }) => {
+    await page.goto("?dev");
+    const canvas = page.locator("[data-hero] canvas");
+    await expect(canvas).toBeVisible();
+    // 背景のグラデーションより濃い画素の数。画素の厳密な比較はしない
+    const inked = () =>
+      canvas.evaluate((cv: HTMLCanvasElement) => {
+        const { data } = cv.getContext("2d")!.getImageData(0, 0, cv.width, cv.height);
+        let n = 0;
+        for (let i = 0; i < data.length; i += 4)
+          if (Math.min(data[i], data[i + 1], data[i + 2]) < 200) n++;
+        return n;
+      });
+    const dev = page.getByRole("navigation", { name: "検証用の図形切り替え" });
+    const buttons = dev.getByRole("button");
+    for (let i = 1; i < (await buttons.count()); i++) {
+      await buttons.nth(i).click();
+      expect(await inked(), (await buttons.nth(i).textContent()) ?? "").toBeGreaterThan(100);
+    }
+    await dev.getByRole("button", { name: "自動" }).click();
+    expect(await inked()).toBeGreaterThan(100);
+  });
 });
