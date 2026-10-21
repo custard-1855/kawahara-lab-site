@@ -1,53 +1,22 @@
-// 回転するグラフと、その上を伝わる信号の状態。時間を進める(update)が、描き方と DOM は知らない
-import { ALGOS, type Algo, type AlgoId, type SceneEvent } from "./algorithms";
+// 回転するトポロジと、その上を飛ぶパケットの状態。時間を進める(update)が、描き方と DOM は知らない
 import { BASE_TILT, CFG } from "./config";
-import { fullerene, geodesic, hypercube, toGraph, torus, type Shape } from "./graphs";
 import { clamp, smooth, type Vec3 } from "./math";
-import { PAL } from "./palette";
+import { route } from "./routing";
+import { ring, star, toGraph, tree, type Topology } from "./topologies";
 
-/** 見せる形と、クリックで実行する処理 */
-export type ShowcaseShape = Shape & { algo: AlgoId };
+/** 見せるトポロジ(この順に切り替える) */
+export const showcase = (): Topology[] => [star(), ring(), tree()];
 
-/** 形ごとに、その形の特徴がよく見える処理を割り当てる */
-export function showcase(): ShowcaseShape[] {
-  return [
-    { ...fullerene(), algo: "edges" }, // 辺がちょうど3色で塗り分けられる
-    { ...torus(), algo: "bfs" }, // 波が輪を回り込み、反対側でぶつかる
-    { ...hypercube(), algo: "bipartite" }, // 4つの中で唯一、2色で塗れる
-    { ...geodesic(), algo: "three" }, // 3色では塗れず、4色で塗り直す
-  ];
-}
-
-/** 辺 a→b を伝わる常時の信号 */
-export type Pulse = {
-  a: number;
-  b: number;
-  t: number;
-  dur: number;
-  ci: number;
-  ttl: number;
-  id: number;
-};
-/** クリックで起こした処理の再生 */
-export type Wave = {
-  src: number;
-  events: SceneEvent[];
-  last: number;
-  t: number;
-  end: number;
-  c0: number;
-};
-export type NodeState = { p: Vec3; ci: number; heat: number; flash: number; last: number };
-/** 画面に投影した頂点。k は遠近の倍率、d は手前ほど 1 に近い奥行き */
+/** path に沿って1ホップずつ進むパケット。今は path[hop] → path[hop + 1] のリンクの上にいる */
+export type Packet = { id: number; path: number[]; hop: number; t: number; dur: number };
+/** flash は通過・到着したときに光る強さ(1 から減っていく) */
+export type NodeState = { p: Vec3; flash: number };
+/** 画面に投影した機器。k は遠近の倍率、d は手前ほど 1 に近い奥行き */
 export type Projected = { x: number; y: number; k: number; d: number };
 
 export type SceneHooks = {
-  /** 形を読み込んだ */
-  onShapeLoad(shape: ShowcaseShape): void;
-  /** クリックで処理を始めた */
-  onAlgoStart(algo: Algo): void;
-  /** 処理の再生が終わっている(毎フレーム呼ぶ) */
-  onAlgoIdle(): void;
+  /** トポロジを読み込んだ */
+  onShapeLoad(shape: Topology): void;
 };
 
 export class Scene {
@@ -59,7 +28,7 @@ export class Scene {
   tilt = BASE_TILT;
   vRot = 0;
   vTilt = 0;
-  cid = 0;
+  pid = 0;
   shapeT = 0;
   fade = 1;
   dragging = false;
@@ -71,12 +40,13 @@ export class Scene {
   /** 最後に投影した画面の大きさと、形の中心 */
   view = { W: 1, H: 1, cx: 0.5, cy: 0.5 };
 
-  shape!: ShowcaseShape;
+  shape!: Topology;
   n = 0;
   nbrs: number[][] = [];
   len = new Map<number, number>();
-  pulses: Pulse[] = [];
-  waves: Wave[] = [];
+  /** パケットの送信元・宛先になる機器 */
+  terminals: number[] = [];
+  packets: Packet[] = [];
   timer = 0;
   nodes: NodeState[] = [];
   proj: Projected[] = [];
@@ -88,52 +58,32 @@ export class Scene {
     this.load(this.list[0]);
   }
 
-  load(shape: ShowcaseShape) {
+  load(shape: Topology) {
     const { n, nbrs, len } = toGraph(shape);
-    Object.assign(this, {
-      shape,
-      n,
-      nbrs,
-      len,
-      pulses: [],
-      waves: [],
-      timer: 0,
-      hover: -1,
-      hoverA: 0,
-    });
-    this.nodes = shape.nodes.map((p) => ({ p, ci: 0, heat: 0, flash: 0, last: -1 }));
+    Object.assign(this, { shape, n, nbrs, len, packets: [], timer: 0, hover: -1, hoverA: 0 });
+    this.terminals = shape.roles.flatMap((r, i) => (r === "terminal" ? [i] : []));
+    this.nodes = shape.nodes.map((p) => ({ p, flash: 0 }));
     this.proj = this.nodes.map(() => ({ x: 0, y: 0, k: 1, d: 0 }));
     this.hooks.onShapeLoad(shape);
-    for (let i = 0; i < 3; i++) this.emit((Math.random() * n) | 0);
   }
 
-  pulse(a: number, b: number, ci: number, ttl: number, id: number): Pulse {
-    return { a, b, t: 0, dur: 0.3 + this.len.get(a * this.n + b)! * CFG.pace, ci, ttl, id };
+  /** リンク a→b を渡るのにかかる秒数 */
+  hopDur(a: number, b: number) {
+    return 0.25 + this.len.get(a * this.n + b)! * CFG.pace;
   }
 
-  // 環境の信号: ランダムに枝分かれしながら伝わる
-  emit(i: number) {
-    const ci = PAL.AMB,
-      id = ++this.cid;
-    Object.assign(this.nodes[i], { ci, heat: 1, flash: 1.4, last: id });
-    for (const j of this.nbrs[i]) this.pulses.push(this.pulse(i, j, ci, CFG.ttl, id));
-  }
-
-  // クリック: 選んだ処理を実際に実行し、出来事の列を起きた順に再生する
-  start(src: number, algo: Algo) {
-    const { ev } = algo.run(this, src);
-    const events = ev.sort((x, y) => x.t - y.t);
-    const last = Math.max(...events.map((e) => e.t + (e.dur || 0)));
-    const wave: Wave = {
-      src,
-      events,
-      last,
-      t: 0,
-      end: last + 3,
-      c0: events[0] ? Math.max(0, events[0].c) : 1,
-    };
-    this.waves = [wave];
-    return wave;
+  /** 端末からランダムに2台選び、その間を最短経路で送る */
+  send() {
+    const T = this.terminals;
+    if (T.length < 2 || this.packets.length >= CFG.maxPackets) return;
+    const ia = (Math.random() * T.length) | 0;
+    let ib = (Math.random() * (T.length - 1)) | 0;
+    if (ib >= ia) ib++;
+    const [a, b] = [T[ia], T[ib]];
+    const path = route(this.nbrs, a, b);
+    if (!path) return;
+    this.nodes[a].flash = 1;
+    this.packets.push({ id: ++this.pid, path, hop: 0, t: 0, dur: this.hopDur(a, path[1]) });
   }
 
   update(dt: number) {
@@ -149,12 +99,11 @@ export class Scene {
     }
     this.timer += dt;
     if (this.timer > CFG.interval) {
-      this.timer = 0;
-      if (!this.waves.length) this.emit((Math.random() * this.n) | 0);
+      this.timer -= CFG.interval;
+      this.send();
     }
-    // 触っている間と探索の波が出ている間は、形を切り替えない
-    if (this.lock === null && !this.dragging && !this.waves.length && this.idle > 4)
-      this.shapeT += dt;
+    // 触っている間は、形を切り替えない
+    if (this.lock === null && !this.dragging && this.idle > 4) this.shapeT += dt;
     if (this.shapeT > CFG.hold) {
       this.fade = Math.max(0, this.fade - dt * 1.5);
       if (this.fade === 0) {
@@ -165,32 +114,20 @@ export class Scene {
     } else {
       this.fade = Math.min(1, this.fade + dt * 1.5);
     }
-    for (const w of this.waves) w.t += dt;
-    this.waves = this.waves.filter((w) => w.t < w.end);
-    if (!this.waves.length) this.hooks.onAlgoIdle();
-    const next: Pulse[] = [];
-    for (const q of this.pulses) {
+    const fl = Math.exp(-dt * 2.4);
+    for (const nd of this.nodes) nd.flash *= fl;
+    this.packets = this.packets.filter((q) => {
       q.t += dt;
-      if (q.t < q.dur) {
-        next.push(q);
-        continue;
+      while (q.t >= q.dur) {
+        q.t -= q.dur;
+        q.hop++;
+        const v = q.path[q.hop];
+        this.nodes[v].flash = 1;
+        if (q.hop === q.path.length - 1) return false;
+        q.dur = this.hopDur(v, q.path[q.hop + 1]);
       }
-      const node = this.nodes[q.b];
-      if (node.last === q.id) continue;
-      Object.assign(node, { ci: q.ci, heat: 1, flash: 1, last: q.id });
-      if (q.ttl <= 0) continue;
-      for (const k of this.nbrs[q.b]) {
-        if (k === q.a || Math.random() > CFG.branch || next.length > CFG.maxPulses) continue;
-        next.push(this.pulse(q.b, k, q.ci, q.ttl - 1, q.id));
-      }
-    }
-    this.pulses = next;
-    const cool = Math.exp(-dt * 0.15),
-      fl = Math.exp(-dt * 2.4);
-    for (const nd of this.nodes) {
-      nd.heat *= cool;
-      nd.flash *= fl;
-    }
+      return true;
+    });
     this.hoverA += ((this.hoverOn ? 1 : 0) - this.hoverA) * Math.min(1, dt * 8);
   }
 
@@ -209,7 +146,7 @@ export class Scene {
     else this.fade = 0;
   }
 
-  // 信号を3秒ぶん進める(形は切り替えない)
+  // パケットを3秒ぶん進める(形は切り替えない)
   settle() {
     for (let i = 0; i < 90; i++) {
       this.shapeT = 0;
@@ -218,7 +155,7 @@ export class Scene {
     this.fade = 1;
   }
 
-  /** 画面の大きさに合わせて頂点を投影し、ポインタの近くの頂点を照らす対象に選ぶ。描く前に呼ぶ */
+  /** 画面の大きさに合わせて機器を投影し、ポインタの近くの機器を照らす対象に選ぶ。描く前に呼ぶ */
   project(W: number, H: number) {
     const wide = W > H * 1.3;
     // サイトでは文言を枠の外に置くので、形は枠の中央に描く
@@ -270,13 +207,8 @@ export class Scene {
     return best;
   }
 
-  click(x: number, y: number) {
+  // クリック: 故障(#21)が入るまでは、触ったことだけを記録する
+  click(_x: number, _y: number) {
     this.idle = 0;
-    const i = this.nearest(x, y, 80);
-    if (i < 0) return;
-    const algo = ALGOS[this.shape.algo];
-    this.hooks.onAlgoStart(algo);
-    const w = this.start(i, algo);
-    if (this.reduceMotion) w.t = w.last;
   }
 }

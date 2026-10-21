@@ -1,15 +1,12 @@
 ---
-// トップのみ。角丸の面の中で、有名なグラフが回転し、その上を信号が伝わる(src/hero/)。
-// ドラッグで回り、クリックで形ごとの処理(探索・塗り分け)を実行する。
+// トップのみ。角丸の面の中で、ネットワークのトポロジが回転し、その上をパケットが飛ぶ(src/hero/)。
+// ドラッグで回る。
 // prefers-reduced-motion では止まった1枚を表示する。JavaScript が無ければ面だけが残る
 ---
 
 <div class="hero" data-hero>
   <canvas aria-hidden="true"></canvas>
-  <p class="shape-name mono" aria-hidden="true">
-    <span data-shape-name></span>
-    <span data-algo-name></span>
-  </p>
+  <p class="shape-name mono" aria-hidden="true" data-shape-name></p>
 </div>
 
 <script>
@@ -29,11 +26,6 @@
     --edge: #bcc6d6;
     --accent: #1d6fd6;
     --accent2: #c7770c;
-    --c3: #1f9e74;
-    --c4: #d6456a;
-    --c5: #7d55d9;
-    --c6: #0f8ba0;
-    --c7: #a8860a;
 
     position: relative;
     height: 460px;
@@ -62,9 +54,6 @@
     letter-spacing: 0.08em;
     color: var(--color-text-sub);
     pointer-events: none;
-  }
-  [data-algo-name]:not(:empty)::before {
-    content: " · ";
   }
   @media (max-width: 640px) {
     .hero {
