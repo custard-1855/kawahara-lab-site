@@ -202,7 +202,9 @@ export class Scene {
     this.si = i;
     this.load(this.list[i]);
     this.shapeT = 0;
-    this.fade = 0;
+    // 動きを減らす設定ではフェードインが進まないので、すぐに静止画まで進める
+    if (this.reduceMotion) this.settle();
+    else this.fade = 0;
   }
 
   // 信号を3秒ぶん進める(形は切り替えない)
