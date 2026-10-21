@@ -25,12 +25,12 @@ function run(scene: Scene, sec: number, each: () => void = () => {}, dt = 1 / 30
 }
 
 describe("トポロジの切り替え", () => {
-  test("STAR → RING → TREE の順に、16秒ごとに切り替わる", () => {
+  test("STAR → RING → TREE → WIRELESS MESH の順に、16秒ごとに切り替わる", () => {
     const names: string[] = [];
     Math.random = seededRandom(1);
     const scene = new Scene({ onLabel: (s) => names.push(s) }, false);
-    run(scene, 3 * CFG.hold + 3);
-    expect(names).toEqual(["STAR", "RING", "TREE", "STAR"]);
+    run(scene, 4 * CFG.hold + 4);
+    expect(names).toEqual(["STAR", "RING", "TREE", "WIRELESS MESH", "STAR"]);
   });
 
   test("?dev で固定した形は切り替わらない", () => {
@@ -83,6 +83,36 @@ describe.each([0, 1, 2])("パケット(形 %i)", (si) => {
     });
     expect(lit.length).toBeGreaterThan(0);
     expect(Math.max(...lit)).toBeGreaterThan(0.9);
+  });
+});
+
+describe("無線メッシュ", () => {
+  const MESH = 3;
+
+  test("パケットの送信元は必ずセンサー、宛先は必ずゲートウェイ", () => {
+    const scene = sceneOf();
+    scene.setShape(MESH);
+    const gateway = scene.shape.roles.indexOf("gateway");
+    let seen = 0;
+    run(scene, 10, () => {
+      for (const q of scene.packets) {
+        expect(scene.shape.roles[q.path[0]]).toBe("terminal");
+        expect(q.path.at(-1)).toBe(gateway);
+        expect(q.path).toEqual(route(scene.nbrs, q.path[0], gateway));
+        seen++;
+      }
+    });
+    expect(seen).toBeGreaterThan(0);
+  });
+
+  test("ゲートウェイが故障すると、すべてのセンサーが届かなくなり、パケットが出なくなる", () => {
+    const scene = sceneOf();
+    scene.setShape(MESH);
+    scene.fail(scene.shape.roles.indexOf("gateway"));
+    expect(scene.cut.size).toBe(40);
+    const after = scene.pid;
+    run(scene, 5);
+    expect(scene.pid).toBe(after);
   });
 });
 

@@ -143,13 +143,17 @@ export function createRenderer(ctx: CanvasRenderingContext2D) {
     }
   }
 
-  /** 機器の点。中継機器は端末より大きく描く。故障した機器は橙の輪、届かない端末は薄く描く */
+  /**
+   * 機器の点。中継機器とゲートウェイは端末より大きく描き、ゲートウェイには輪を重ねる。
+   * 故障した機器は橙の輪、届かない端末は薄く描く
+   */
   function nodes(scene: Scene, Q: Projected[], a0: number) {
     for (let i = 0; i < scene.n; i++) {
       const nd = scene.nodes[i],
         q = Q[i];
-      const relay = scene.shape.roles[i] === "relay";
-      const r = (relay ? 4 + 2.4 * q.d : 2 + 1.8 * q.d) * q.k;
+      const role = scene.shape.roles[i],
+        big = role !== "terminal";
+      const r = (big ? 4 + 2.4 * q.d : 2 + 1.8 * q.d) * q.k;
       const depth = 0.35 + 0.65 * q.d;
       ctx.beginPath();
       ctx.arc(q.x, q.y, scene.down.has(i) ? r + 2 : r, 0, Math.PI * 2);
@@ -160,9 +164,15 @@ export function createRenderer(ctx: CanvasRenderingContext2D) {
         ctx.lineWidth = 1;
         continue;
       }
-      const col: RGB = mix(relay ? C.ink : C.muted, C.accent, Math.min(1, nd.flash));
+      const col: RGB = mix(big ? C.ink : C.muted, C.accent, Math.min(1, nd.flash));
       ctx.fillStyle = rgba(col, depth * (scene.cut.has(i) ? 0.3 : 1) * a0);
       ctx.fill();
+      if (role === "gateway") {
+        ctx.beginPath();
+        ctx.arc(q.x, q.y, r + 4 * q.k, 0, Math.PI * 2);
+        ctx.strokeStyle = rgba(C.ink, 0.7 * depth * a0);
+        ctx.stroke();
+      }
     }
   }
 
