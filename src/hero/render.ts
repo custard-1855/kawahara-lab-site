@@ -1,19 +1,18 @@
 // canvas への描画。シーンの状態を読んで1コマ描く(シーンは書き換えない)
 import { mix, rgba, type RGB } from "./color";
 import { CFG } from "./config";
-import { clamp, smooth } from "./math";
-import type { EdgeEvent } from "./algorithms";
+import { smooth } from "./math";
 import { C } from "./palette";
 import type { Projected, Scene } from "./scene";
 
 export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: boolean) {
   /* 光の粒(色ごとに1枚作って使い回す) */
-  const glowCache = new Map<number, HTMLCanvasElement>();
-  function glow(ci: number, x: number, y: number, r: number, a: number) {
+  const glowCache = new Map<string, HTMLCanvasElement>();
+  function glow(c: RGB, x: number, y: number, r: number, a: number) {
     if (a <= 0.01) return;
-    let s = glowCache.get(ci);
+    const key = c.join(",");
+    let s = glowCache.get(key);
     if (!s) {
-      const c = C.pal[ci];
       s = document.createElement("canvas");
       s.width = s.height = 64;
       const g = s.getContext("2d")!;
@@ -24,7 +23,7 @@ export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: bool
       gr.addColorStop(1, rgba(c, 0));
       g.fillStyle = gr;
       g.fillRect(0, 0, 64, 64);
-      glowCache.set(ci, s);
+      glowCache.set(key, s);
     }
     ctx.globalAlpha = Math.min(1, a);
     ctx.drawImage(s, x - r, y - r, r * 2, r * 2);
@@ -57,7 +56,7 @@ export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: bool
     bgKey = "";
   }
 
-  /** 辺(奥行きで3段階の濃さ) */
+  /** リンク(奥行きで3段階の濃さ) */
   function links(scene: Scene, Q: Projected[], a0: number) {
     const bands = [new Path2D(), new Path2D(), new Path2D()];
     for (const [a, b] of scene.shape.edges) {
@@ -72,7 +71,7 @@ export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: bool
     });
   }
 
-  /** ホバー: いちばん近い頂点と、その隣を照らす */
+  /** ホバー: いちばん近い機器と、その隣を照らす */
   function hover(scene: Scene, Q: Projected[], a0: number) {
     const hv = scene.hover,
       ha = scene.hoverA * a0;
@@ -99,131 +98,50 @@ export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: bool
     ctx.stroke();
   }
 
-  /** 頂点ごとの、クリックした処理の色・濃さ・大きく描くか */
-  type WaveMarks = { col: Int8Array; a: Float32Array; big: Uint8Array };
-
-  /** クリックした処理: 出来事を時刻順にたどり、済んだ分だけ描く */
-  function waves(scene: Scene, Q: Projected[], a0: number): WaveMarks {
-    const marks: WaveMarks = {
-      col: new Int8Array(scene.n).fill(-1),
-      a: new Float32Array(scene.n),
-      big: new Uint8Array(scene.n),
-    };
-    for (const w of scene.waves) {
-      const tt = w.t,
-        out = clamp((w.end - tt) / 0.8, 0, 1) * a0;
-      const kept = new Map<string, EdgeEvent>(); // 残る辺(同じ key は後の出来事で上書き)
-      let idx = 0;
-      for (const ev of w.events) {
-        if (tt < ev.t) break;
-        if (ev.e) {
-          if (ev.fade) {
-            const al = Math.exp(-Math.max(0, tt - ev.t - ev.dur) / ev.fade) * out;
-            if (al < 0.02) continue;
-            const A = Q[ev.a],
-              B = Q[ev.b],
-              f = Math.min(1, (tt - ev.t) / ev.dur);
-            ctx.strokeStyle = rgba(C.pal[ev.c], 0.85 * al);
-            ctx.lineWidth = ev.w || 2;
-            ctx.beginPath();
-            ctx.moveTo(A.x, A.y);
-            ctx.lineTo(A.x + (B.x - A.x) * f, A.y + (B.y - A.y) * f);
-            ctx.stroke();
-          } else {
-            const key = ev.key || "i" + idx++;
-            if (ev.c < 0) kept.delete(key);
-            else kept.set(key, ev);
-          }
-        } else {
-          marks.col[ev.v] = ev.c;
-          marks.a[ev.v] = out;
-          marks.big[ev.v] = ev.big ? 1 : 0;
-          const age = tt - ev.t;
-          if (ev.c >= 0 && age < 0.6)
-            glow(
-              ev.c,
-              Q[ev.v].x,
-              Q[ev.v].y,
-              (10 + 14 * (1 - age / 0.6)) * Q[ev.v].k,
-              (1 - age / 0.6) * out,
-            );
-        }
-      }
-      const groups = new Map<string, Path2D>();
-      for (const ev of kept.values()) {
-        const A = Q[ev.a],
-          B = Q[ev.b],
-          f = Math.min(1, (tt - ev.t) / ev.dur);
-        const hx = A.x + (B.x - A.x) * f,
-          hy = A.y + (B.y - A.y) * f;
-        const g = `${ev.c}|${ev.w || 2}|${ev.alpha || 0.8}`;
-        if (!groups.has(g)) groups.set(g, new Path2D());
-        groups.get(g)!.moveTo(A.x, A.y);
-        groups.get(g)!.lineTo(hx, hy);
-        if (f < 1) glow(ev.c, hx, hy, 8 * B.k, 0.9 * out);
-      }
-      for (const [g, pa] of groups) {
-        const [c, lw, al] = g.split("|").map(Number);
-        ctx.strokeStyle = rgba(C.pal[c], al * out);
-        ctx.lineWidth = lw;
-        ctx.stroke(pa);
-      }
-      if (tt < 0.5) glow(w.c0, Q[w.src].x, Q[w.src].y, 46 * Q[w.src].k, (1 - tt / 0.5) * out);
-    }
-    return marks;
-  }
-
-  /** 環境の信号と、届いた頂点の光。尾は色ごとにまとめて描く */
-  function pulses(scene: Scene, Q: Projected[], a0: number) {
-    const tails = C.pal.map(() => new Path2D());
+  /** パケットと、通過・到着した機器の光。尾はまとめて描く */
+  function packets(scene: Scene, Q: Projected[], a0: number) {
+    const tails = new Path2D();
     const heads: number[] = [];
-    for (const q of scene.pulses) {
+    for (const q of scene.packets) {
       const t = Math.min(1, q.t / q.dur),
         t0 = Math.max(0, t - CFG.tail);
-      const A = Q[q.a],
-        B = Q[q.b];
+      const A = Q[q.path[q.hop]],
+        B = Q[q.path[q.hop + 1]];
       const hx = A.x + (B.x - A.x) * t,
         hy = A.y + (B.y - A.y) * t;
-      tails[q.ci].moveTo(A.x + (B.x - A.x) * t0, A.y + (B.y - A.y) * t0);
-      tails[q.ci].lineTo(hx, hy);
-      heads.push(q.ci, hx, hy, A.k, A.d + (B.d - A.d) * t);
+      tails.moveTo(A.x + (B.x - A.x) * t0, A.y + (B.y - A.y) * t0);
+      tails.lineTo(hx, hy);
+      heads.push(hx, hy, A.k + (B.k - A.k) * t, A.d + (B.d - A.d) * t);
     }
     ctx.lineWidth = 1.8;
-    tails.forEach((pa, ci) => {
-      ctx.strokeStyle = rgba(C.pal[ci], 0.55 * a0);
-      ctx.stroke(pa);
-    });
-    for (let i = 0; i < heads.length; i += 5)
-      glow(heads[i], heads[i + 1], heads[i + 2], 7 * heads[i + 3], (0.4 + 0.5 * heads[i + 4]) * a0);
+    ctx.strokeStyle = rgba(C.accent, 0.55 * a0);
+    ctx.stroke(tails);
+    for (let i = 0; i < heads.length; i += 4)
+      glow(C.accent, heads[i], heads[i + 1], 9 * heads[i + 2], (0.5 + 0.5 * heads[i + 3]) * a0);
     for (let i = 0; i < scene.n; i++) {
       const nd = scene.nodes[i],
         q = Q[i];
       if (nd.flash > 0.05)
-        glow(nd.ci, q.x, q.y, (10 + 26 * nd.flash) * q.k, 0.75 * nd.flash * (0.3 + 0.7 * q.d) * a0);
+        glow(
+          C.accent,
+          q.x,
+          q.y,
+          (10 + 22 * nd.flash) * q.k,
+          0.75 * nd.flash * (0.3 + 0.7 * q.d) * a0,
+        );
     }
   }
 
-  /** 頂点の点 */
-  function nodes(scene: Scene, Q: Projected[], a0: number, marks: WaveMarks) {
+  /** 機器の点。中継機器は端末より大きく描く */
+  function nodes(scene: Scene, Q: Projected[], a0: number) {
     for (let i = 0; i < scene.n; i++) {
       const nd = scene.nodes[i],
         q = Q[i];
-      let col: RGB = mix(C.muted, C.dark ? mix(C.pal[nd.ci], C.ink, 0.2) : C.pal[nd.ci], nd.heat);
-      if (marks.col[i] >= 0)
-        col = mix(
-          col,
-          C.dark ? mix(C.pal[marks.col[i]], C.ink, 0.15) : C.pal[marks.col[i]],
-          marks.a[i],
-        );
+      const relay = scene.shape.roles[i] === "relay";
+      const col: RGB = mix(relay ? C.ink : C.muted, C.accent, Math.min(1, nd.flash));
       ctx.beginPath();
-      ctx.arc(
-        q.x,
-        q.y,
-        (1.5 + 1.8 * q.d) * q.k + (marks.col[i] >= 0 ? marks.a[i] * (marks.big[i] ? 3 : 1) : 0),
-        0,
-        Math.PI * 2,
-      );
-      ctx.fillStyle = rgba(col, (0.3 + 0.7 * q.d) * a0);
+      ctx.arc(q.x, q.y, (relay ? 4 + 2.4 * q.d : 2 + 1.8 * q.d) * q.k, 0, Math.PI * 2);
+      ctx.fillStyle = rgba(col, (0.35 + 0.65 * q.d) * a0);
       ctx.fill();
     }
   }
@@ -238,10 +156,9 @@ export function createRenderer(ctx: CanvasRenderingContext2D, reduceMotion: bool
     hover(scene, Q, a0);
     ctx.globalCompositeOperation = C.dark ? "lighter" : "source-over";
     ctx.lineCap = "round";
-    const marks = waves(scene, Q, a0);
-    pulses(scene, Q, a0);
+    packets(scene, Q, a0);
     ctx.globalCompositeOperation = "source-over";
-    nodes(scene, Q, a0, marks);
+    nodes(scene, Q, a0);
   }
 
   return { draw, resetCaches };

@@ -138,7 +138,7 @@ src/
   pages/          URL ごとの薄いファイル(views を呼ぶだけ)
   layouts/        BaseLayout(全ページの土台)、ArticleLayout(記事ページ)
   components/     Header、Footer、Section、ListRow など
-  hero/           トップのモーション(canvas)。akabane2026 の lab-site から移したもの
+  hero/           トップのモーション(canvas)。ネットワークのトポロジとパケット
   lib/            データの計算(Astro に依存しない部分はテストあり)
   i18n/ui.ts      ナビやボタンの文言
   styles/         tokens.css(デザイントークン)、base.css

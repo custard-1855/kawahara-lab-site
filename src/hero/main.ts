@@ -11,7 +11,6 @@ export function startHero(hero: HTMLElement) {
   const cv = hero.querySelector("canvas")!;
   const ctx = cv.getContext("2d")!;
   const nameEl = hero.querySelector<HTMLElement>("[data-shape-name]")!;
-  const algoEl = hero.querySelector<HTMLElement>("[data-algo-name]")!;
 
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const renderer = createRenderer(ctx, reduceMotion);
@@ -42,7 +41,7 @@ export function startHero(hero: HTMLElement) {
     draw();
   }
 
-  /* 操作: ドラッグで回す / ホバーで隣を照らす / クリックで処理を実行 */
+  /* 操作: ドラッグで回す / ホバーで隣を照らす / クリック */
   const local = (e: PointerEvent): [number, number] => {
     const r = cv.getBoundingClientRect();
     return [e.clientX - r.left, e.clientY - r.top];
@@ -152,20 +151,13 @@ export function startHero(hero: HTMLElement) {
       onShapeLoad: (shape) => {
         nameEl.textContent = shape.name;
       },
-      // ヒーローでは結果の文は出さず、実行中の処理の名前だけを形の名前の横に出す
-      onAlgoStart: (algo) => {
-        algoEl.textContent = algo.name;
-      },
-      onAlgoIdle: () => {
-        if (algoEl.textContent) algoEl.textContent = "";
-      },
     },
     reduceMotion,
   );
   if (devPanelEnabled()) setupDevPanel(hero, scene, draw);
 
   if (reduceMotion) {
-    // 動きを減らす設定では、信号が広がった状態の1枚で止める(ドラッグとクリックには応じる)
+    // 動きを減らす設定では、パケットが飛んでいる状態の1枚で止める(ドラッグとクリックには応じる)
     scene.settle();
     draw();
   } else {
